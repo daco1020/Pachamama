@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Enlaces - Pachamama</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-link {
+            display: block;
+            padding: 15px 20px;
+            margin: 10px 0;
+            background: #2c5530;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .test-link:hover {
+            background: #1a3d1f;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+        }
+        .log {
+            background: #000;
+            color: #0f0;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Test de Enlaces - Pachamama</h1>
+        
+        <div class="status">
+            <strong>Instrucciones:</strong> Haz clic en cada enlace para probar la navegación. 
+            Los logs aparecerán abajo.
+        </div>
+
+        <h2>Enlaces de Prueba:</h2>
+        
+        <a href="index.html" class="test-link" onclick="logClick(this)">🏠 Inicio</a>
+        <a href="debug.html" class="test-link" onclick="logClick(this)">🐛 Debug</a>
+        <a href="test-navigation.html" class="test-link" onclick="logClick(this)">🧪 Test Navegación</a>
+
+        <h2>Test con JavaScript:</h2>
+        <button onclick="testJSNavigation('index.html')" class="test-link" style="border: none; cursor: pointer;">
+            🧪 JS → Inicio
+        </button>
+
+        <h2>Log de Eventos:</h2>
+        <div id="log" class="log"></div>
+    </div>
+
+    <script>
+        let logElement = document.getElementById('log');
+        
+        function log(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            logElement.innerHTML += `<div>[${timestamp}] ${message}</div>`;
+            logElement.scrollTop = logElement.scrollHeight;
+            console.log(message);
+        }
+
+        function logClick(element) {
+            log(`🔗 Click en enlace: ${element.href}`);
+            log(`📍 URL actual: ${window.location.href}`);
+            
+            // No prevenir el comportamiento por defecto
+            setTimeout(() => {
+                log(`⏳ Esperando navegación...`);
+            }, 100);
+        }
+
+        function testJSNavigation(url) {
+            log(`🧪 Navegación JavaScript a: ${url}`);
+            try {
+                window.location.href = url;
+                log(`✅ Comando de navegación ejecutado`);
+            } catch (error) {
+                log(`❌ Error en navegación JS: ${error.message}`);
+            }
+        }
+
+        // Detectar cambios de página
+        window.addEventListener('beforeunload', function() {
+            log('🚪 Página se está descargando...');
+        });
+
+        // Log inicial
+        document.addEventListener('DOMContentLoaded', function() {
+            log('✅ Página de test cargada');
+            log(`📍 URL inicial: ${window.location.href}`);
+        });
+
+        // Interceptar todos los clics
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A') {
+                log(`👆 Click detectado en: ${e.target.textContent.trim()}`);
+            }
+        });
+    </script>
+</body>
+</html>

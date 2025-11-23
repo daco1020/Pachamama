@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Navegación Pachamama</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+            line-height: 1.6;
+        }
+        .debug-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background: #2c5530;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+        .btn:hover {
+            background: #1a3d1f;
+        }
+        .log {
+            background: #000;
+            color: #0f0;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+            margin: 10px 0;
+        }
+        .success { color: #4caf50; }
+        .error { color: #f44336; }
+        .warning { color: #ff9800; }
+        .info { color: #2196f3; }
+    </style>
+</head>
+<body>
+    <div class="debug-container">
+        <h1>🔍 Debug de Navegación - Pachamama</h1>
+        
+        <div class="test-section">
+            <h2>1. Test de Enlaces Directos</h2>
+            <p>Estos enlaces deberían funcionar normalmente:</p>
+            <a href="index.html" class="btn">🏠 Inicio</a>
+            <a href="test-navigation.html" class="btn">🧪 Test Navegación</a>
+            <a href="test-links.html" class="btn">🔗 Test Enlaces</a>
+        </div>
+
+        <div class="test-section">
+            <h2>2. Test de JavaScript</h2>
+            <button onclick="testJavaScriptNavigation()" class="btn">🧪 Test JS Navigation</button>
+            <button onclick="testFetch()" class="btn">🌐 Test Fetch</button>
+            <button onclick="clearLog()" class="btn">🗑️ Limpiar Log</button>
+        </div>
+
+        <div class="test-section">
+            <h2>3. Información del Sistema</h2>
+            <div id="system-info"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>4. Log de Eventos</h2>
+            <div id="log" class="log"></div>
+        </div>
+    </div>
+
+    <script>
+        let logElement = document.getElementById('log');
+        
+        function log(message, type = 'info') {
+            const timestamp = new Date().toLocaleTimeString();
+            const className = type;
+            logElement.innerHTML += `<div class="${className}">[${timestamp}] ${message}</div>`;
+            logElement.scrollTop = logElement.scrollHeight;
+            console.log(`[${type.toUpperCase()}] ${message}`);
+        }
+
+        function clearLog() {
+            logElement.innerHTML = '';
+        }
+
+        // Información del sistema
+        function displaySystemInfo() {
+            const info = document.getElementById('system-info');
+            info.innerHTML = `
+                <p><strong>URL:</strong> ${window.location.href}</p>
+                <p><strong>Protocol:</strong> ${window.location.protocol}</p>
+                <p><strong>Host:</strong> ${window.location.host}</p>
+                <p><strong>Pathname:</strong> ${window.location.pathname}</p>
+                <p><strong>User Agent:</strong> ${navigator.userAgent}</p>
+                <p><strong>Cookies Enabled:</strong> ${navigator.cookieEnabled}</p>
+                <p><strong>Online:</strong> ${navigator.onLine}</p>
+            `;
+        }
+
+        // Test de navegación con JavaScript
+        function testJavaScriptNavigation() {
+            log('Iniciando test de navegación JavaScript...', 'info');
+            
+            const testUrls = [
+                'index.html',
+                'test-navigation.html', 
+                'test-links.html'
+            ];
+
+            testUrls.forEach(url => {
+                log(`Probando acceso a: ${url}`, 'info');
+                
+                // Test con fetch
+                fetch(url)
+                    .then(response => {
+                        if (response.ok) {
+                            log(`✅ ${url} - Status: ${response.status}`, 'success');
+                        } else {
+                            log(`❌ ${url} - Status: ${response.status}`, 'error');
+                        }
+                    })
+                    .catch(error => {
+                        log(`❌ ${url} - Error: ${error.message}`, 'error');
+                    });
+            });
+        }
+
+        // Test de fetch general
+        function testFetch() {
+            log('Probando conectividad del servidor...', 'info');
+            
+            fetch('index.html')
+                .then(response => {
+                    log(`Servidor responde: ${response.status} ${response.statusText}`, 'success');
+                    return response.text();
+                })
+                .then(html => {
+                    log(`Contenido recibido: ${html.length} caracteres`, 'success');
+                })
+                .catch(error => {
+                    log(`Error de conectividad: ${error.message}`, 'error');
+                });
+        }
+
+        // Interceptar clics en enlaces
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A' && e.target.href) {
+                log(`Click en enlace: ${e.target.href}`, 'info');
+                
+                // No prevenir el comportamiento por defecto, solo loggear
+                setTimeout(() => {
+                    log(`Navegando a: ${e.target.href}`, 'warning');
+                }, 100);
+            }
+        });
+
+        // Eventos de navegación
+        window.addEventListener('beforeunload', function() {
+            log('Página se está descargando...', 'warning');
+        });
+
+        window.addEventListener('unload', function() {
+            log('Página descargada', 'warning');
+        });
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', function() {
+            log('Página de debug cargada correctamente', 'success');
+            displaySystemInfo();
+            
+            // Test automático inicial
+            setTimeout(() => {
+                log('Ejecutando test automático...', 'info');
+                testFetch();
+            }, 1000);
+        });
+
+        // Detectar errores JavaScript
+        window.addEventListener('error', function(e) {
+            log(`Error JavaScript: ${e.message} en ${e.filename}:${e.lineno}`, 'error');
+        });
+    </script>
+</body>
+</html>

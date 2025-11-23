@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Navegación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 10px;
+            background: #2c5530;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #1a3d1f;
+        }
+        .status {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test de Navegación - Pachamama</h1>
+        
+        <div class="status">
+            ✅ Esta página se cargó correctamente<br>
+            ✅ El servidor está funcionando<br>
+            ✅ Los archivos están siendo servidos
+        </div>
+
+        <h2>Prueba los enlaces:</h2>
+        
+        <a href="index.html" class="btn">← Volver a Inicio</a>
+        <a href="debug.html" class="btn">Debug</a>
+        <a href="test-links.html" class="btn">Test Enlaces</a>
+
+        <h2>Información del navegador:</h2>
+        <div id="browser-info"></div>
+
+        <h2>Test de JavaScript:</h2>
+        <button onclick="testJS()" class="btn">Probar JavaScript</button>
+        <div id="js-result"></div>
+    </div>
+
+    <script>
+        // Mostrar información del navegador
+        document.getElementById('browser-info').innerHTML = `
+            <p><strong>User Agent:</strong> ${navigator.userAgent}</p>
+            <p><strong>URL actual:</strong> ${window.location.href}</p>
+            <p><strong>Hora de carga:</strong> ${new Date().toLocaleString()}</p>
+        `;
+
+        function testJS() {
+            document.getElementById('js-result').innerHTML = `
+                <div style="background: #e8f5e8; padding: 10px; margin: 10px 0; border-radius: 5px;">
+                    ✅ JavaScript está funcionando correctamente
+                </div>
+            `;
+        }
+
+        // Test de navegación programática
+        function testNavigation() {
+            console.log('Testing navigation...');
+            
+            // Verificar que los enlaces existen
+            const links = document.querySelectorAll('a[href$=".html"]');
+            console.log(`Found ${links.length} HTML links`);
+            
+            links.forEach(link => {
+                console.log(`Link: ${link.href}`);
+            });
+        }
+
+        // Ejecutar test al cargar
+        document.addEventListener('DOMContentLoaded', testNavigation);
+    </script>
+</body>
+</html>
