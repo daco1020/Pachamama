@@ -101,7 +101,7 @@ h6 {
 /* Buttons */
 .btn-primary,
 .btn-primary-large {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    background: linear-gradient(135deg, #DC2626, #B91C1C);
     color: var(--color-white);
     border: none;
     padding: 1rem 2.5rem;
@@ -112,14 +112,15 @@ h6 {
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
-    box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
     letter-spacing: 0.02em;
 }
 
 .btn-primary:hover,
 .btn-primary-large:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.4);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5);
+    background: linear-gradient(135deg, #EF4444, #DC2626);
 }
 
 .btn-secondary {
@@ -376,18 +377,20 @@ h6 {
     margin-top: auto;
     width: 100%;
     padding: 1.2rem;
-    background: var(--color-black);
+    background: linear-gradient(135deg, #DC2626, #B91C1C);
     color: var(--color-white);
     border: none;
     border-radius: var(--radius-full);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
 }
 
 .pricing-btn:hover {
-    background: var(--color-primary);
+    background: linear-gradient(135deg, #EF4444, #DC2626);
     transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5);
 }
 
 /* Process Slider */
