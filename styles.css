@@ -657,6 +657,16 @@ h6 {
     gap: 2rem;
 }
 
+.footer-links a {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .hero-title {
