@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Relax - Avena & Lavanda | Pachamama</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&amp;family=Inter:wght@300;400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#C4A484",
+                        secondary: "#B0A18E",
+                        accent: "#5C6B5F",
+                        "background-light": "#FDFBF9",
+                        "background-dark": "#0F0F0F",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#181818",
+                        "text-light": "#2C2A29",
+                        "text-dark": "#FFFFFF",
+                        "text-muted-light": "#85817E",
+                        "text-muted-dark": "#737373",
+                        "banner-dark": "#1C1C1C",
+                    },
+                    fontFamily: {
+                        heading: ['"Manrope"', 'sans-serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        'xl': "0.75rem",
+                        '2xl': "1rem",
+                        '3xl': "1.5rem",
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0, 0, 0, 0.03)',
+                        'glow': '0 0 20px rgba(176, 161, 142, 0.15)',
+                    },
+                    letterSpacing: {
+                        'widest': '.15em',
+                        'super-wide': '.25em',
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #8E7F70 0%, #B0A18E 50%, #8E7F70 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+        }
+
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #E5E5E5;
+            border-radius: 4px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #333;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans transition-colors duration-500 antialiased selection:bg-primary/20">
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg border-b border-gray-100 dark:border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-24">
+                <button class="md:hidden text-text-light dark:text-text-dark">
+                    <span class="material-symbols-outlined font-light">menu</span>
+                </button>
+                <a href="index.html" class="flex-shrink-0 flex items-center md:flex-1">
+                    <span
+                        class="font-heading text-xl font-bold tracking-widest text-text-light dark:text-white uppercase">Pachamama</span>
+                </a>
+                <div class="hidden md:flex justify-center space-x-12 flex-1">
+                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors text-xs uppercase tracking-widest font-semibold"
+                        href="coleccion.html">Colección</a>
+                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors text-xs uppercase tracking-widest font-semibold"
+                        href="index.html#ingredientes">Ingredientes</a>
+                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors text-xs uppercase tracking-widest font-semibold"
+                        href="filosofia.html">Filosofía</a>
+                </div>
+                <div class="flex items-center space-x-6 md:flex-1 md:justify-end">
+                    <button class="text-text-light dark:text-text-dark hover:text-primary transition-colors"
+                        onclick="document.documentElement.classList.toggle('dark')">
+                        <span class="material-symbols-outlined dark:hidden font-light text-[22px]">dark_mode</span>
+                        <span
+                            class="material-symbols-outlined hidden dark:inline font-light text-[22px]">light_mode</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-40 pb-20 lg:pt-52 lg:pb-32 overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-[#F5F2EF] to-transparent dark:from-white/5 dark:to-transparent -z-10 opacity-70">
+        </div>
+        <div
+            class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#E8DFD6]/30 dark:bg-secondary/10 rounded-full blur-[100px] -z-10 pointer-events-none">
+        </div>
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <div class="flex justify-center gap-6 mb-10">
+                <span
+                    class="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-text-muted-light dark:text-text-muted-dark border-b border-gray-200 dark:border-gray-800 pb-1">
+                    Avena & Lavanda
+                </span>
+            </div>
+            <h1
+                class="font-heading text-5xl md:text-7xl lg:text-8xl font-medium text-text-light dark:text-text-dark leading-[1.1] mb-8 tracking-tight">
+                Relax
+            </h1>
+            <p
+                class="text-base md:text-lg text-text-muted-light dark:text-text-muted-dark max-w-xl mx-auto mb-12 font-light leading-relaxed">
+                Sumérgete en una experiencia de calma profunda. Formulado con avena y lavanda para nutrir pieles
+                sensibles y prepararte para un descanso reparador.
+            </p>
+            <a href="https://wa.link/d79bce" target="_blank"
+                class="px-10 py-4 bg-text-light dark:bg-white text-white dark:text-black rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary dark:hover:bg-gray-200 transition-all duration-300 inline-flex items-center justify-center">
+                Ordenar Ahora
+            </a>
+        </div>
+    </header>
+
+    <!-- Ingredients Section -->
+    <section class="py-24 md:py-32 bg-white dark:bg-[#121212]">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div
+                class="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-gray-100 dark:border-gray-800 pb-8">
+                <div>
+                    <span
+                        class="text-primary text-[10px] font-bold tracking-super-wide uppercase mb-3 block">Ingredientes
+                        Activos</span>
+                    <h2
+                        class="font-heading text-3xl md:text-4xl text-text-light dark:text-text-dark font-medium tracking-tight">
+                        La Fórmula Perfecta</h2>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Avena -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 rounded-lg border border-gray-100 dark:border-white/5 hover-lift">
+                    <span class="material-symbols-outlined text-4xl mb-4 text-primary font-light">grain</span>
+                    <h3 class="font-heading text-xl font-bold text-text-light dark:text-text-dark mb-3">Avena</h3>
+                    <p class="text-sm text-text-muted-light dark:text-text-muted-dark leading-relaxed">
+                        Rica en beta-glucanos que forman una película protectora sobre la piel. Alivia la irritación,
+                        reduce el enrojecimiento y proporciona una hidratación duradera. Ideal para pieles sensibles y
+                        con tendencia a la sequedad.
+                    </p>
+                </div>
+                <!-- Lavanda -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 rounded-lg border border-gray-100 dark:border-white/5 hover-lift">
+                    <span class="material-symbols-outlined text-4xl mb-4 text-primary font-light">spa</span>
+                    <h3 class="font-heading text-xl font-bold text-text-light dark:text-text-dark mb-3">Lavanda</h3>
+                    <p class="text-sm text-text-muted-light dark:text-text-muted-dark leading-relaxed">
+                        Aceite esencial con propiedades calmantes y antisépticas. Su aroma reduce el estrés y promueve
+                        la relajación. Ayuda a equilibrar la producción de sebo y acelera la regeneración celular.
+                    </p>
+                </div>
+                <!-- Aloe Vera -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 rounded-lg border border-gray-100 dark:border-white/5 hover-lift">
+                    <span class="material-symbols-outlined text-4xl mb-4 text-primary font-light">eco</span>
+                    <h3 class="font-heading text-xl font-bold text-text-light dark:text-text-dark mb-3">Aloe Vera</h3>
+                    <p class="text-sm text-text-muted-light dark:text-text-muted-dark leading-relaxed">
+                        Gel rico en vitaminas A, C y E con poderosas propiedades hidratantes y regeneradoras. Calma
+                        quemaduras solares, reduce la inflamación y aporta frescura inmediata a la piel.
+                    </p>
+                </div>
+                <!-- Miel -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 rounded-lg border border-gray-100 dark:border-white/5 hover-lift">
+                    <span class="material-symbols-outlined text-4xl mb-4 text-primary font-light">opacity</span>
+                    <h3 class="font-heading text-xl font-bold text-text-light dark:text-text-dark mb-3">Miel Pura</h3>
+                    <p class="text-sm text-text-muted-light dark:text-text-muted-dark leading-relaxed">
+                        Humectante natural con propiedades antibacterianas. Atrae y retiene la humedad en la piel,
+                        dejándola suave y luminosa. Sus enzimas naturales promueven una exfoliación suave.
+                    </p>
+                </div>
+                <!-- Vitamina E -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 rounded-lg border border-gray-100 dark:border-white/5 hover-lift">
+                    <span class="material-symbols-outlined text-4xl mb-4 text-primary font-light">light_mode</span>
+                    <h3 class="font-heading text-xl font-bold text-text-light dark:text-text-dark mb-3">Vitamina E</h3>
+                    <p class="text-sm text-text-muted-light dark:text-text-muted-dark leading-relaxed">
+                        Poderoso antioxidante que protege contra el daño de los radicales libres. Fortalece la barrera
+                        cutánea, previene el envejecimiento prematuro y mejora la elasticidad de la piel.
+                    </p>
+                </div>
+                <!-- Proteína de Seda -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 rounded-lg border border-gray-100 dark:border-white/5 hover-lift">
+                    <span class="material-symbols-outlined text-4xl mb-4 text-primary font-light">filter_drama</span>
+                    <h3 class="font-heading text-xl font-bold text-text-light dark:text-text-dark mb-3">Proteína de
+                        Seda</h3>
+                    <p class="text-sm text-text-muted-light dark:text-text-muted-dark leading-relaxed">
+                        Aminoácidos que penetran profundamente para suavizar y alisar la piel. Crea una sensación de
+                        terciopelo al tacto y mejora la textura general, dejando un acabado sedoso y refinado.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-24 bg-background-light dark:bg-background-dark">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <span
+                    class="text-primary text-[10px] font-bold tracking-super-wide uppercase mb-3 block">Beneficios</span>
+                <h2
+                    class="font-heading text-3xl md:text-4xl text-text-light dark:text-text-dark font-medium tracking-tight">
+                    Diseñado para Ti</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="text-center p-6">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">self_improvement</span>
+                    <h4 class="font-heading text-sm font-bold text-text-light dark:text-text-dark">Calma Profunda</h4>
+                </div>
+                <div class="text-center p-6">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">nightlight</span>
+                    <h4 class="font-heading text-sm font-bold text-text-light dark:text-text-dark">Uso Nocturno</h4>
+                </div>
+                <div class="text-center p-6">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">sentiment_satisfied</span>
+                    <h4 class="font-heading text-sm font-bold text-text-light dark:text-text-dark">Pieles Sensibles</h4>
+                </div>
+                <div class="text-center p-6">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">texture</span>
+                    <h4 class="font-heading text-sm font-bold text-text-light dark:text-text-dark">Exfoliación Suave
+                    </h4>
+                </div>
+                <div class="text-center p-6">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">air</span>
+                    <h4 class="font-heading text-sm font-bold text-text-light dark:text-text-dark">Aroma Relajante</h4>
+                </div>
+                <div class="text-center p-6">
+                    <span class="material-symbols-outlined text-3xl text-primary mb-3">psychiatry</span>
+                    <h4 class="font-heading text-sm font-bold text-text-light dark:text-text-dark">100% Vegano</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-[#F5F2EF] dark:bg-[#C4A484]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2
+                class="font-heading text-3xl md:text-4xl text-text-light dark:text-text-dark font-medium mb-6 tracking-tight">
+                ¿Listo para Relajarte?</h2>
+            <p class="text-text-muted-light dark:text-white mb-10 max-w-lg mx-auto">
+                Ordena tu jabón Relax hoy y transforma tu rutina de cuidado personal en un ritual de bienestar.
+            </p>
+            <a href="https://wa.link/d79bce" target="_blank"
+                class="px-10 py-4 bg-text-light dark:bg-white text-white dark:text-black rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary dark:hover:bg-gray-200 transition-all duration-300 inline-flex items-center justify-center">
+                Ordenar por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-[#0A0A0A] pt-20 pb-10 border-t border-gray-100 dark:border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+                <div class="md:col-span-4">
+                    <h3
+                        class="font-heading text-xl font-bold tracking-widest mb-6 text-text-light dark:text-white uppercase">
+                        Pachamama</h3>
+                    <p
+                        class="text-text-muted-light dark:text-gray-500 text-sm leading-relaxed mb-8 max-w-xs font-light">
+                        Redefiniendo el cuidado de la piel a través de la botánica moderna y el diseño consciente.
+                    </p>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-text-light dark:text-white mb-6">Tienda
+                    </h4>
+                    <ul class="space-y-4 text-sm text-text-muted-light dark:text-gray-500 font-light">
+                        <li><a class="hover:text-primary transition-colors" href="coleccion.html">Colección</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-text-light dark:text-white mb-6">
+                        Productos</h4>
+                    <ul class="space-y-4 text-sm text-text-muted-light dark:text-gray-500 font-light">
+                        <li><a class="hover:text-primary transition-colors" href="relax.html">Relax</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="detox.html">Detox</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="renew.html">Renew</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-text-light dark:text-white mb-6">
+                        Empresa</h4>
+                    <ul class="space-y-4 text-sm text-text-muted-light dark:text-gray-500 font-light">
+                        <li><a class="hover:text-primary transition-colors" href="filosofia.html">Filosofía</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-text-muted-light dark:text-gray-600 border-t border-gray-100 dark:border-white/5">
+                <p>© 2025 Pachamama. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="sparkle.js"></script>
+</body>
+
+</html>

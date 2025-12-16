@@ -2,380 +2,618 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jabones Artesanales Premium - Cuidado Natural para tu Piel</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pachamama - Jabones de Lujo</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&amp;family=Inter:wght@300;400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#C4A484", // Warm Tan
+                        secondary: "#B0A18E", // Sand
+                        accent: "#5C6B5F", // Muted Sage
+                        "background-light": "#FDFBF9", // Warm White
+                        "background-dark": "#0F0F0F", // Deep Black
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#181818",
+                        "text-light": "#2C2A29", // Soft Black
+                        "text-dark": "#FFFFFF", // Stone 200
+                        "text-muted-light": "#85817E", // Stone 500
+                        "text-muted-dark": "#737373", // Neutral 500
+                        "banner-dark": "#1C1C1C", // Off black
+                    },
+                    fontFamily: {
+                        heading: ['"Manrope"', 'sans-serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        'xl': "0.75rem",
+                        '2xl': "1rem",
+                        '3xl': "1.5rem",
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0, 0, 0, 0.03)',
+                        'glow': '0 0 20px rgba(176, 161, 142, 0.15)',
+                    },
+                    letterSpacing: {
+                        'widest': '.15em',
+                        'super-wide': '.25em',
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #8E7F70 0%, #B0A18E 50%, #8E7F70 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+        }
 
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #E5E5E5;
+            border-radius: 4px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #333;
+        }
+    </style>
 </head>
 
-<body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav-brand">
-                <h2>Pachamama Jabones</h2>
+<body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans transition-colors duration-500 antialiased selection:bg-primary/20">
+    <nav
+        class="fixed w-full z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg border-b border-gray-100 dark:border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-24">
+                <button class="md:hidden text-text-light dark:text-text-dark">
+                    <span class="material-symbols-outlined font-light">menu</span>
+                </button>
+                <div class="flex-shrink-0 flex items-center md:flex-1">
+                    <span
+                        class="font-heading text-xl font-bold tracking-widest text-text-light dark:text-white uppercase">Pachamama</span>
+                </div>
+                <div class="hidden md:flex justify-center space-x-12 flex-1">
+                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors text-xs uppercase tracking-widest font-semibold"
+                        href="coleccion.html">Colección</a>
+                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors text-xs uppercase tracking-widest font-semibold"
+                        href="#">Ingredientes</a>
+                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors text-xs uppercase tracking-widest font-semibold"
+                        href="filosofia.html">Filosofía</a>
+                </div>
+                <div class="flex items-center space-x-6 md:flex-1 md:justify-end">
+                    <button class="text-text-light dark:text-text-dark hover:text-primary transition-colors"
+                        onclick="document.documentElement.classList.toggle('dark')">
+                        <span class="material-symbols-outlined dark:hidden font-light text-[22px]">dark_mode</span>
+                        <span
+                            class="material-symbols-outlined hidden dark:inline font-light text-[22px]">light_mode</span>
+                    </button>
+                </div>
             </div>
-        </nav>
+        </div>
+    </nav>
+    <header class="relative pt-40 pb-20 lg:pt-52 lg:pb-40 overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-gray-50 to-transparent dark:from-white/5 dark:to-transparent -z-10 opacity-50">
+        </div>
+        <div
+            class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-secondary/5 dark:bg-secondary/10 rounded-full blur-[100px] -z-10 pointer-events-none">
+        </div>
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <div class="flex justify-center gap-6 mb-10 opacity-0 animate-[fadeIn_1s_ease-out_forwards]">
+                <span
+                    class="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-text-muted-light dark:text-text-muted-dark border-b border-gray-200 dark:border-gray-800 pb-1">
+                    Origen 100% Natural
+                </span>
+                <span
+                    class="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-text-muted-light dark:text-text-muted-dark border-b border-gray-200 dark:border-gray-800 pb-1">
+                    Calidad Premium
+                </span>
+            </div>
+            <h1
+                class="font-heading text-5xl md:text-7xl lg:text-8xl font-medium text-text-light dark:text-text-dark leading-[1.1] mb-8 tracking-tight">
+                Renace tu Piel<br />
+                <span
+                    class="text-muted-light font-light text-primary dark:text-secondary italic font-serif">Naturalmente</span>
+            </h1>
+            <p
+                class="text-base md:text-lg text-text-muted-light dark:text-text-muted-dark max-w-xl mx-auto mb-12 font-light leading-relaxed">
+                Una experiencia de spa minimalista. Jabones artesanales creados para purificar, nutrir y elevar tus
+                rituales diarios.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <a href="https://wa.link/d79bce" target="_blank"
+                    class="px-10 py-4 bg-text-light dark:bg-white text-white dark:text-black rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary dark:hover:bg-gray-200 transition-all duration-300 min-w-[200px] flex items-center justify-center">
+                    Comprar Kit
+                </a>
+            </div>
+        </div>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badges">
-                    <span class="badge">🌿 COLÁGENO & ELASTINA</span>
-                    <span class="badge">✨ 6 ACTIVOS DE LUJO</span>
+    <section class="py-24 md:py-32 bg-white dark:bg-[#121212]">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div
+                class="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-gray-100 dark:border-gray-800 pb-8">
+                <div>
+                    <span
+                        class="text-primary text-[10px] font-bold tracking-super-wide uppercase mb-3 block">Ingredientes
+                        Puros</span>
+                    <h2
+                        class="font-heading text-3xl md:text-4xl text-text-light dark:text-text-dark font-medium tracking-tight">
+                        Ciencia y Naturaleza</h2>
                 </div>
-                <h1 class="hero-title">
-                    ¡REVELADO! El Kit que Transforma tu Ducha en un Ritual Antiedad con Colágeno, Elastina y 6 Activos
-                    de Lujo
-                </h1>
-                <p class="hero-description">
-                    ¿Cansada de la piel seca o sensible? Descubre por qué miles eligen nuestro Kit Artesanal de 3
-                    Jabones Especializados para nutrir y reafirmar la piel desde la primera aplicación.
+                <p
+                    class="text-text-muted-light dark:text-text-muted-dark font-light text-sm max-w-md mt-4 md:mt-0 md:text-right">
+                    6 activos botánicos seleccionados rigurosamente por su potencia y pureza.
                 </p>
-
-                <br>
-                <div class="hero-actions">
-                    <button class="btn-primary-large">🛒 Ordena Tu Kit Ahora Mismo</button>
-                    <a href="#beneficios" class="btn-secondary">Conoce Los 6 Activos Premium</a>
+            </div>
+            <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-gray-100 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 md:p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-50 dark:hover:bg-black transition-colors aspect-square">
+                    <span
+                        class="material-symbols-outlined text-4xl mb-4 text-primary font-light group-hover:scale-110 transition-transform duration-500">biotech</span>
+                    <h3 class="font-heading text-sm font-bold text-text-light dark:text-text-dark mb-1">Colágeno</h3>
+                    <p class="text-[10px] uppercase tracking-wider text-text-muted-light dark:text-text-muted-dark">
+                        Estructura</p>
+                </div>
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 md:p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-50 dark:hover:bg-black transition-colors aspect-square">
+                    <span
+                        class="material-symbols-outlined text-4xl mb-4 text-primary font-light group-hover:scale-110 transition-transform duration-500">all_inclusive</span>
+                    <h3 class="font-heading text-sm font-bold text-text-light dark:text-text-dark mb-1">Elastina</h3>
+                    <p class="text-[10px] uppercase tracking-wider text-text-muted-light dark:text-text-muted-dark">
+                        Flexibilidad</p>
+                </div>
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 md:p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-50 dark:hover:bg-black transition-colors aspect-square">
+                    <span
+                        class="material-symbols-outlined text-4xl mb-4 text-primary font-light group-hover:scale-110 transition-transform duration-500">light_mode</span>
+                    <h3 class="font-heading text-sm font-bold text-text-light dark:text-text-dark mb-1">Vitamina E</h3>
+                    <p class="text-[10px] uppercase tracking-wider text-text-muted-light dark:text-text-muted-dark">
+                        Protección</p>
+                </div>
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 md:p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-50 dark:hover:bg-black transition-colors aspect-square">
+                    <span
+                        class="material-symbols-outlined text-4xl mb-4 text-primary font-light group-hover:scale-110 transition-transform duration-500">opacity</span>
+                    <h3 class="font-heading text-sm font-bold text-text-light dark:text-text-dark mb-1">Miel Pura</h3>
+                    <p class="text-[10px] uppercase tracking-wider text-text-muted-light dark:text-text-muted-dark">
+                        Nutrición</p>
+                </div>
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 md:p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-50 dark:hover:bg-black transition-colors aspect-square">
+                    <span
+                        class="material-symbols-outlined text-4xl mb-4 text-primary font-light group-hover:scale-110 transition-transform duration-500">spa</span>
+                    <h3 class="font-heading text-sm font-bold text-text-light dark:text-text-dark mb-1">Aloe Vera</h3>
+                    <p class="text-[10px] uppercase tracking-wider text-text-muted-light dark:text-text-muted-dark">
+                        Calma</p>
+                </div>
+                <div
+                    class="bg-surface-light dark:bg-surface-dark p-8 md:p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-50 dark:hover:bg-black transition-colors aspect-square">
+                    <span
+                        class="material-symbols-outlined text-4xl mb-4 text-primary font-light group-hover:scale-110 transition-transform duration-500">filter_drama</span>
+                    <h3 class="font-heading text-sm font-bold text-text-light dark:text-text-dark mb-1">Seda</h3>
+                    <p class="text-[10px] uppercase tracking-wider text-text-muted-light dark:text-text-muted-dark">
+                        Suavidad</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Features Section -->
-    <section class="features" id="beneficios">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">✨ La Piel que Siempre Soñaste</span>
-                <h2>Nuestro Secreto es el Kit de 3 Jabones Infusionados con Colágeno, Elastina y Aceite de Argán</h2>
-                <p>Diseñados Específicamente para Darle Firmeza y Luminosidad a tu Piel</p>
+    <section class="py-24 relative bg-background-light dark:bg-background-dark">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
+            <div class="text-center mb-24">
+                <span class="text-primary text-[10px] font-bold tracking-super-wide uppercase mb-3 block">La
+                    Colección</span>
+                <h2
+                    class="font-heading text-3xl md:text-5xl text-text-light dark:text-text-dark font-medium tracking-tight">
+                    Tu Ritual Personal</h2>
             </div>
-
-            <div class="features-grid">
-                <!-- 1. Colágeno -->
-                <div class="feature-card">
-                    <div class="feature-icon">🧬</div>
-                    <h3>Colágeno</h3>
-                    <p>Aporta la estructura necesaria para una piel visiblemente más firme y joven.</p>
-                </div>
-                <!-- 2. Elastina -->
-                <div class="feature-card">
-                    <div class="feature-icon">✨</div>
-                    <h3>Elastina</h3>
-                    <p>Devuelve la flexibilidad natural, permitiendo que tu piel recupere su forma.</p>
-                </div>
-                <!-- 3. Vitamina E -->
-                <div class="feature-card">
-                    <div class="feature-icon">🌟</div>
-                    <h3>Vitamina E</h3>
-                    <p>Escudo antioxidante que protege contra los radicales libres y el envejecimiento.</p>
-                </div>
-                <!-- 4. Miel Orgánica -->
-                <div class="feature-card">
-                    <div class="feature-icon">🍯</div>
-                    <h3>Miel Orgánica</h3>
-                    <p>Propiedades antibacterianas y calmantes para una piel radiante y sana.</p>
-                </div>
-                <!-- 7. Aloe Vera -->
-                <div class="feature-card">
-                    <div class="feature-icon">🌿</div>
-                    <h3>Aloe Vera</h3>
-                    <p>Regenerador celular por excelencia, calma irritaciones y refresca.</p>
-                </div>
-                <!-- 8. Proteína de Seda -->
-                <div class="feature-card">
-                    <div class="feature-icon">☁️</div>
-                    <h3>Proteína de Seda</h3>
-                    <p>Otorga un acabado aterciopelado y una sensación de lujo inigualable.</p>
-                </div>
-            </div>
-            </br>
-            <div class="luxury-ingredients" style="text-align: center;">
-                <h3>Lo que realmente te hace elegirnos es nuestra formulación exclusiva</h3>
-                <p>Cada barra contiene 6 ingredientes conocidos por sus beneficios reparadores y antiedad, creando una
-                    experiencia de spa en tu propia ducha.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing" id="precios">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">🛒 Tu Kit de 3 Tratamientos Artesanales<br>¡Lujo a tu Alcance!</span>
-                <p>Cada jabón especializado está diseñado para una experiencia única de cuidado y transformación</p>
-            </div>
-
-            <div class="pricing-grid">
-                <!-- Jabón Relax y Suavidad -->
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Relax y Suavidad</h3>
-                        <p class="specialty">Avena y Esencia de Lavanda</p>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <a href="relax.html"
+                    class="bg-white dark:bg-[#151515] p-10 rounded-lg border border-gray-100 dark:border-white/5 hover-lift flex flex-col group h-full">
+                    <div
+                        class="mb-8 p-6 bg-[#F5F2EF] dark:bg-[#1A1A1A] rounded-sm flex items-center justify-center aspect-[4/3] relative overflow-hidden">
+                        <span
+                            class="material-symbols-outlined text-6xl text-[#D6Cfc7] font-thin opacity-50 group-hover:scale-110 transition-transform duration-700">nightlight</span>
                     </div>
-                    <div class="pricing-features">
-                        <ul>
-                            <li>✨ Anti-Estrés Profundo</li>
-                            <li>🌙 Calma la irritación</li>
-                            <li>😴 Prepara para descanso hipnótico</li>
-                            <li>🤲 Ideal para pieles sensibles</li>
-                            <li>🌅 Perfecto para uso nocturno</li>
-                        </ul>
+                    <div class="mb-6">
+                        <h3 class="font-heading text-2xl text-text-light dark:text-text-dark font-medium mb-1">Relax
+                        </h3>
+                        <p
+                            class="text-[11px] tracking-widest uppercase text-text-muted-light dark:text-text-muted-dark font-semibold">
+                            Avena &amp; Lavanda</p>
                     </div>
-                    <button class="pricing-btn">Haz Clic Aquí y Ordena Ahora</button>
-                </div>
-
-                <!-- Jabón Detox y Energía -->
-                <div class="pricing-card featured">
-                    <div class="pricing-badge">Más Popular</div>
-                    <div class="pricing-header">
-                        <h3>Detox y Energía</h3>
-                        <p class="specialty">Carbón Activado y Esencia de Menta</p>
-                    </div>
-                    <div class="pricing-features">
-                        <ul>
-                            <li>🔥 Piel Pura y Vitalidad Instantánea</li>
-                            <li>🖤 Carbón limpia poros profundamente</li>
-                            <li>🌿 Menta despierta tus sentidos</li>
-                            <li>☀️ Perfecto para limpieza matutina</li>
-                            <li>⚡ Efecto vigorizante inmediato</li>
-                        </ul>
-                    </div>
-                    <button class="pricing-btn">Haz Clic Aquí y Ordena Ahora</button>
-                </div>
-
-                <!-- Jabón Regeneración y Bienestar -->
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>Renovación y Bienestar</h3>
-                        <p class="specialty">Caléndula y Esencia de Eucalipto</p>
-                    </div>
-                    <div class="pricing-features">
-                        <ul>
-                            <li>🌸 Reparación y Alivio</li>
-                            <li>💧 Caléndula nutre zonas resecas</li>
-                            <li>🌿 Eucalipto aporta frescura terapéutica</li>
-                            <li>✨ Sensación de alivio inmediato</li>
-                            <li>🔄 Regeneración celular activa</li>
-                        </ul>
-                    </div>
-                    <button class="pricing-btn">Haz Clic Aquí y Ordena Ahora</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process" id="proceso">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">🌿 Nuestro Proceso<br>Artesanal</span>
-                <p>Cada jabón es elaborado a mano siguiendo técnicas tradicionales que preservan las propiedades
-                    naturales de los ingredientes</p>
-            </div>
-
-            <div class="process-grid">
-                <!-- 1. Selección de Ingredientes -->
-                <div class="process-card">
-                    <div class="process-header">
-                        <div class="process-icon">🌿</div>
-                        <h3>Selección de Ingredientes</h3>
-
-                    </div>
-                </div>
-
-                <!-- 2. Saponificación en Frío -->
-                <div class="process-card">
-                    <div class="process-header">
-                        <div class="process-icon">🧪</div>
-                        <h3>Saponificación en Frío</h3>
-
-                    </div>
-                </div>
-
-                <!-- 3. Moldeado y Formado -->
-                <div class="process-card">
-                    <div class="process-header">
-                        <div class="process-icon">🏺</div>
-                        <h3>Moldeado y Formado</h3>
-
-                    </div>
-                </div>
-
-                <!-- 4. Curado Natural -->
-                <div class="process-card">
-                    <div class="process-header">
-                        <div class="process-icon">⏰</div>
-                        <h3>Curado Natural</h3>
-
-                    </div>
-                </div>
-
-                <!-- 5. Corte y Acabado -->
-                <div class="process-card">
-                    <div class="process-header">
-                        <div class="process-icon">✂️</div>
-                        <h3>Corte y Acabado</h3>
-
-                    </div>
-                </div>
-
-                <!-- 6. Control de Calidad -->
-                <div class="process-card">
-                    <div class="process-header">
-                        <div class="process-icon">🔍</div>
-                        <h3>Control de Calidad</h3>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Philosophy Section -->
-    <section class="integrations" id="filosofia">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">✨ Nuestra Filosofía</span>
-                <p>Más que jabones, creamos experiencias de bienestar con honestidad, pasión y respeto por tu piel.</p>
-            </div>
-
-            <div class="integrations-grid">
-                <div class="integration-item">
-                    <div class="integration-icon">🤲</div>
-                    <h4>Hecho a Mano</h4>
-                    <p>Cada barra es única, elaborada con dedicación y detalle.</p>
-                </div>
-
-                <div class="integration-item">
-                    <div class="integration-icon">🌿</div>
-                    <h4>Ingredientes Naturales</h4>
-                    <p>Seleccionamos lo mejor de la naturaleza para tu piel.</p>
-                </div>
-
-                <div class="integration-item">
-                    <div class="integration-icon">💧</div>
-                    <h4>Sin Químicos Agresivos</h4>
-                    <p>Fórmulas suaves, libres de parabenos y sulfatos dañinos.</p>
-                </div>
-
-                <div class="integration-item">
-                    <div class="integration-icon">📦</div>
-                    <h4>Lotes Pequeños</h4>
-                    <p>Producción limitada para garantizar la máxima frescura.</p>
-                </div>
-
-                <div class="integration-item">
-                    <div class="integration-icon">❤️</div>
-                    <h4>Pasión Artesanal</h4>
-                    <p>El amor por lo que hacemos se nota en cada producto.</p>
-                </div>
-
-                <div class="integration-item">
-                    <div class="integration-icon">✨</div>
-                    <h4>Bienestar Real</h4>
-                    <p>Resultados visibles sin promesas vacías.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Guarantee and Urgency Section -->
-    <section class="guarantee-urgency" id="garantia">
-        <div class="container">
-            <!-- Guarantee Section -->
-            <div class="guarantee-section">
-                <div class="guarantee-header">
-                    <span class="guarantee-badge">🛡️ ¡Garantía de Satisfacción Total!</span>
-                    <h2>Asumimos Todo el Riesgo</h2>
-                </div>
-                <div class="guarantee-content">
-                    <p>Estamos tan seguros de la calidad superior y la experiencia transformadora de nuestros jabones
-                        que si no sientes tu piel más suave y con mayor elasticidad, <strong>te devolveremos el 100% de
-                            tu dinero</strong>.</p>
-                    <div class="guarantee-features">
-                        <div class="guarantee-item">
-                            <span class="guarantee-icon">💯</span>
-                            <span>100% Garantía de Devolución</span>
+                    <div class="flex-grow space-y-3 mb-8 border-t border-gray-100 dark:border-white/5 pt-6">
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Calma Profunda</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
                         </div>
-                        <div class="guarantee-item">
-                            <span class="guarantee-icon">🔒</span>
-                            <span>Sin Riesgo Para Ti</span>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Uso Nocturno</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
                         </div>
-                        <div class="guarantee-item">
-                            <span class="guarantee-icon">⚡</span>
-                            <span>Resultados Visibles</span>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Pieles Sensibles</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Exfoliación Suave</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Aroma Relajante</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>100% Vegano</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
                         </div>
                     </div>
-                </div>
+
+                </a>
+                <a href="detox.html"
+                    class="bg-white dark:bg-[#151515] p-10 rounded-lg border border-primary/30 dark:border-primary/30 hover-lift flex flex-col group h-full relative shadow-soft">
+                    <div class="absolute top-4 right-4">
+                        <span
+                            class="bg-text-light dark:bg-white text-white dark:text-black text-[9px] font-bold px-3 py-1 uppercase tracking-widest">Más
+                            Vendido</span>
+                    </div>
+                    <div
+                        class="mb-8 p-6 bg-[#EBECEB] dark:bg-[#1F2220] rounded-sm flex items-center justify-center aspect-[4/3] relative overflow-hidden">
+                        <span
+                            class="material-symbols-outlined text-6xl text-[#AAB0AD] font-thin opacity-50 group-hover:scale-110 transition-transform duration-700">clean_hands</span>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="font-heading text-2xl text-text-light dark:text-text-dark font-medium mb-1">Detox
+                        </h3>
+                        <p class="text-[11px] tracking-widest uppercase text-accent dark:text-accent font-semibold">
+                            Carbón &amp; Menta</p>
+                    </div>
+                    <div class="flex-grow space-y-3 mb-8 border-t border-gray-100 dark:border-white/5 pt-6">
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Limpieza Profunda</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Energía Matutina</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Control de Grasa</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Desintoxicante</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Frescura Total</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Antibacteriano</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                    </div>
+
+                </a>
+                <a href="renew.html"
+                    class="bg-white dark:bg-[#151515] p-10 rounded-lg border border-gray-100 dark:border-white/5 hover-lift flex flex-col group h-full">
+                    <div
+                        class="mb-8 p-6 bg-[#FDF2F2] dark:bg-[#2A1D1D] rounded-sm flex items-center justify-center aspect-[4/3] relative overflow-hidden">
+                        <span
+                            class="material-symbols-outlined text-6xl text-[#E5C7C7] font-thin opacity-50 group-hover:scale-110 transition-transform duration-700">local_florist</span>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="font-heading text-2xl text-text-light dark:text-text-dark font-medium mb-1">Renew
+                        </h3>
+                        <p
+                            class="text-[11px] tracking-widest uppercase text-text-muted-light dark:text-text-muted-dark font-semibold">
+                            Caléndula &amp; Eucalipto</p>
+                    </div>
+                    <div class="flex-grow space-y-3 mb-8 border-t border-gray-100 dark:border-white/5 pt-6">
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Regeneración</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Hidratación</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Antiinflamatorio</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Cicatrizante</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Aroma Herbal</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
+                            <span>Elasticidad</span>
+                            <span class="material-symbols-outlined text-xs">check</span>
+                        </div>
+                    </div>
+
+                </a>
             </div>
-
-            <br>
-
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-brand">
-                        <h3>Pachamama</h3>
-                        <p>Jabones artesanales que cuidan tu piel y respetan la naturaleza. Elaborados con amor y los
-                            mejores ingredientes naturales.</p>
+    <section class="py-12 px-4 sm:px-6 lg:px-8 bg-background-light dark:bg-background-dark">
+        <div
+            class="max-w-[1400px] mx-auto bg-banner-dark rounded-lg relative overflow-hidden flex flex-col md:flex-row items-center justify-between p-12 md:p-20 shadow-2xl">
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <div class="absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-[80px]"></div>
+                <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent"></div>
+            </div>
+            <div class="relative z-10 md:w-1/2 mb-10 md:mb-0">
+                <span class="text-white/60 text-xs font-bold tracking-super-wide uppercase mb-4 block">Edición
+                    Limitada</span>
+                <h2 class="font-heading text-4xl md:text-5xl text-white mb-6 font-medium tracking-tight">El Kit Esencial
+                </h2>
+                <p class="text-white/70 mb-0 max-w-md font-light text-base leading-relaxed">
+                    La trilogía completa para el cuidado holístico de tu piel. Presentado en una caja minimalista,
+                    perfecta para regalar.
+                </p>
+            </div>
+            <div class="relative z-10 flex flex-col items-center md:items-end md:w-1/3">
+                <div class="mb-6 text-center md:text-right">
+                    <p class="text-white/50 text-xs uppercase tracking-widest line-through mb-1">$55.000 COP</p>
+                    <span class="text-white font-heading text-4xl md:text-5xl font-light">$45.000 COP</span>
+                </div>
+                <a href="https://wa.link/d79bce" target="_blank"
+                    class="bg-white text-black px-10 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-200 transition-all duration-300 shadow-lg inline-block">
+                    Comprar Colección
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Customer Reviews Section -->
+    <section class="py-24 bg-[#F5F2EF] dark:bg-[#1A1A1A]">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <span
+                    class="text-primary text-[10px] font-bold tracking-super-wide uppercase mb-3 block">Testimonios</span>
+                <h2
+                    class="font-heading text-3xl md:text-4xl text-text-light dark:text-text-dark font-medium tracking-tight">
+                    Lo Que Dicen Nuestros Clientes</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div
+                    class="bg-white dark:bg-surface-dark p-8 rounded-lg border border-gray-100 dark:border-white/5 hover-lift">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                    </div>
+                    <p class="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed mb-6 italic">
+                        "El jabón Relax se ha convertido en mi ritual nocturno favorito. El aroma a lavanda es suave y
+                        natural, nada artificial. Mi piel se siente increíblemente suave."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                            <span class="font-heading text-sm font-bold text-primary">MA</span>
+                        </div>
+                        <div>
+                            <p class="font-heading text-sm font-medium text-text-light dark:text-text-dark">María
+                                Alejandra</p>
+                            <p class="text-xs text-text-muted-light dark:text-text-muted-dark">Bogotá, Colombia</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="footer-section">
-                    <h4>Productos</h4>
-                    <ul>
-                        <li><a href="#beneficios">Ingredientes Naturales</a></li>
-                        <li><a href="#precios">Kits y Precios</a></li>
-                        <li><a href="#proceso">Proceso Artesanal</a></li>
+                <!-- Review 2 -->
+                <div
+                    class="bg-white dark:bg-surface-dark p-8 rounded-lg border border-gray-100 dark:border-white/5 hover-lift">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                    </div>
+                    <p class="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed mb-6 italic">
+                        "El Detox es perfecto para las mañanas. La menta te despierta y el carbón deja la piel limpia
+                        sin resecarla. Definitivamente mi favorito del kit."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                            <span class="font-heading text-sm font-bold text-primary">CP</span>
+                        </div>
+                        <div>
+                            <p class="font-heading text-sm font-medium text-text-light dark:text-text-dark">Carlos Pérez
+                            </p>
+                            <p class="text-xs text-text-muted-light dark:text-text-muted-dark">Medellín, Colombia</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Review 3 -->
+                <div
+                    class="bg-white dark:bg-surface-dark p-8 rounded-lg border border-gray-100 dark:border-white/5 hover-lift">
+                    <div class="flex items-center gap-1 mb-4">
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                    </div>
+                    <p class="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed mb-6 italic">
+                        "Compré el kit completo y no me arrepiento. La calidad se nota desde el empaque. Son jabones
+                        que realmente cuidan tu piel y apoyan un consumo consciente."
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                            <span class="font-heading text-sm font-bold text-primary">LR</span>
+                        </div>
+                        <div>
+                            <p class="font-heading text-sm font-medium text-text-light dark:text-text-dark">Laura
+                                Rodríguez</p>
+                            <p class="text-xs text-text-muted-light dark:text-text-muted-dark">Cali, Colombia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-white dark:bg-[#121212] border-t border-gray-100 dark:border-white/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+            <span class="text-primary text-[10px] font-bold tracking-super-wide uppercase mb-3 block">Artesanía</span>
+            <h2 class="font-heading text-3xl md:text-4xl text-text-light dark:text-text-dark mb-16 tracking-tight">
+                Proceso Artesanal</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                <div
+                    class="hidden md:block absolute top-12 left-[16%] right-[16%] h-px bg-gray-200 dark:bg-gray-800 -z-10">
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-24 h-24 rounded-full bg-background-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-6 z-10">
+                        <span class="material-symbols-outlined text-3xl text-primary font-light">eco</span>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-text-light dark:text-text-dark mb-2">Selección</h3>
+                    <p
+                        class="text-sm text-text-muted-light dark:text-text-muted-dark font-light leading-relaxed max-w-xs">
+                        Ingredientes botánicos de origen sostenible, libres de crueldad.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-24 h-24 rounded-full bg-background-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-6 z-10">
+                        <span class="material-symbols-outlined text-3xl text-primary font-light">science</span>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-text-light dark:text-text-dark mb-2">Saponificación
+                    </h3>
+                    <p
+                        class="text-sm text-text-muted-light dark:text-text-muted-dark font-light leading-relaxed max-w-xs">
+                        Método en frío tradicional para preservar la integridad de los aceites.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="w-24 h-24 rounded-full bg-background-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-6 z-10">
+                        <span class="material-symbols-outlined text-3xl text-primary font-light">hourglass_bottom</span>
+                    </div>
+                    <h3 class="font-heading text-lg font-bold text-text-light dark:text-text-dark mb-2">Curado Lento
+                    </h3>
+                    <p
+                        class="text-sm text-text-muted-light dark:text-text-muted-dark font-light leading-relaxed max-w-xs">
+                        Hasta 48 horas de reposo en ambiente controlado para la textura perfecta.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 bg-background-light dark:bg-background-dark">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="material-symbols-outlined text-4xl text-primary/50 mb-6">format_quote</span>
+            <blockquote
+                class="font-heading text-2xl md:text-4xl text-text-light dark:text-text-dark leading-snug font-medium mb-8">
+                Creemos que el lujo real reside en la simplicidad, la honestidad de los materiales y el tiempo dedicado
+                a crear.
+            </blockquote>
+            <div
+                class="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-text-muted-light dark:text-text-muted-dark">
+                <span class="w-8 h-px bg-primary"></span>
+                <span>Filosofía Pachamama</span>
+                <span class="w-8 h-px bg-primary"></span>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-white dark:bg-[#0A0A0A] pt-20 pb-10 border-t border-gray-100 dark:border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+                <div class="md:col-span-4">
+                    <h3
+                        class="font-heading text-xl font-bold tracking-widest mb-6 text-text-light dark:text-white uppercase">
+                        Pachamama</h3>
+                    <p
+                        class="text-text-muted-light dark:text-gray-500 text-sm leading-relaxed mb-8 max-w-xs font-light">
+                        Redefiniendo el cuidado de la piel a través de la botánica moderna y el diseño consciente.
+                    </p>
+                </div>
+                <div class="md:col-span-2">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-text-light dark:text-white mb-6">Tienda
+                    </h4>
+                    <ul class="space-y-4 text-sm text-text-muted-light dark:text-gray-500 font-light">
+                        <li><a class="hover:text-primary transition-colors" href="coleccion.html">Colección</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-section">
-                    <h4>Información</h4>
-                    <ul>
-                        <li><a href="#filosofia">Nuestra Filosofía</a></li>
-                        <li><a href="#garantia">Garantía</a></li>
+                <div class="md:col-span-2">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-text-light dark:text-white mb-6">
+                        Productos</h4>
+                    <ul class="space-y-4 text-sm text-text-muted-light dark:text-gray-500 font-light">
+                        <li><a class="hover:text-primary transition-colors" href="relax.html">Relax</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="detox.html">Detox</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="renew.html">Renew</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <ul>
-                        <li>📧 hola@pachamama.cc</li>
-                        <li>📱 +57 312 776 0390</li>
-                        <li>📍 Bello - Antioquia</li>
+                <div class="md:col-span-2">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-text-light dark:text-white mb-6">
+                        Empresa</h4>
+                    <ul class="space-y-4 text-sm text-text-muted-light dark:text-gray-500 font-light">
+                        <li><a class="hover:text-primary transition-colors" href="filosofia.html">Filosofía</a></li>
                     </ul>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2025 Pachamama. Todos los derechos reservados.</p>
-                    <div class="footer-links">
-                        <a href="privacidad.html">Política de Privacidad</a>
-                        <a href="terminos.html">Términos de Servicio</a>
-                        <a href="cookies.html">Política de Cookies</a>
-                    </div>
-                </div>
+            <div
+                class="pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-text-muted-light dark:text-gray-600 border-t border-gray-100 dark:border-white/5">
+                <p>© 2025 Pachamama. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="sparkle.js"></script>
 </body>
 
 </html>

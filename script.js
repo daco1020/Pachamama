@@ -117,6 +117,47 @@ document.addEventListener('DOMContentLoaded', function () {
         const testimonialsSlider = new Slider('.testimonials-slider-container', 4000);
     }
 
+    // Countdown Timer para el Kit Completo
+    function initCountdown() {
+        // Establecer el tiempo final (24 horas desde ahora)
+        const endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = endTime - now;
+
+            if (distance < 0) {
+                // Si el tiempo se acabó, reiniciar el contador
+                const newEndTime = new Date().getTime() + (24 * 60 * 60 * 1000);
+                localStorage.setItem('countdownEndTime', newEndTime);
+                return;
+            }
+
+            // Calcular horas, minutos y segundos
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Actualizar el DOM
+            const hoursElement = document.getElementById('hours');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+
+            if (hoursElement) hoursElement.textContent = String(hours).padStart(2, '0');
+            if (minutesElement) minutesElement.textContent = String(minutes).padStart(2, '0');
+            if (secondsElement) secondsElement.textContent = String(seconds).padStart(2, '0');
+        }
+
+        // Actualizar cada segundo
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    }
+
+    // Iniciar el countdown si existe el elemento
+    if (document.getElementById('hours')) {
+        initCountdown();
+    }
+
     // Smooth scrolling SOLO para enlaces internos (que empiezan con #)
     const navLinks = document.querySelectorAll('a[href^="#"]');
 
