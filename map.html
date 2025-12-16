@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mapa de Reforestación - Pachamama</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&amp;family=Inter:wght@300;400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#C4A484",
+                        secondary: "#B0A18E",
+                        accent: "#5C6B5F",
+                        "background-light": "#FDFBF9",
+                        "background-dark": "#0F0F0F",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#181818",
+                        "text-light": "#2C2A29",
+                        "text-dark": "#FFFFFF",
+                        "text-muted-light": "#85817E",
+                        "text-muted-dark": "#737373",
+                        "banner-dark": "#1C1C1C",
+                    },
+                    fontFamily: {
+                        heading: ['"Manrope"', 'sans-serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        'xl': "0.75rem",
+                        '2xl': "1rem",
+                        '3xl': "1.5rem",
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(0, 0, 0, 0.03)',
+                        'glow': '0 0 20px rgba(176, 161, 142, 0.15)',
+                    },
+                    letterSpacing: {
+                        'widest': '.15em',
+                        'super-wide': '.25em',
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        .hover-lift {
+            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans transition-colors duration-500 antialiased selection:bg-primary/20">
+    <nav
+        class="fixed w-full z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg border-b border-gray-100 dark:border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-24">
+                <button class="md:hidden text-text-light dark:text-text-dark">
+                    <span class="material-symbols-outlined font-light">menu</span>
+                </button>
+                <div class="flex-shrink-0 flex items-center md:flex-1">
+                    <a href="index.html"
+                        class="font-heading text-xl font-bold tracking-widest text-text-light dark:text-white uppercase">Pachamama</a>
+                </div>
+                <div class="hidden md:flex justify-center space-x-12 flex-1">
+                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors text-xs uppercase tracking-widest font-semibold"
+                        href="coleccion.html">Colección</a>
+                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors text-xs uppercase tracking-widest font-semibold"
+                        href="filosofia.html">Filosofía</a>
+                    <a class="text-primary hover:text-primary dark:hover:text-primary transition-colors text-xs uppercase tracking-widest font-bold"
+                        href="map.html">Zonas de Siembra</a>
+                </div>
+                <div class="flex items-center space-x-6 md:flex-1 md:justify-end">
+                    <button class="text-text-light dark:text-text-dark hover:text-primary transition-colors"
+                        onclick="document.documentElement.classList.toggle('dark')">
+                        <span class="material-symbols-outlined dark:hidden font-light text-[22px]">dark_mode</span>
+                        <span
+                            class="material-symbols-outlined hidden dark:inline font-light text-[22px]">light_mode</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-12 lg:pt-52 lg:pb-24 overflow-hidden">
+        <div
+            class="absolute inset-0 bg-gradient-to-b from-gray-50 to-transparent dark:from-white/5 dark:to-transparent -z-10 opacity-50">
+        </div>
+        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+            <h1
+                class="font-heading text-4xl md:text-6xl font-medium text-text-light dark:text-text-dark leading-[1.1] mb-6 tracking-tight">
+                Zonas de <span class="text-primary italic font-serif">Reforestación</span>
+            </h1>
+            <p
+                class="text-base md:text-lg text-text-muted-light dark:text-text-muted-dark max-w-xl mx-auto font-light leading-relaxed">
+                Descubre dónde estamos plantando el futuro. Cada zona representa un compromiso con nuestra tierra.
+            </p>
+        </div>
+    </header>
+
+    <section class="pb-24 px-6 lg:px-12">
+        <div class="max-w-[1400px] mx-auto">
+            <div id="map"
+                class="w-full h-[600px] rounded-2xl shadow-soft z-0 border border-gray-100 dark:border-white/5"></div>
+        </div>
+    </section>
+
+    <footer class="bg-white dark:bg-[#0A0A0A] pt-20 pb-10 border-t border-gray-100 dark:border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div
+                class="pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-text-muted-light dark:text-gray-600 border-t border-gray-100 dark:border-white/5">
+                <p>© 2025 Pachamama. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="map-script.js"></script>
+</body>
+
+</html>
