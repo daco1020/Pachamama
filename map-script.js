@@ -37,8 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    // Store markers to trigger them programmatically
+    const markers = [];
+
     // Add markers to map
-    zones.forEach(zone => {
+    zones.forEach((zone, index) => {
         const circle = L.circleMarker(zone.coords, {
             color: zone.color,
             fillColor: zone.color,
@@ -53,5 +56,80 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p class="text-sm text-gray-600"><strong>Árboles:</strong> ${zone.trees}</p>
             </div>
         `);
+
+        markers.push({
+            id: index,
+            marker: circle,
+            zone: zone
+        });
+    });
+
+    // Search Functionality
+    const searchInput = document.getElementById('map-search');
+    const searchResults = document.getElementById('search-results');
+
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+
+        if (query.length < 2) {
+            searchResults.classList.add('hidden');
+            return;
+        }
+
+        const filtered = markers.filter(m =>
+            m.zone.name.toLowerCase().includes(query) ||
+            m.zone.type.toLowerCase().includes(query)
+        );
+
+        if (filtered.length > 0) {
+            searchResults.innerHTML = filtered.map(m => `
+                <div class="search-item p-4 hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer border-b border-gray-100 dark:border-white/5 last:border-0 transition-colors" data-id="${m.id}">
+                    <div class="flex items-center gap-3">
+                        <div class="w-2 h-2 rounded-full" style="background-color: ${m.zone.color}"></div>
+                        <div>
+                            <div class="text-sm font-bold text-text-light dark:text-text-dark">${m.zone.name}</div>
+                            <div class="text-[10px] uppercase tracking-wider text-text-muted-light dark:text-text-muted-dark">${m.zone.type}</div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            searchResults.classList.remove('hidden');
+        } else {
+            searchResults.innerHTML = `
+                <div class="p-6 text-center">
+                    <div class="text-sm text-text-muted-light dark:text-text-muted-dark">No se encontraron zonas</div>
+                </div>
+            `;
+            searchResults.classList.remove('hidden');
+        }
+    });
+
+    // Handle result click
+    searchResults.addEventListener('click', (e) => {
+        const item = e.target.closest('.search-item');
+        if (!item) return;
+
+        const id = parseInt(item.dataset.id);
+        const match = markers.find(m => m.id === id);
+
+        if (match) {
+            map.flyTo(match.zone.coords, 14, {
+                duration: 1.5
+            });
+
+            setTimeout(() => {
+                match.marker.openPopup();
+            }, 1500);
+
+            searchInput.value = match.zone.name;
+            searchResults.classList.add('hidden');
+        }
+    });
+
+    // Close results when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.classList.add('hidden');
+        }
     });
 });

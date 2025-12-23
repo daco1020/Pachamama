@@ -18,209 +18,247 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#C4A484",
-                        secondary: "#B0A18E",
-                        accent: "#5C6B5F",
-                        "background-light": "#FDFBF9",
-                        "background-dark": "#0F0F0F",
-                        "surface-light": "#FFFFFF",
-                        "surface-dark": "#181818",
-                        "text-light": "#2C2A29",
-                        "text-dark": "#FFFFFF",
-                        "text-muted-light": "#85817E",
-                        "text-muted-dark": "#737373",
-                        "banner-dark": "#1C1C1C",
+                        primary: "#FFFFFF",
+                        secondary: "#71717a",
+                        accent: "#3b82f6",
+                        "background-dark": "#000000",
+                        "surface-dark": "#09090b",
+                        "border-dark": "#27272a",
                     },
                     fontFamily: {
-                        heading: ['"Manrope"', 'sans-serif'],
+                        heading: ['"Inter"', 'sans-serif'],
                         sans: ['"Inter"', 'sans-serif'],
                     },
                     borderRadius: {
-                        DEFAULT: "0.25rem",
-                        'xl': "0.75rem",
                         '2xl': "1rem",
                         '3xl': "1.5rem",
                     },
                     boxShadow: {
-                        'soft': '0 10px 40px -10px rgba(0, 0, 0, 0.03)',
-                        'glow': '0 0 20px rgba(176, 161, 142, 0.15)',
+                        'glow': '0 0 20px rgba(59, 130, 246, 0.1)',
                     },
                     letterSpacing: {
-                        'widest': '.15em',
-                        'super-wide': '.25em',
+                        'tightest': '-.05em',
                     }
                 },
             },
         };
     </script>
     <style>
-        .text-gradient-gold {
-            background: linear-gradient(135deg, #C4A484 0%, #B0A18E 50%, #C4A484 100%);
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --glass-bg: rgba(9, 9, 11, 0.7);
+            --glass-border: rgba(39, 39, 42, 0.5);
+            --aura-glow: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+        }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-premium {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow:
+                inset 0 1px 1px rgba(255, 255, 255, 0.1),
+                0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+
+        .aura-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .aura-glow {
+            position: absolute;
+            width: 80vw;
+            height: 80vw;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            pointer-events: none;
+            animation: float 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(10vw, 10vh) scale(1.1);
+            }
+        }
+
+        @keyframes float-reverse {
+            0% {
+                transform: translate(0, 0) scale(1.1);
+            }
+
+            100% {
+                transform: translate(-10vw, -10vh) scale(1);
+            }
+        }
+
+        .text-gradient {
+            background: linear-gradient(to bottom right, #fff 30%, rgba(255, 255, 255, 0.5));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
         }
 
-        .hover-lift {
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .hover-lift:hover {
+        .hover-glow:hover {
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+            border-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-4px);
         }
 
-        ::-webkit-scrollbar {
-            width: 8px;
+        .transition-premium {
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #E5E5E5;
-            border-radius: 4px;
-        }
-
-        .dark ::-webkit-scrollbar-thumb {
-            background: #333;
+        body {
+            background-color: #000;
+            color: #fff;
         }
     </style>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans transition-colors duration-500 antialiased selection:bg-primary/20">
-    <!-- Navigation -->
-    <nav
-        class="fixed w-full z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg border-b border-gray-100 dark:border-white/5">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div class="flex justify-between items-center h-24">
-                <button class="md:hidden text-text-light dark:text-text-dark">
-                    <span class="material-symbols-outlined font-light">menu</span>
-                </button>
-                <a href="index.html" class="flex-shrink-0 flex items-center md:flex-1">
-                    <span
-                        class="font-heading text-xl font-bold tracking-widest text-text-light dark:text-white uppercase">Pachamama</span>
-                </a>
-                <div class="hidden md:flex justify-center space-x-12 flex-1">
-                    <a class="text-primary dark:text-primary transition-colors text-xs uppercase tracking-widest font-semibold"
+<body class="bg-black text-white font-sans antialiased selection:bg-accent/30 overflow-x-hidden">
+
+    <!-- Aura Background -->
+    <div class="aura-bg">
+        <div class="aura-glow -top-[20%] -left-[10%] scale-150 opacity-40"></div>
+        <div class="aura-glow top-[40%] -right-[20%] scale-125 opacity-20"
+            style="background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%); animation-name: float-reverse; animation-duration: 25s;">
+        </div>
+        <div class="aura-glow -bottom-[20%] left-[10%] scale-150 opacity-30"
+            style="background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%); animation-duration: 30s;">
+        </div>
+    </div>
+
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] max-w-4xl">
+        <div class="glass-premium rounded-3xl px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-12">
+                <a href="index.html"
+                    class="font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="text-xs uppercase tracking-widest font-semibold text-white/40 hover:text-white transition-premium"
                         href="coleccion.html">Colección</a>
-                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors text-xs uppercase tracking-widest font-semibold"
+                    <a class="text-xs uppercase tracking-widest font-semibold text-white/40 hover:text-white transition-premium"
                         href="filosofia.html">Filosofía</a>
                 </div>
-                <div class="flex items-center space-x-6 md:flex-1 md:justify-end">
-                    <button class="text-text-light dark:text-text-dark hover:text-primary transition-colors"
-                        onclick="document.documentElement.classList.toggle('dark')">
-                        <span class="material-symbols-outlined dark:hidden font-light text-[22px]">dark_mode</span>
-                        <span
-                            class="material-symbols-outlined hidden dark:inline font-light text-[22px]">light_mode</span>
-                    </button>
-                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://wa.link/d79bce" target="_blank"
+                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-white text-black px-6 py-2 rounded-full hover:bg-white/90 transition-premium">
+                    Comprar
+                </a>
+                <button class="md:hidden text-white">
+                    <span class="material-symbols-outlined font-light">menu</span>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative pt-40 pb-16 lg:pt-48 lg:pb-20 overflow-hidden">
-        <div
-            class="absolute inset-0 bg-gradient-to-b from-gray-50 to-transparent dark:from-white/5 dark:to-transparent -z-10 opacity-50">
-        </div>
-        <div
-            class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none">
-        </div>
-        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-            <span class="text-primary text-[10px] font-bold tracking-super-wide uppercase mb-4 block">Nuestra
+    <header class="relative pt-48 pb-16 lg:pt-56 lg:pb-24 flex flex-col items-center justify-center text-center px-6">
+        <div class="max-w-4xl mx-auto">
+            <span class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">Nuestra
                 Colección</span>
             <h1
-                class="font-heading text-4xl md:text-6xl lg:text-7xl font-medium text-text-light dark:text-text-dark leading-[1.1] mb-6 tracking-tight">
-                Tres Rituales,<br>Una Experiencia
+                class="font-heading text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tightest mb-8 leading-[0.9] text-gradient">
+                Tres Rituales,<br />
+                <span class="opacity-50 font-light italic">Una Experiencia</span>
             </h1>
-            <p
-                class="text-base md:text-lg text-text-muted-light dark:text-text-muted-dark max-w-xl mx-auto font-light leading-relaxed">
-                Descubre nuestra línea de jabones artesanales, cada uno diseñado para transformar tu rutina diaria en
-                un momento de bienestar.
+            <p class="text-lg md:text-xl text-white/40 max-w-2xl mx-auto font-light leading-relaxed">
+                Descubre nuestra línea de jabones artesanales, cada uno diseñado para transformar tu rutina diaria en un
+                momento de bienestar.
             </p>
         </div>
     </header>
 
     <!-- Collection Section -->
-    <section class="py-16 md:py-24 bg-white dark:bg-[#121212]">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div class="space-y-16 md:space-y-24">
+    <section class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="space-y-16">
                 <!-- Relax Block -->
                 <a href="relax.html"
-                    class="block group bg-[#F5F2EF] dark:bg-[#1A1A1A] rounded-2xl overflow-hidden hover-lift">
-                    <div class="grid md:grid-cols-2 gap-8 md:gap-0">
-                        <div class="p-10 md:p-16 flex flex-col justify-center">
-                            <span
-                                class="text-primary text-[10px] font-bold tracking-super-wide uppercase mb-4 block">Calma
-                                & Serenidad</span>
+                    class="glass-premium rounded-[3rem] overflow-hidden group transition-premium hover-glow block border border-white/5">
+                    <div class="grid md:grid-cols-2">
+                        <div class="p-12 md:p-20 flex flex-col justify-center">
+                            <span class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">Calma &
+                                Serenidad</span>
                             <h2
-                                class="font-heading text-3xl md:text-4xl text-text-light dark:text-text-dark font-medium mb-4">
+                                class="font-heading text-4xl md:text-6xl text-white font-extrabold tracking-tightest mb-6">
                                 Relax</h2>
-                            <p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-6 leading-relaxed">
+                            <p class="text-white/40 text-lg font-light leading-relaxed mb-10">
                                 Formulado con avena y lavanda para nutrir pieles sensibles. Su aroma relajante te
-                                prepara para un descanso reparador, transformando cada ducha nocturna en un ritual de
-                                calma.
+                                prepara para un descanso reparador.
                             </p>
-                            <div class="flex flex-wrap gap-3 mb-8">
+                            <div class="flex flex-wrap gap-4 mb-10">
                                 <span
-                                    class="text-[10px] uppercase tracking-widest font-semibold text-text-muted-light dark:text-text-muted-dark border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full">Avena</span>
+                                    class="text-[10px] uppercase tracking-widest font-bold text-white/30 border border-white/5 px-4 py-1.5 rounded-full">Avena</span>
                                 <span
-                                    class="text-[10px] uppercase tracking-widest font-semibold text-text-muted-light dark:text-text-muted-dark border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full">Lavanda</span>
-                                <span
-                                    class="text-[10px] uppercase tracking-widest font-semibold text-text-muted-light dark:text-text-muted-dark border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full">Aloe
-                                    Vera</span>
+                                    class="text-[10px] uppercase tracking-widest font-bold text-white/30 border border-white/5 px-4 py-1.5 rounded-full">Lavanda</span>
                             </div>
                             <span
-                                class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-text-light dark:text-text-dark group-hover:text-primary transition-colors">
+                                class="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white py-3 px-6 rounded-full bg-white/5 border border-white/10 group-hover:bg-white group-hover:text-black transition-premium w-fit">
                                 Ver Detalles
                                 <span class="material-symbols-outlined text-sm ml-2">arrow_forward</span>
                             </span>
                         </div>
-                        <div
-                            class="bg-[#E8DFD6] dark:bg-[#252525] flex items-center justify-center min-h-[300px] md:min-h-full relative overflow-hidden">
-                            <img src="relax-soap.jpg" alt="Jabón Relax de Avena y Lavanda"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="relative overflow-hidden min-h-[400px]">
+                            <img src="relax-soap.jpg" alt="Relax"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-premium duration-1000 grayscale-[0.5] group-hover:grayscale-0">
                         </div>
                     </div>
                 </a>
 
                 <!-- Detox Block -->
                 <a href="detox.html"
-                    class="block group bg-[#EBECEB] dark:bg-[#1F2220] rounded-2xl overflow-hidden hover-lift border-2 border-primary/30">
-                    <div class="grid md:grid-cols-2 gap-8 md:gap-0">
-                        <div
-                            class="bg-[#D8DAD8] dark:bg-[#2A2C2A] flex items-center justify-center min-h-[300px] md:min-h-full order-2 md:order-1 relative overflow-hidden">
-                            <img src="detox-soap.jpg" alt="Jabón Detox de Carbón y Menta"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    class="glass-premium rounded-[3rem] overflow-hidden group transition-premium hover-glow block border border-accent/20 ring-1 ring-accent/10">
+                    <div class="grid md:grid-cols-2">
+                        <div class="relative overflow-hidden min-h-[400px] order-2 md:order-1">
+                            <img src="detox-soap.jpg" alt="Detox"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-premium duration-1000">
                         </div>
-                        <div class="p-10 md:p-16 flex flex-col justify-center order-1 md:order-2">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="text-primary text-[10px] font-bold tracking-super-wide uppercase">Limpieza
+                        <div class="p-12 md:p-20 flex flex-col justify-center order-1 md:order-2">
+                            <div class="flex items-center gap-4 mb-4">
+                                <span class="text-accent text-[10px] font-bold tracking-widest uppercase">Limpieza
                                     Profunda</span>
                                 <span
-                                    class="bg-text-light dark:bg-white text-white dark:text-black text-[9px] font-bold px-3 py-1 uppercase tracking-widest">Más
+                                    class="bg-accent text-white text-[9px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">Más
                                     Vendido</span>
                             </div>
                             <h2
-                                class="font-heading text-3xl md:text-4xl text-text-light dark:text-text-dark font-medium mb-4">
+                                class="font-heading text-4xl md:text-6xl text-white font-extrabold tracking-tightest mb-6">
                                 Detox</h2>
-                            <p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-6 leading-relaxed">
+                            <p class="text-white/40 text-lg font-light leading-relaxed mb-10">
                                 Carbón activado y menta fresca se combinan para purificar y energizar tu piel desde el
-                                primer uso. Ideal para las mañanas cuando necesitas despertar con frescura total.
+                                primer uso.
                             </p>
-                            <div class="flex flex-wrap gap-3 mb-8">
+                            <div class="flex flex-wrap gap-4 mb-10">
                                 <span
-                                    class="text-[10px] uppercase tracking-widest font-semibold text-text-muted-light dark:text-text-muted-dark border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full">Carbón</span>
+                                    class="text-[10px] uppercase tracking-widest font-bold text-white/30 border border-white/5 px-4 py-1.5 rounded-full">Carbón</span>
                                 <span
-                                    class="text-[10px] uppercase tracking-widest font-semibold text-text-muted-light dark:text-text-muted-dark border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full">Menta</span>
-                                <span
-                                    class="text-[10px] uppercase tracking-widest font-semibold text-text-muted-light dark:text-text-muted-dark border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full">Eucalipto</span>
+                                    class="text-[10px] uppercase tracking-widest font-bold text-white/30 border border-white/5 px-4 py-1.5 rounded-full">Menta</span>
                             </div>
                             <span
-                                class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-text-light dark:text-text-dark group-hover:text-primary transition-colors">
+                                class="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white py-3 px-6 rounded-full bg-white/5 border border-white/10 group-hover:bg-accent group-hover:border-accent transition-premium w-fit">
                                 Ver Detalles
                                 <span class="material-symbols-outlined text-sm ml-2">arrow_forward</span>
                             </span>
@@ -230,37 +268,34 @@
 
                 <!-- Renew Block -->
                 <a href="renew.html"
-                    class="block group bg-[#FDF2F2] dark:bg-[#2A1D1D] rounded-2xl overflow-hidden hover-lift">
-                    <div class="grid md:grid-cols-2 gap-8 md:gap-0">
-                        <div class="p-10 md:p-16 flex flex-col justify-center">
+                    class="glass-premium rounded-[3rem] overflow-hidden group transition-premium hover-glow block border border-white/5">
+                    <div class="grid md:grid-cols-2">
+                        <div class="p-12 md:p-20 flex flex-col justify-center">
                             <span
-                                class="text-primary text-[10px] font-bold tracking-super-wide uppercase mb-4 block">Regeneración
+                                class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">Regeneración
                                 Activa</span>
                             <h2
-                                class="font-heading text-3xl md:text-4xl text-text-light dark:text-text-dark font-medium mb-4">
+                                class="font-heading text-4xl md:text-6xl text-white font-extrabold tracking-tightest mb-6">
                                 Renew</h2>
-                            <p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-6 leading-relaxed">
+                            <p class="text-white/40 text-lg font-light leading-relaxed mb-10">
                                 Caléndula y eucalipto trabajan en sinergia para hidratar, calmar y restaurar la
-                                vitalidad de tu piel. Perfecto para pieles que necesitan un boost de regeneración.
+                                vitalidad de tu piel.
                             </p>
-                            <div class="flex flex-wrap gap-3 mb-8">
+                            <div class="flex flex-wrap gap-4 mb-10">
                                 <span
-                                    class="text-[10px] uppercase tracking-widest font-semibold text-text-muted-light dark:text-text-muted-dark border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full">Caléndula</span>
+                                    class="text-[10px] uppercase tracking-widest font-bold text-white/30 border border-white/5 px-4 py-1.5 rounded-full">Caléndula</span>
                                 <span
-                                    class="text-[10px] uppercase tracking-widest font-semibold text-text-muted-light dark:text-text-muted-dark border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full">Eucalipto</span>
-                                <span
-                                    class="text-[10px] uppercase tracking-widest font-semibold text-text-muted-light dark:text-text-muted-dark border border-gray-200 dark:border-white/10 px-3 py-1 rounded-full">Colágeno</span>
+                                    class="text-[10px] uppercase tracking-widest font-bold text-white/30 border border-white/5 px-4 py-1.5 rounded-full">Eucalipto</span>
                             </div>
                             <span
-                                class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-text-light dark:text-text-dark group-hover:text-primary transition-colors">
+                                class="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-white py-3 px-6 rounded-full bg-white/5 border border-white/10 group-hover:bg-white group-hover:text-black transition-premium w-fit">
                                 Ver Detalles
                                 <span class="material-symbols-outlined text-sm ml-2">arrow_forward</span>
                             </span>
                         </div>
-                        <div
-                            class="bg-[#F5E0E0] dark:bg-[#352525] flex items-center justify-center min-h-[300px] md:min-h-full relative overflow-hidden">
-                            <img src="renew-soap.png" alt="Jabón Renew de Caléndula y Eucalipto"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="relative overflow-hidden min-h-[400px]">
+                            <img src="renew-soap.png" alt="Renew"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-premium duration-1000 grayscale-[0.5] group-hover:grayscale-0">
                         </div>
                     </div>
                 </a>
@@ -269,67 +304,80 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-[#F5F2EF] dark:bg-[#C4A484]">
-        <div class="max-w-4xl mx-auto px-6 text-center">
+    <section class="py-32 relative text-center">
+        <div class="max-w-4xl mx-auto px-6">
             <h2
-                class="font-heading text-3xl md:text-4xl text-text-light dark:text-text-dark font-medium mb-6 tracking-tight">
-                ¿No Sabes Cuál Elegir?</h2>
-            <p class="text-text-muted-light dark:text-white mb-10 max-w-lg mx-auto">
+                class="font-heading text-4xl md:text-6xl text-white font-extrabold tracking-tightest mb-8 leading-tight">
+                ¿No Sabes Cuál Elegir?
+            </h2>
+            <p class="text-white/40 text-lg md:text-xl font-light leading-relaxed mb-12 max-w-2xl mx-auto">
                 Lleva los tres y descubre cuál se convierte en tu favorito. Nuestro kit completo incluye los tres
                 jabones artesanales a un precio especial.
             </p>
             <a href="https://wa.link/d79bce" target="_blank"
-                class="px-10 py-4 bg-text-light dark:bg-white text-white dark:text-black rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary dark:hover:bg-gray-200 transition-all duration-300 inline-flex items-center justify-center">
+                class="px-12 py-5 bg-white text-black rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">
                 Ordenar Colección Completa
             </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white dark:bg-[#0A0A0A] pt-20 pb-10 border-t border-gray-100 dark:border-white/5">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
-                <div class="md:col-span-4">
-                    <h3
-                        class="font-heading text-xl font-bold tracking-widest mb-6 text-text-light dark:text-white uppercase">
-                        Pachamama</h3>
-                    <p
-                        class="text-text-muted-light dark:text-gray-500 text-sm leading-relaxed mb-8 max-w-xs font-light">
-                        Redefiniendo el cuidado de la piel a través de la botánica moderna y el diseño consciente.
+    <footer class="py-24 px-6 lg:px-12 border-t border-white/5 relative bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+                <div class="md:col-span-1">
+                    <a href="index.html"
+                        class="font-heading text-2xl font-bold tracking-tightest uppercase text-gradient mb-8 block">Pachamama</a>
+                    <p class="text-white/30 font-light leading-relaxed">
+                        Elevando el ritual del baño a una experiencia de lujo botánico y consciencia natural.
                     </p>
                 </div>
-                <div class="md:col-span-2">
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-text-light dark:text-white mb-6">Tienda
-                    </h4>
-                    <ul class="space-y-4 text-sm text-text-muted-light dark:text-gray-500 font-light">
-                        <li><a class="hover:text-primary transition-colors" href="coleccion.html">Colección</a></li>
+                <div>
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-8">Navegación</h4>
+                    <ul class="space-y-4">
+                        <li><a href="coleccion.html"
+                                class="text-sm text-white/60 hover:text-white transition-premium">Colección</a></li>
+                        <li><a href="filosofia.html"
+                                class="text-sm text-white/60 hover:text-white transition-premium">Filosofía</a></li>
+                        <li><a href="map.html" class="text-sm text-white/60 hover:text-white transition-premium">Zonas
+                                de Siembra</a></li>
                     </ul>
                 </div>
-                <div class="md:col-span-2">
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-text-light dark:text-white mb-6">
-                        Productos</h4>
-                    <ul class="space-y-4 text-sm text-text-muted-light dark:text-gray-500 font-light">
-                        <li><a class="hover:text-primary transition-colors" href="relax.html">Relax</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="detox.html">Detox</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="renew.html">Renew</a></li>
+                <div>
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-8">Contacto</h4>
+                    <ul class="space-y-4">
+                        <li><a href="https://wa.link/d79bce"
+                                class="text-sm text-white/60 hover:text-white transition-premium">WhatsApp Directo</a>
+                        </li>
+                        <li><a href="#" class="text-sm text-white/60 hover:text-white transition-premium">Instagram</a>
+                        </li>
                     </ul>
                 </div>
-                <div class="md:col-span-2">
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-text-light dark:text-white mb-6">
-                        Empresa</h4>
-                    <ul class="space-y-4 text-sm text-text-muted-light dark:text-gray-500 font-light">
-                        <li><a class="hover:text-primary transition-colors" href="filosofia.html">Filosofía</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="map.html">Zonas de Siembra</a></li>
-                    </ul>
+                <div>
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-8">Newsletter</h4>
+                    <div class="relative group">
+                        <input type="email" placeholder="Email"
+                            class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm focus:outline-none focus:border-accent transition-premium">
+                        <button
+                            class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white text-black flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div
-                class="pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-text-muted-light dark:text-gray-600 border-t border-gray-100 dark:border-white/5">
-                <p>© 2025 Pachamama. Todos los derechos reservados.</p>
+
+            <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 gap-6">
+                <p class="text-[10px] uppercase tracking-widest text-white/20">© 2024 Pachamama. Todos los derechos
+                    reservados.</p>
+                <div class="flex gap-8">
+                    <a href="#"
+                        class="text-[10px] uppercase tracking-widest text-white/20 hover:text-white/40 transition-premium">Términos</a>
+                    <a href="#"
+                        class="text-[10px] uppercase tracking-widest text-white/20 hover:text-white/40 transition-premium">Privacidad</a>
+                </div>
             </div>
         </div>
     </footer>
-
     <script src="sparkle.js"></script>
 </body>
 

@@ -18,600 +18,635 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#C4A484", // Warm Tan
-                        secondary: "#B0A18E", // Sand
-                        accent: "#5C6B5F", // Muted Sage
-                        "background-light": "#FDFBF9", // Warm White
-                        "background-dark": "#0F0F0F", // Deep Black
-                        "surface-light": "#FFFFFF",
-                        "surface-dark": "#181818",
-                        "text-light": "#2C2A29", // Soft Black
-                        "text-dark": "#FFFFFF", // Stone 200
-                        "text-muted-light": "#85817E", // Stone 500
-                        "text-muted-dark": "#737373", // Neutral 500
-                        "banner-dark": "#1C1C1C", // Off black
+                        primary: "#FFFFFF",
+                        secondary: "#71717a",
+                        accent: "#3b82f6",
+                        "background-dark": "#000000",
+                        "surface-dark": "#09090b",
+                        "border-dark": "#27272a",
                     },
                     fontFamily: {
-                        heading: ['"Manrope"', 'sans-serif'],
+                        heading: ['"Inter"', 'sans-serif'],
                         sans: ['"Inter"', 'sans-serif'],
                     },
                     borderRadius: {
-                        DEFAULT: "0.25rem",
-                        'xl': "0.75rem",
                         '2xl': "1rem",
                         '3xl': "1.5rem",
                     },
                     boxShadow: {
-                        'soft': '0 10px 40px -10px rgba(0, 0, 0, 0.03)',
-                        'glow': '0 0 20px rgba(176, 161, 142, 0.15)',
+                        'glow': '0 0 20px rgba(59, 130, 246, 0.1)',
                     },
                     letterSpacing: {
-                        'widest': '.15em',
-                        'super-wide': '.25em',
+                        'tightest': '-.05em',
                     }
                 },
             },
         };
     </script>
     <style>
-        .text-gradient-gold {
-            background: linear-gradient(135deg, #8E7F70 0%, #B0A18E 50%, #8E7F70 100%);
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --glass-bg: rgba(9, 9, 11, 0.7);
+            --glass-border: rgba(39, 39, 42, 0.5);
+            --aura-glow: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+        }
+
+        .glass {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-premium {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow:
+                inset 0 1px 1px rgba(255, 255, 255, 0.1),
+                0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+
+        .aura-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: -2;
+            overflow: hidden;
+        }
+
+        .aura-glow {
+            position: absolute;
+            width: 80vw;
+            height: 80vw;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            pointer-events: none;
+            animation: float 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(10vw, 10vh) scale(1.1);
+            }
+        }
+
+        @keyframes float-reverse {
+            0% {
+                transform: translate(0, 0) scale(1.1);
+            }
+
+            100% {
+                transform: translate(-10vw, -10vh) scale(1);
+            }
+        }
+
+        .text-gradient {
+            background: linear-gradient(to bottom right, #fff 30%, rgba(255, 255, 255, 0.5));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
         }
 
-        .hover-lift {
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .hover-lift:hover {
+        .hover-glow:hover {
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+            border-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-4px);
         }
 
-        ::-webkit-scrollbar {
-            width: 8px;
+        .transition-premium {
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        ::-webkit-scrollbar-track {
-            background: transparent;
+        body {
+            background-color: #000;
+            color: #fff;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: #E5E5E5;
-            border-radius: 4px;
-        }
-
-        .dark ::-webkit-scrollbar-thumb {
-            background: #333;
+        /* Override light mode for this modernization task as requested */
+        .light {
+            display: none !important;
         }
     </style>
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-sans transition-colors duration-500 antialiased selection:bg-primary/20">
-    <nav
-        class="fixed w-full z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg border-b border-gray-100 dark:border-white/5">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div class="flex justify-between items-center h-24">
-                <button class="md:hidden text-text-light dark:text-text-dark">
-                    <span class="material-symbols-outlined font-light">menu</span>
-                </button>
-                <div class="flex-shrink-0 flex items-center md:flex-1">
-                    <span
-                        class="font-heading text-xl font-bold tracking-widest text-text-light dark:text-white uppercase">Pachamama</span>
-                </div>
-                <div class="hidden md:flex justify-center space-x-12 flex-1">
-                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors text-xs uppercase tracking-widest font-semibold"
+<body class="bg-black text-white font-sans antialiased selection:bg-accent/30 overflow-x-hidden">
+
+    <!-- Aura Background -->
+    <div class="aura-bg">
+        <div class="fixed inset-0 opacity-15 pointer-events-none" style="background-image: url('file:///Users/daniel/.gemini/antigravity/brain/e2d9ad60-dedf-4b10-909e-42d86f6a658f/uploaded_image_1766297732824.jpg'); 
+                    background-size: cover; 
+                    background-position: center; 
+                    background-attachment: fixed;"></div>
+        <div class="aura-glow -top-[20%] -left-[10%] scale-150 opacity-40"></div>
+        <div class="aura-glow top-[40%] -right-[20%] scale-125 opacity-20"
+            style="background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%); animation-name: float-reverse; animation-duration: 25s;">
+        </div>
+        <div class="aura-glow -bottom-[20%] left-[10%] scale-150 opacity-30"
+            style="background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%); animation-duration: 30s;">
+        </div>
+    </div>
+
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] max-w-4xl">
+        <div class="glass-premium rounded-3xl px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-12">
+                <a href="index.html"
+                    class="font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="text-xs uppercase tracking-widest font-semibold text-white/60 hover:text-white transition-premium"
                         href="coleccion.html">Colección</a>
-                    <a class="text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary transition-colors text-xs uppercase tracking-widest font-semibold"
+                    <a class="text-xs uppercase tracking-widest font-semibold text-white/60 hover:text-white transition-premium"
                         href="filosofia.html">Filosofía</a>
                 </div>
-                <div class="flex items-center space-x-6 md:flex-1 md:justify-end">
-                    <button class="text-text-light dark:text-text-dark hover:text-primary transition-colors"
-                        onclick="document.documentElement.classList.toggle('dark')">
-                        <span class="material-symbols-outlined dark:hidden font-light text-[22px]">dark_mode</span>
-                        <span
-                            class="material-symbols-outlined hidden dark:inline font-light text-[22px]">light_mode</span>
-                    </button>
-                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://wa.link/d79bce" target="_blank"
+                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-white text-black px-6 py-2 rounded-full hover:bg-white/90 transition-premium">
+                    Comprar
+                </a>
+                <button class="md:hidden text-white">
+                    <span class="material-symbols-outlined font-light">menu</span>
+                </button>
             </div>
         </div>
     </nav>
-    <header class="relative pt-40 pb-20 lg:pt-52 lg:pb-40 overflow-hidden">
-        <div
-            class="absolute inset-0 bg-gradient-to-b from-gray-50 to-transparent dark:from-white/5 dark:to-transparent -z-10 opacity-50">
-        </div>
-        <div
-            class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-secondary/5 dark:bg-secondary/10 rounded-full blur-[100px] -z-10 pointer-events-none">
-        </div>
-        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-            <div class="flex justify-center gap-6 mb-10 opacity-0 animate-[fadeIn_1s_ease-out_forwards]">
-                <span
-                    class="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-text-muted-light dark:text-text-muted-dark border-b border-gray-200 dark:border-gray-800 pb-1">
-                    Origen 100% Natural
-                </span>
-                <span
-                    class="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-text-muted-light dark:text-text-muted-dark border-b border-gray-200 dark:border-gray-800 pb-1">
-                    Calidad Premium
-                </span>
+
+    <header class="relative pt-48 pb-32 lg:pt-64 lg:pb-48 flex flex-col items-center justify-center text-center px-6">
+        <div class="max-w-4xl mx-auto">
+            <div
+                class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-12 animate-fade-in">
+                <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-white/70">Artesanía Botánica de
+                    Lujo</span>
             </div>
+
             <h1
-                class="font-heading text-5xl md:text-7xl lg:text-8xl font-medium text-text-light dark:text-text-dark leading-[1.1] mb-8 tracking-tight">
+                class="font-heading text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tightest mb-8 leading-[0.9] text-gradient">
                 Renace tu Piel<br />
-                <span
-                    class="text-muted-light font-light text-primary dark:text-secondary italic font-serif">Naturalmente</span>
+                <span class="opacity-50 font-light italic">Naturalmente</span>
             </h1>
-            <p
-                class="text-base md:text-lg text-text-muted-light dark:text-text-muted-dark max-w-xl mx-auto mb-12 font-light leading-relaxed">
+
+            <p class="text-lg md:text-xl text-white/40 max-w-2xl mx-auto mb-16 font-light leading-relaxed">
                 Una experiencia de spa minimalista. Jabones artesanales creados para purificar, nutrir y elevar tus
                 rituales diarios.
             </p>
+
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
                 <a href="https://wa.link/d79bce" target="_blank"
-                    class="px-10 py-4 bg-text-light dark:bg-white text-white dark:text-black rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary dark:hover:bg-gray-200 transition-all duration-300 min-w-[200px] flex items-center justify-center">
-                    Comprar Kit
+                    class="px-12 py-5 bg-white text-black rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium min-w-[220px] flex items-center justify-center shadow-[0_0_40px_rgba(255,255,255,0.1)]">
+                    Explorar Colección
                 </a>
             </div>
         </div>
     </header>
-    <section class="py-24 md:py-32 bg-white dark:bg-[#121212]">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div
-                class="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-gray-100 dark:border-gray-800 pb-8">
-                <div>
-                    <span
-                        class="text-primary text-[10px] font-bold tracking-super-wide uppercase mb-3 block">Ingredientes
+    <section class="py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-white/5 pb-12">
+                <div class="max-w-2xl">
+                    <span class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">Ingredientes
                         Puros</span>
                     <h2
-                        class="font-heading text-3xl md:text-4xl text-text-light dark:text-text-dark font-medium tracking-tight">
+                        class="font-heading text-4xl md:text-6xl text-white font-extrabold tracking-tightest leading-tight">
                         Ciencia y Naturaleza</h2>
                 </div>
-                <p
-                    class="text-text-muted-light dark:text-text-muted-dark font-light text-sm max-w-md mt-4 md:mt-0 md:text-right">
+                <p class="text-white/40 font-light text-lg max-w-md mt-6 md:mt-0 md:text-right">
                     6 activos botánicos seleccionados rigurosamente por su potencia y pureza.
                 </p>
             </div>
-            <div
-                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-gray-100 dark:bg-gray-800 border border-gray-100 dark:border-gray-800">
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Ingredient Item -->
                 <div
-                    class="bg-surface-light dark:bg-surface-dark p-8 md:p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-50 dark:hover:bg-black transition-colors aspect-square">
+                    class="glass-premium p-10 rounded-3xl flex flex-col items-center text-center transition-premium hover-glow group">
                     <span
-                        class="material-symbols-outlined text-4xl mb-4 text-primary font-light group-hover:scale-110 transition-transform duration-500">biotech</span>
-                    <h3 class="font-heading text-sm font-bold text-text-light dark:text-text-dark mb-1">Colágeno</h3>
-                    <p class="text-[10px] uppercase tracking-wider text-text-muted-light dark:text-text-muted-dark">
-                        Estructura</p>
+                        class="material-symbols-outlined text-4xl mb-6 text-white/80 group-hover:text-accent transition-premium">biotech</span>
+                    <h3 class="font-heading text-sm font-bold text-white mb-2">Colágeno</h3>
+                    <p class="text-[10px] uppercase tracking-widest text-white/30">Estructura</p>
                 </div>
                 <div
-                    class="bg-surface-light dark:bg-surface-dark p-8 md:p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-50 dark:hover:bg-black transition-colors aspect-square">
+                    class="glass-premium p-10 rounded-3xl flex flex-col items-center text-center transition-premium hover-glow group">
                     <span
-                        class="material-symbols-outlined text-4xl mb-4 text-primary font-light group-hover:scale-110 transition-transform duration-500">all_inclusive</span>
-                    <h3 class="font-heading text-sm font-bold text-text-light dark:text-text-dark mb-1">Elastina</h3>
-                    <p class="text-[10px] uppercase tracking-wider text-text-muted-light dark:text-text-muted-dark">
-                        Flexibilidad</p>
+                        class="material-symbols-outlined text-4xl mb-6 text-white/80 group-hover:text-accent transition-premium">all_inclusive</span>
+                    <h3 class="font-heading text-sm font-bold text-white mb-2">Elastina</h3>
+                    <p class="text-[10px] uppercase tracking-widest text-white/30">Flexibilidad</p>
+                </div>
+                <!-- ... Repeat for others ... -->
+                <div
+                    class="glass-premium p-10 rounded-3xl flex flex-col items-center text-center transition-premium hover-glow group">
+                    <span
+                        class="material-symbols-outlined text-4xl mb-6 text-white/80 group-hover:text-accent transition-premium">light_mode</span>
+                    <h3 class="font-heading text-sm font-bold text-white mb-2">Vitamina E</h3>
+                    <p class="text-[10px] uppercase tracking-widest text-white/30">Protección</p>
                 </div>
                 <div
-                    class="bg-surface-light dark:bg-surface-dark p-8 md:p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-50 dark:hover:bg-black transition-colors aspect-square">
+                    class="glass-premium p-10 rounded-3xl flex flex-col items-center text-center transition-premium hover-glow group">
                     <span
-                        class="material-symbols-outlined text-4xl mb-4 text-primary font-light group-hover:scale-110 transition-transform duration-500">light_mode</span>
-                    <h3 class="font-heading text-sm font-bold text-text-light dark:text-text-dark mb-1">Vitamina E</h3>
-                    <p class="text-[10px] uppercase tracking-wider text-text-muted-light dark:text-text-muted-dark">
-                        Protección</p>
+                        class="material-symbols-outlined text-4xl mb-6 text-white/80 group-hover:text-accent transition-premium">opacity</span>
+                    <h3 class="font-heading text-sm font-bold text-white mb-2">Miel Pura</h3>
+                    <p class="text-[10px] uppercase tracking-widest text-white/30">Nutrición</p>
                 </div>
                 <div
-                    class="bg-surface-light dark:bg-surface-dark p-8 md:p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-50 dark:hover:bg-black transition-colors aspect-square">
+                    class="glass-premium p-10 rounded-3xl flex flex-col items-center text-center transition-premium hover-glow group">
                     <span
-                        class="material-symbols-outlined text-4xl mb-4 text-primary font-light group-hover:scale-110 transition-transform duration-500">opacity</span>
-                    <h3 class="font-heading text-sm font-bold text-text-light dark:text-text-dark mb-1">Miel Pura</h3>
-                    <p class="text-[10px] uppercase tracking-wider text-text-muted-light dark:text-text-muted-dark">
-                        Nutrición</p>
+                        class="material-symbols-outlined text-4xl mb-6 text-white/80 group-hover:text-accent transition-premium">spa</span>
+                    <h3 class="font-heading text-sm font-bold text-white mb-2">Aloe Vera</h3>
+                    <p class="text-[10px] uppercase tracking-widest text-white/30">Calma</p>
                 </div>
                 <div
-                    class="bg-surface-light dark:bg-surface-dark p-8 md:p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-50 dark:hover:bg-black transition-colors aspect-square">
+                    class="glass-premium p-10 rounded-3xl flex flex-col items-center text-center transition-premium hover-glow group">
                     <span
-                        class="material-symbols-outlined text-4xl mb-4 text-primary font-light group-hover:scale-110 transition-transform duration-500">spa</span>
-                    <h3 class="font-heading text-sm font-bold text-text-light dark:text-text-dark mb-1">Aloe Vera</h3>
-                    <p class="text-[10px] uppercase tracking-wider text-text-muted-light dark:text-text-muted-dark">
-                        Calma</p>
-                </div>
-                <div
-                    class="bg-surface-light dark:bg-surface-dark p-8 md:p-10 flex flex-col items-center justify-center text-center group hover:bg-gray-50 dark:hover:bg-black transition-colors aspect-square">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-4 text-primary font-light group-hover:scale-110 transition-transform duration-500">filter_drama</span>
-                    <h3 class="font-heading text-sm font-bold text-text-light dark:text-text-dark mb-1">Seda</h3>
-                    <p class="text-[10px] uppercase tracking-wider text-text-muted-light dark:text-text-muted-dark">
-                        Suavidad</p>
+                        class="material-symbols-outlined text-4xl mb-6 text-white/80 group-hover:text-accent transition-premium">filter_drama</span>
+                    <h3 class="font-heading text-sm font-bold text-white mb-2">Seda</h3>
+                    <p class="text-[10px] uppercase tracking-widest text-white/30">Suavidad</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="py-24 relative bg-background-light dark:bg-background-dark">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-            <div class="text-center mb-24">
-                <span class="text-primary text-[10px] font-bold tracking-super-wide uppercase mb-3 block">La
-                    Colección</span>
-                <h2
-                    class="font-heading text-3xl md:text-5xl text-text-light dark:text-text-dark font-medium tracking-tight">
-                    Tu Ritual Personal</h2>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-                <a href="relax.html"
-                    class="bg-white dark:bg-[#151515] p-10 rounded-lg border border-gray-100 dark:border-white/5 hover-lift flex flex-col group h-full">
-                    <div
-                        class="mb-8 p-0 bg-[#F5F2EF] dark:bg-[#1A1A1A] rounded-sm flex items-center justify-center aspect-[4/3] relative overflow-hidden">
-                        <img src="relax-soap.jpg" alt="Relax"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="mb-6">
-                        <h3 class="font-heading text-2xl text-text-light dark:text-text-dark font-medium mb-1">Relax
-                        </h3>
-                        <p
-                            class="text-[11px] tracking-widest uppercase text-text-muted-light dark:text-text-muted-dark font-semibold">
-                            Avena &amp; Lavanda</p>
-                    </div>
-                    <div class="flex-grow space-y-3 mb-8 border-t border-gray-100 dark:border-white/5 pt-6">
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Calma Profunda</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Uso Nocturno</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Pieles Sensibles</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Exfoliación Suave</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Aroma Relajante</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>100% Vegano</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                    </div>
 
-                </a>
-                <a href="detox.html"
-                    class="bg-white dark:bg-[#151515] p-10 rounded-lg border border-primary/30 dark:border-primary/30 hover-lift flex flex-col group h-full relative shadow-soft">
-                    <div class="absolute top-4 right-4">
+    <section class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-24">
+                <span class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">La Colección</span>
+                <h2 class="font-heading text-5xl md:text-7xl text-white font-extrabold tracking-tightest">Tu Ritual
+                    Personal</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <!-- Product Card -->
+                <a href="relax.html"
+                    class="glass-premium p-8 rounded-[2.5rem] flex flex-col group transition-premium hover-glow h-full overflow-hidden">
+                    <div class="mb-10 rounded-3xl relative overflow-hidden aspect-[4/3]">
+                        <img src="relax-soap.jpg" alt="Relax"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-premium duration-1000 grayscale-[0.5] group-hover:grayscale-0">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-premium">
+                        </div>
+                    </div>
+                    <div class="px-4">
+                        <h3 class="font-heading text-3xl text-white font-bold mb-2 tracking-tight">Relax</h3>
+                        <p class="text-xs tracking-widest uppercase text-white/40 font-semibold mb-8">Avena & Lavanda
+                        </p>
+
+                        <div class="space-y-4 mb-10 border-t border-white/5 pt-8">
+                            <div
+                                class="flex items-center justify-between text-sm text-white/50 group-hover:text-white/80 transition-premium">
+                                <span>Calma Profunda</span>
+                                <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+                            </div>
+                            <div
+                                class="flex items-center justify-between text-sm text-white/50 group-hover:text-white/80 transition-premium">
+                                <span>Pieles Sensibles</span>
+                                <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+                            </div>
+                        </div>
+
                         <span
-                            class="bg-text-light dark:bg-white text-white dark:text-black text-[9px] font-bold px-3 py-1 uppercase tracking-widest">Más
+                            class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-white py-3 px-6 rounded-full bg-white/5 border border-white/10 group-hover:bg-white group-hover:text-black transition-premium">
+                            Ver Detalles
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Best Seller Card -->
+                <a href="detox.html"
+                    class="glass-premium p-8 rounded-[2.5rem] flex flex-col group transition-premium hover-glow h-full relative overflow-hidden ring-1 ring-accent/20">
+                    <div class="absolute top-6 right-6 z-10">
+                        <span
+                            class="bg-accent text-white text-[9px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-[0_0_20px_rgba(59,130,246,0.5)]">Más
                             Vendido</span>
                     </div>
-                    <div
-                        class="mb-8 p-0 bg-[#EBECEB] dark:bg-[#1F2220] rounded-sm flex items-center justify-center aspect-[4/3] relative overflow-hidden">
+                    <div class="mb-10 rounded-3xl relative overflow-hidden aspect-[4/3]">
                         <img src="detox-soap.jpg" alt="Detox"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            class="w-full h-full object-cover group-hover:scale-110 transition-premium duration-1000">
                     </div>
-                    <div class="mb-6">
-                        <h3 class="font-heading text-2xl text-text-light dark:text-text-dark font-medium mb-1">Detox
-                        </h3>
-                        <p class="text-[11px] tracking-widest uppercase text-accent dark:text-accent font-semibold">
-                            Carbón &amp; Menta</p>
-                    </div>
-                    <div class="flex-grow space-y-3 mb-8 border-t border-gray-100 dark:border-white/5 pt-6">
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Limpieza Profunda</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Energía Matutina</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Control de Grasa</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Desintoxicante</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Frescura Total</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Antibacteriano</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                    </div>
+                    <div class="px-4">
+                        <h3 class="font-heading text-3xl text-white font-bold mb-2 tracking-tight">Detox</h3>
+                        <p class="text-xs tracking-widest uppercase text-accent font-semibold mb-8">Carbón & Menta</p>
 
+                        <div class="space-y-4 mb-10 border-t border-white/5 pt-8">
+                            <div
+                                class="flex items-center justify-between text-sm text-white/50 group-hover:text-white/80 transition-premium">
+                                <span>Limpieza Profunda</span>
+                                <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+                            </div>
+                            <div
+                                class="flex items-center justify-between text-sm text-white/50 group-hover:text-white/80 transition-premium">
+                                <span>Desintoxicante</span>
+                                <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+                            </div>
+                        </div>
+
+                        <span
+                            class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-white py-3 px-6 rounded-full bg-white/5 border border-white/10 group-hover:bg-accent group-hover:border-accent group-hover:text-white transition-premium">
+                            Ver Detalles
+                        </span>
+                    </div>
                 </a>
-                <a href="renew.html"
-                    class="bg-white dark:bg-[#151515] p-10 rounded-lg border border-gray-100 dark:border-white/5 hover-lift flex flex-col group h-full">
-                    <div
-                        class="mb-8 p-0 bg-[#FDF2F2] dark:bg-[#2A1D1D] rounded-sm flex items-center justify-center aspect-[4/3] relative overflow-hidden">
-                        <img src="renew-soap.png" alt="Renew"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <div class="mb-6">
-                        <h3 class="font-heading text-2xl text-text-light dark:text-text-dark font-medium mb-1">Renew
-                        </h3>
-                        <p
-                            class="text-[11px] tracking-widest uppercase text-text-muted-light dark:text-text-muted-dark font-semibold">
-                            Caléndula &amp; Eucalipto</p>
-                    </div>
-                    <div class="flex-grow space-y-3 mb-8 border-t border-gray-100 dark:border-white/5 pt-6">
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Regeneración</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Hidratación</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Antiinflamatorio</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Cicatrizante</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Aroma Herbal</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                        <div
-                            class="flex items-center justify-between text-sm text-text-muted-light dark:text-text-muted-dark">
-                            <span>Elasticidad</span>
-                            <span class="material-symbols-outlined text-xs">check</span>
-                        </div>
-                    </div>
 
+                <a href="renew.html"
+                    class="glass-premium p-8 rounded-[2.5rem] flex flex-col group transition-premium hover-glow h-full overflow-hidden">
+                    <div class="mb-10 rounded-3xl relative overflow-hidden aspect-[4/3]">
+                        <img src="renew-soap.png" alt="Renew"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-premium duration-1000 grayscale-[0.5] group-hover:grayscale-0">
+                    </div>
+                    <div class="px-4">
+                        <h3 class="font-heading text-3xl text-white font-bold mb-2 tracking-tight">Renew</h3>
+                        <p class="text-xs tracking-widest uppercase text-white/40 font-semibold mb-8">Caléndula &
+                            Eucalipto</p>
+
+                        <div class="space-y-4 mb-10 border-t border-white/5 pt-8">
+                            <div
+                                class="flex items-center justify-between text-sm text-white/50 group-hover:text-white/80 transition-premium">
+                                <span>Regeneración</span>
+                                <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+                            </div>
+                            <div
+                                class="flex items-center justify-between text-sm text-white/50 group-hover:text-white/80 transition-premium">
+                                <span>Hidratación</span>
+                                <span class="material-symbols-outlined text-[10px]">arrow_forward</span>
+                            </div>
+                        </div>
+
+                        <span
+                            class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-white py-3 px-6 rounded-full bg-white/5 border border-white/10 group-hover:bg-white group-hover:text-black transition-premium">
+                            Ver Detalles
+                        </span>
+                    </div>
                 </a>
             </div>
         </div>
     </section>
-    <section class="py-12 px-4 sm:px-6 lg:px-8 bg-background-light dark:bg-background-dark">
+    <section class="py-24 px-6 lg:px-12 bg-black">
         <div
-            class="max-w-[1400px] mx-auto bg-banner-dark rounded-lg relative overflow-hidden flex flex-col md:flex-row items-center justify-between p-12 md:p-20 shadow-2xl">
+            class="max-w-7xl mx-auto glass rounded-[3rem] relative overflow-hidden flex flex-col md:flex-row items-center justify-between p-12 md:p-24 shadow-glow">
             <div class="absolute inset-0 opacity-10 pointer-events-none">
-                <div class="absolute -top-24 -right-24 w-96 h-96 bg-white rounded-full blur-[80px]"></div>
+                <div class="absolute -top-24 -right-24 w-96 h-96 bg-accent rounded-full blur-[100px]"></div>
                 <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent"></div>
             </div>
-            <div class="relative z-10 md:w-1/2 mb-10 md:mb-0">
-                <span class="text-white/60 text-xs font-bold tracking-super-wide uppercase mb-4 block">Edición
+
+            <div class="relative z-10 md:w-1/2 mb-12 md:mb-0">
+                <span class="text-accent text-[10px] font-bold tracking-widest uppercase mb-6 block">Edición
                     Limitada</span>
-                <h2 class="font-heading text-4xl md:text-5xl text-white mb-6 font-medium tracking-tight">El Kit Esencial
-                </h2>
-                <p class="text-white/70 mb-0 max-w-md font-light text-base leading-relaxed">
+                <h2
+                    class="font-heading text-5xl md:text-7xl text-white mb-8 font-extrabold tracking-tightest leading-tight">
+                    El Kit Esencial</h2>
+                <p class="text-white/40 mb-12 max-w-md font-light text-lg leading-relaxed">
                     La trilogía completa para el cuidado holístico de tu piel. Presentado en una caja minimalista,
                     perfecta para regalar.
                 </p>
-            </div>
-            <div class="relative z-10 flex flex-col items-center md:items-end md:w-1/3">
-                <div class="mb-6 text-center md:text-right">
-                    <p class="text-white/50 text-xs uppercase tracking-widest line-through mb-1">$55.000 COP</p>
-                    <span class="text-white font-heading text-4xl md:text-5xl font-light">$45.000 COP</span>
+                <div class="flex items-baseline gap-4 mb-2">
+                    <span class="text-white/30 text-sm uppercase tracking-widest line-through">$55.000 COP</span>
+                    <span class="text-white font-heading text-5xl font-extrabold tracking-tightest">$45.000 COP</span>
                 </div>
+            </div>
+
+            <div class="relative z-10 md:w-1/3 flex justify-center md:justify-end">
                 <a href="https://wa.link/d79bce" target="_blank"
-                    class="bg-white text-black px-10 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-200 transition-all duration-300 shadow-lg inline-block">
+                    class="bg-white text-black px-12 py-5 rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-lg inline-block text-center">
                     Comprar Colección
                 </a>
             </div>
         </div>
     </section>
+
     <!-- Customer Reviews Section -->
-    <section class="py-24 bg-[#F5F2EF] dark:bg-[#1A1A1A]">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div class="text-center mb-16">
-                <span
-                    class="text-primary text-[10px] font-bold tracking-super-wide uppercase mb-3 block">Testimonios</span>
-                <h2
-                    class="font-heading text-3xl md:text-4xl text-text-light dark:text-text-dark font-medium tracking-tight">
-                    Lo Que Dicen Nuestros Clientes</h2>
+    <section class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-24">
+                <span class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">Testimonios</span>
+                <h2 class="font-heading text-4xl md:text-6xl text-white font-extrabold tracking-tightest">Lo Que Dicen
+                    Nuestros Clientes</h2>
             </div>
+
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Review 1 -->
-                <div
-                    class="bg-white dark:bg-surface-dark p-8 rounded-lg border border-gray-100 dark:border-white/5 hover-lift">
-                    <div class="flex items-center gap-1 mb-4">
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+                <!-- Review Card -->
+                <div class="glass-premium p-10 rounded-3xl transition-premium hover-glow border border-white/5">
+                    <div class="flex items-center gap-1 mb-6">
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
                     </div>
-                    <p class="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed mb-6 italic">
+                    <p class="text-white/60 text-base leading-relaxed mb-8 italic font-light">
                         "El jabón Relax se ha convertido en mi ritual nocturno favorito. El aroma a lavanda es suave y
                         natural, nada artificial. Mi piel se siente increíblemente suave."
                     </p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-                            <span class="font-heading text-sm font-bold text-primary">MA</span>
+                    <div class="flex items-center gap-4 border-t border-white/5 pt-8">
+                        <div
+                            class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center border border-white/10">
+                            <span class="font-heading text-xs font-bold text-white">MA</span>
                         </div>
                         <div>
-                            <p class="font-heading text-sm font-medium text-text-light dark:text-text-dark">María
-                                Alejandra</p>
-                            <p class="text-xs text-text-muted-light dark:text-text-muted-dark">Bogotá, Colombia</p>
+                            <p class="font-heading text-sm font-bold text-white tracking-tight">María Alejandra</p>
+                            <p class="text-[10px] uppercase tracking-widest text-white/30">Bogotá, Colombia</p>
                         </div>
                     </div>
                 </div>
-                <!-- Review 2 -->
-                <div
-                    class="bg-white dark:bg-surface-dark p-8 rounded-lg border border-gray-100 dark:border-white/5 hover-lift">
-                    <div class="flex items-center gap-1 mb-4">
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+
+                <div class="glass-premium p-10 rounded-3xl transition-premium hover-glow border border-white/5">
+                    <div class="flex items-center gap-1 mb-6">
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
                     </div>
-                    <p class="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed mb-6 italic">
+                    <p class="text-white/60 text-base leading-relaxed mb-8 italic font-light">
                         "El Detox es perfecto para las mañanas. La menta te despierta y el carbón deja la piel limpia
                         sin resecarla. Definitivamente mi favorito del kit."
                     </p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-                            <span class="font-heading text-sm font-bold text-primary">CP</span>
+                    <div class="flex items-center gap-4 border-t border-white/5 pt-8">
+                        <div
+                            class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center border border-white/10">
+                            <span class="font-heading text-xs font-bold text-white">CP</span>
                         </div>
                         <div>
-                            <p class="font-heading text-sm font-medium text-text-light dark:text-text-dark">Carlos Pérez
-                            </p>
-                            <p class="text-xs text-text-muted-light dark:text-text-muted-dark">Medellín, Colombia</p>
+                            <p class="font-heading text-sm font-bold text-white tracking-tight">Carlos Pérez</p>
+                            <p class="text-[10px] uppercase tracking-widest text-white/30">Medellín, Colombia</p>
                         </div>
                     </div>
                 </div>
-                <!-- Review 3 -->
-                <div
-                    class="bg-white dark:bg-surface-dark p-8 rounded-lg border border-gray-100 dark:border-white/5 hover-lift">
-                    <div class="flex items-center gap-1 mb-4">
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
-                        <span class="material-symbols-outlined text-primary text-lg">star</span>
+
+                <div class="glass-premium p-10 rounded-3xl transition-premium hover-glow border border-white/5">
+                    <div class="flex items-center gap-1 mb-6">
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
+                        <span class="material-symbols-outlined text-accent text-sm">star</span>
                     </div>
-                    <p class="text-text-muted-light dark:text-text-muted-dark text-sm leading-relaxed mb-6 italic">
-                        "Compré el kit completo y no me arrepiento. La calidad se nota desde el empaque. Son jabones
-                        que realmente cuidan tu piel y apoyan un consumo consciente."
+                    <p class="text-white/60 text-base leading-relaxed mb-8 italic font-light">
+                        "Compré el kit completo y no me arrepiento. La calidad se nota desde el empaque. Son jabones que
+                        realmente cuidan tu piel y apoyan un consumo consciente."
                     </p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-                            <span class="font-heading text-sm font-bold text-primary">LR</span>
+                    <div class="flex items-center gap-4 border-t border-white/5 pt-8">
+                        <div
+                            class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center border border-white/10">
+                            <span class="font-heading text-xs font-bold text-white">LR</span>
                         </div>
                         <div>
-                            <p class="font-heading text-sm font-medium text-text-light dark:text-text-dark">Laura
-                                Rodríguez</p>
-                            <p class="text-xs text-text-muted-light dark:text-text-muted-dark">Cali, Colombia</p>
+                            <p class="font-heading text-sm font-bold text-white tracking-tight">Laura Rodríguez</p>
+                            <p class="text-[10px] uppercase tracking-widest text-white/30">Cali, Colombia</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="py-24 bg-white dark:bg-[#121212] border-t border-gray-100 dark:border-white/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-            <span class="text-primary text-[10px] font-bold tracking-super-wide uppercase mb-3 block">Artesanía</span>
-            <h2 class="font-heading text-3xl md:text-4xl text-text-light dark:text-text-dark mb-16 tracking-tight">
-                Proceso Artesanal</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+    <section class="py-32 relative overflow-hidden bg-black">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-white/5 pb-12">
+                <div class="max-w-2xl">
+                    <span class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">Nuestro
+                        Método</span>
+                    <h2
+                        class="font-heading text-4xl md:text-6xl text-white font-extrabold tracking-tightest leading-tight">
+                        Proceso Artesanal</h2>
+                </div>
+                <p class="text-white/40 font-light text-lg max-w-md mt-6 md:mt-0 md:text-right">
+                    Paciencia y precisión en cada barra de jabón.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Process Step Card -->
                 <div
-                    class="hidden md:block absolute top-12 left-[16%] right-[16%] h-px bg-gray-200 dark:bg-gray-800 -z-10">
+                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    <span
+                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">science</span>
+                    <h3 class="font-heading text-2xl text-white font-bold mb-4 tracking-tight">Formulación</h3>
+                    <p class="text-white/40 font-light leading-relaxed">Combinación precisa de aceites vegetales y
+                        activos botánicos de alta pureza.</p>
                 </div>
-                <div class="flex flex-col items-center">
-                    <div
-                        class="w-24 h-24 rounded-full bg-background-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-6 z-10">
-                        <span class="material-symbols-outlined text-3xl text-primary font-light">eco</span>
-                    </div>
-                    <h3 class="font-heading text-lg font-bold text-text-light dark:text-text-dark mb-2">Selección</h3>
-                    <p
-                        class="text-sm text-text-muted-light dark:text-text-muted-dark font-light leading-relaxed max-w-xs">
-                        Ingredientes botánicos de origen sostenible, libres de crueldad.
-                    </p>
+                <div
+                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    <span
+                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">water_drop</span>
+                    <h3 class="font-heading text-2xl text-white font-bold mb-4 tracking-tight">Saponificación</h3>
+                    <p class="text-white/40 font-light leading-relaxed">Proceso en frío para preservar las propiedades
+                        de cada ingrediente natural.</p>
                 </div>
-                <div class="flex flex-col items-center">
-                    <div
-                        class="w-24 h-24 rounded-full bg-background-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-6 z-10">
-                        <span class="material-symbols-outlined text-3xl text-primary font-light">science</span>
-                    </div>
-                    <h3 class="font-heading text-lg font-bold text-text-light dark:text-text-dark mb-2">Saponificación
-                    </h3>
-                    <p
-                        class="text-sm text-text-muted-light dark:text-text-muted-dark font-light leading-relaxed max-w-xs">
-                        Método en frío tradicional para preservar la integridad de los aceites.
-                    </p>
+                <div
+                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    <span
+                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">precision_manufacturing</span>
+                    <h3 class="font-heading text-2xl text-white font-bold mb-4 tracking-tight">Vertido Manual</h3>
+                    <p class="text-white/40 font-light leading-relaxed">Cada lote se vierte individualmente en moldes
+                        artesanales de madera.</p>
                 </div>
-                <div class="flex flex-col items-center">
-                    <div
-                        class="w-24 h-24 rounded-full bg-background-light dark:bg-surface-dark border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-6 z-10">
-                        <span class="material-symbols-outlined text-3xl text-primary font-light">hourglass_bottom</span>
-                    </div>
-                    <h3 class="font-heading text-lg font-bold text-text-light dark:text-text-dark mb-2">Curado Lento
-                    </h3>
-                    <p
-                        class="text-sm text-text-muted-light dark:text-text-muted-dark font-light leading-relaxed max-w-xs">
-                        Hasta 48 horas de reposo en ambiente controlado para la textura perfecta.
-                    </p>
+                <div
+                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    <span
+                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">grid_view</span>
+                    <h3 class="font-heading text-2xl text-white font-bold mb-4 tracking-tight">Corte y Sello</h3>
+                    <p class="text-white/40 font-light leading-relaxed">Selección y corte manual de cada barra, sellada
+                        con nuestra marca de calidad.</p>
+                </div>
+                <div
+                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    <span
+                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">hourglass_empty</span>
+                    <h3 class="font-heading text-2xl text-white font-bold mb-4 tracking-tight">Maduración Lenta</h3>
+                    <p class="text-white/40 font-light leading-relaxed">Reposo de 4 a 6 semanas para lograr la máxima
+                        suavidad y durabilidad.</p>
+                </div>
+                <div
+                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    <span
+                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">package_2</span>
+                    <h3 class="font-heading text-2xl text-white font-bold mb-4 tracking-tight">Empaque Eco</h3>
+                    <p class="text-white/40 font-light leading-relaxed">Presentación impecable sin plásticos, utilizando
+                        materiales reciclables.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="py-20 bg-background-light dark:bg-background-dark">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <span class="material-symbols-outlined text-4xl text-primary/50 mb-6">format_quote</span>
-            <blockquote
-                class="font-heading text-2xl md:text-4xl text-text-light dark:text-text-dark leading-snug font-medium mb-8">
+
+    <!-- Philosophy Quote -->
+    <section class="py-32 relative text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <span class="material-symbols-outlined text-4xl text-white/10 mb-8">format_quote</span>
+            <blockquote class="font-heading text-3xl md:text-5xl text-white font-light italic leading-tight mb-12">
                 Creemos que el lujo real reside en la simplicidad, la honestidad de los materiales y el tiempo dedicado
                 a crear.
             </blockquote>
-            <div
-                class="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-text-muted-light dark:text-text-muted-dark">
-                <span class="w-8 h-px bg-primary"></span>
-                <span>Filosofía Pachamama</span>
-                <span class="w-8 h-px bg-primary"></span>
+            <div class="flex items-center justify-center gap-4">
+                <span class="w-8 h-px bg-white/10"></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-accent">Filosofía Pachamama</span>
+                <span class="w-8 h-px bg-white/10"></span>
             </div>
         </div>
     </section>
-    <footer class="bg-white dark:bg-[#0A0A0A] pt-20 pb-10 border-t border-gray-100 dark:border-white/5">
-        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
-                <div class="md:col-span-4">
-                    <h3
-                        class="font-heading text-xl font-bold tracking-widest mb-6 text-text-light dark:text-white uppercase">
-                        Pachamama</h3>
-                    <p
-                        class="text-text-muted-light dark:text-gray-500 text-sm leading-relaxed mb-8 max-w-xs font-light">
-                        Redefiniendo el cuidado de la piel a través de la botánica moderna y el diseño consciente.
+
+    <footer class="py-24 px-6 lg:px-12 border-t border-white/5 relative bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+                <div class="md:col-span-1">
+                    <a href="index.html"
+                        class="font-heading text-2xl font-bold tracking-tightest uppercase text-gradient mb-8 block">Pachamama</a>
+                    <p class="text-white/30 font-light leading-relaxed">
+                        Elevando el ritual del baño a una experiencia de lujo botánico y consciencia natural.
                     </p>
                 </div>
-                <div class="md:col-span-2">
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-text-light dark:text-white mb-6">Tienda
-                    </h4>
-                    <ul class="space-y-4 text-sm text-text-muted-light dark:text-gray-500 font-light">
-                        <li><a class="hover:text-primary transition-colors" href="coleccion.html">Colección</a></li>
+                <div>
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-8">Navegación</h4>
+                    <ul class="space-y-4">
+                        <li><a href="coleccion.html"
+                                class="text-sm text-white/60 hover:text-white transition-premium">Colección</a></li>
+                        <li><a href="filosofia.html"
+                                class="text-sm text-white/60 hover:text-white transition-premium">Filosofía</a></li>
+                        <li><a href="map.html" class="text-sm text-white/60 hover:text-white transition-premium">Zonas
+                                de Siembra</a></li>
                     </ul>
                 </div>
-                <div class="md:col-span-2">
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-text-light dark:text-white mb-6">
-                        Productos</h4>
-                    <ul class="space-y-4 text-sm text-text-muted-light dark:text-gray-500 font-light">
-                        <li><a class="hover:text-primary transition-colors" href="relax.html">Relax</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="detox.html">Detox</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="renew.html">Renew</a></li>
+                <div>
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-8">Contacto</h4>
+                    <ul class="space-y-4">
+                        <li><a href="https://wa.link/d79bce"
+                                class="text-sm text-white/60 hover:text-white transition-premium">WhatsApp Directo</a>
+                        </li>
+                        <li><a href="#" class="text-sm text-white/60 hover:text-white transition-premium">Instagram</a>
+                        </li>
                     </ul>
                 </div>
-                <div class="md:col-span-2">
-                    <h4 class="text-xs font-bold uppercase tracking-widest text-text-light dark:text-white mb-6">
-                        Empresa</h4>
-                    <ul class="space-y-4 text-sm text-text-muted-light dark:text-gray-500 font-light">
-                        <li><a class="hover:text-primary transition-colors" href="filosofia.html">Filosofía</a></li>
-                        <li><a class="hover:text-primary transition-colors" href="map.html">Zonas de Siembra</a></li>
-                    </ul>
+                <div>
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-8">Newsletter</h4>
+                    <div class="relative group">
+                        <input type="email" placeholder="Email"
+                            class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm focus:outline-none focus:border-accent transition-premium">
+                        <button
+                            class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white text-black flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
                 </div>
             </div>
-            <div
-                class="pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-text-muted-light dark:text-gray-600 border-t border-gray-100 dark:border-white/5">
-                <p>© 2025 Pachamama. Todos los derechos reservados.</p>
+
+            <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 gap-6">
+                <p class="text-[10px] uppercase tracking-widest text-white/20">© 2024 Pachamama. Todos los derechos
+                    reservados.</p>
+                <div class="flex gap-8">
+                    <a href="#"
+                        class="text-[10px] uppercase tracking-widest text-white/20 hover:text-white/40 transition-premium">Términos</a>
+                    <a href="#"
+                        class="text-[10px] uppercase tracking-widest text-white/20 hover:text-white/40 transition-premium">Privacidad</a>
+                </div>
             </div>
         </div>
     </footer>
-
     <script src="sparkle.js"></script>
 </body>
 
