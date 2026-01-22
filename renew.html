@@ -14,12 +14,12 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#FFFFFF",
-                        secondary: "#71717a",
-                        accent: "#3b82f6",
-                        "background-dark": "#000000",
-                        "surface-dark": "#09090b",
-                        "border-dark": "#272727",
+                        primary: "#2D2926",
+                        secondary: "#8DA47E",
+                        accent: "#B38B6D",
+                        background: "#FDFBF7",
+                        "surface": "#FFFFFF",
+                        "border": "rgba(45, 41, 38, 0.1)",
                     },
                     fontFamily: {
                         heading: ['"Inter"', 'sans-serif'],
@@ -30,7 +30,7 @@
                         '3xl': "1.5rem",
                     },
                     boxShadow: {
-                        'glow': '0 0 20px rgba(59, 130, 246, 0.1)',
+                        'glow': '0 0 20px rgba(141, 164, 126, 0.1)',
                     },
                     letterSpacing: {
                         'tightest': '-.05em',
@@ -43,9 +43,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
         :root {
-            --glass-bg: rgba(9, 9, 11, 0.7);
-            --glass-border: rgba(39, 39, 42, 0.5);
-            --aura-glow: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(45, 41, 38, 0.1);
+            --aura-glow: radial-gradient(circle at 50% 50%, rgba(141, 164, 126, 0.15) 0%, transparent 70%);
         }
 
         .glass {
@@ -53,17 +53,17 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
-            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5);
         }
 
         .glass-premium {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(45, 41, 38, 0.08);
             box-shadow:
-                inset 0 1px 1px rgba(255, 255, 255, 0.1),
-                0 8px 32px 0 rgba(0, 0, 0, 0.8);
+                inset 0 1px 1px rgba(255, 255, 255, 0.3),
+                0 8px 32px 0 rgba(45, 41, 38, 0.1);
         }
 
         .aura-bg {
@@ -72,7 +72,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #000;
+            background: #FDFBF7;
             z-index: -2;
             overflow: hidden;
         }
@@ -81,7 +81,7 @@
             position: absolute;
             width: 80vw;
             height: 80vw;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(141, 164, 126, 0.1) 0%, transparent 70%);
             border-radius: 50%;
             filter: blur(100px);
             z-index: -1;
@@ -110,15 +110,15 @@
         }
 
         .text-gradient {
-            background: linear-gradient(to bottom right, #fff 30%, rgba(255, 255, 255, 0.5));
+            background: linear-gradient(to bottom right, #2D2926 30%, rgba(45, 41, 38, 0.6));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hover-glow:hover {
-            box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
-            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 40px rgba(141, 164, 126, 0.15);
+            border-color: rgba(45, 41, 38, 0.2);
             transform: translateY(-4px);
         }
 
@@ -133,22 +133,23 @@
         .material-symbols-outlined.fill-1 {
             font-variation-settings: 'FILL' 1;
         }
+
+        body {
+            background-color: #FDFBF7;
+            color: #2D2926;
+        }
     </style>
 </head>
 
-<body class="bg-black text-white font-sans selection:bg-accent/30 selection:text-white">
+<body class="bg-[#FDFBF7] text-[#2D2926] font-sans selection:bg-accent/30 selection:text-[#FDFBF7]">
     <!-- Aura Background -->
     <div class="aura-bg">
-        <div class="fixed inset-0 opacity-15 pointer-events-none" style="background-image: url('file:///Users/daniel/.gemini/antigravity/brain/e2d9ad60-dedf-4b10-909e-42d86f6a658f/uploaded_image_1766297732824.jpg'); 
-                    background-size: cover; 
-                    background-position: center; 
-                    background-attachment: fixed;"></div>
         <div class="aura-glow -top-[20%] -left-[10%] scale-150 opacity-40"></div>
         <div class="aura-glow top-[40%] -right-[20%] scale-125 opacity-20"
-            style="background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%); animation-name: float-reverse; animation-duration: 25s;">
+            style="background: radial-gradient(circle, rgba(179, 139, 109, 0.08) 0%, transparent 70%); animation-name: float-reverse; animation-duration: 25s;">
         </div>
         <div class="aura-glow -bottom-[20%] left-[10%] scale-150 opacity-30"
-            style="background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%); animation-duration: 30s;">
+            style="background: radial-gradient(circle, rgba(141, 164, 126, 0.05) 0%, transparent 70%); animation-duration: 30s;">
         </div>
     </div>
     <!-- Navigation -->
@@ -158,18 +159,18 @@
                 <a href="index.html"
                     class="font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a>
                 <div class="hidden md:flex items-center gap-8">
-                    <a class="text-xs uppercase tracking-widest font-semibold text-white/40 hover:text-white transition-premium"
+                    <a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
                         href="coleccion.html">Colección</a>
-                    <a class="text-xs uppercase tracking-widest font-semibold text-white/40 hover:text-white transition-premium"
+                    <a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
                         href="filosofia.html">Filosofía</a>
                 </div>
             </div>
             <div class="flex items-center gap-6">
                 <a href="https://wa.link/d79bce" target="_blank"
-                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-white text-black px-6 py-2 rounded-full hover:bg-white/90 transition-premium">
+                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-primary text-[#FDFBF7] px-6 py-2 rounded-full hover:bg-primary/90 transition-premium">
                     Comprar
                 </a>
-                <button class="md:hidden text-white">
+                <button class="md:hidden text-primary">
                     <span class="material-symbols-outlined font-light">menu</span>
                 </button>
             </div>
@@ -179,88 +180,89 @@
     <!-- Hero Section -->
     <header class="relative pt-48 pb-16 lg:pt-56 lg:pb-24 flex flex-col items-center justify-center text-center px-6">
         <div class="max-w-4xl mx-auto">
-            <span class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">Caléndula &
+            <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Caléndula &
                 Eucalipto</span>
             <h1
                 class="font-heading text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tightest mb-8 leading-[0.9] text-gradient">
                 Renew
             </h1>
-            <p class="text-lg md:text-xl text-white/40 max-w-2xl mx-auto font-light leading-relaxed mb-12">
+            <p class="text-lg md:text-xl text-primary/40 max-w-2xl mx-auto font-light leading-relaxed mb-12">
                 Regeneración activa para una piel renovada. Caléndula y eucalipto trabajan en sinergia para hidratar,
                 calmar y restaurar la vitalidad de tu piel.
             </p>
             <a href="https://wa.link/d79bce" target="_blank"
-                class="px-12 py-5 bg-white text-black rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">
+                class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">
                 Ordenar Ahora
             </a>
         </div>
     </header>
 
     <!-- Ingredients Section -->
-    <section class="py-32 relative overflow-hidden bg-black">
+    <section class="py-32 relative overflow-hidden bg-background">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-white/5 pb-12">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-primary/5 pb-12">
                 <div class="max-w-2xl">
-                    <span class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">Ingredientes
+                    <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Ingredientes
                         Activos</span>
                     <h2
-                        class="font-heading text-4xl md:text-6xl text-white font-extrabold tracking-tightest leading-tight">
+                        class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest leading-tight">
                         La Fórmula Regeneradora</h2>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Caléndula -->
                 <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
                     <span
-                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">local_florist</span>
-                    <h3 class="font-heading text-2xl text-white font-bold mb-4 tracking-tight">Caléndula</h3>
-                    <p class="text-white/40 font-light leading-relaxed">Flor con potentes propiedades antiinflamatorias
+                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">local_florist</span>
+                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Caléndula</h3>
+                    <p class="text-primary/40 font-light leading-relaxed">Flor con potentes propiedades
+                        antiinflamatorias
                         y cicatrizantes. Acelera la regeneración celular y calma irritaciones.</p>
                 </div>
                 <!-- Eucalipto -->
                 <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
                     <span
-                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">forest</span>
-                    <h3 class="font-heading text-2xl text-white font-bold mb-4 tracking-tight">Eucalipto</h3>
-                    <p class="text-white/40 font-light leading-relaxed">Aceite esencial con propiedades antisépticas y
+                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">forest</span>
+                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Eucalipto</h3>
+                    <p class="text-primary/40 font-light leading-relaxed">Aceite esencial con propiedades antisépticas y
                         refrescantes. Estimula la circulación y proporciona revitalización.</p>
                 </div>
                 <!-- Aloe Vera -->
                 <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
                     <span
-                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">eco</span>
-                    <h3 class="font-heading text-2xl text-white font-bold mb-4 tracking-tight">Aloe Vera</h3>
-                    <p class="text-white/40 font-light leading-relaxed">Gel hidratante rico en vitaminas y minerales
+                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">eco</span>
+                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Aloe Vera</h3>
+                    <p class="text-primary/40 font-light leading-relaxed">Gel hidratante rico en vitaminas y minerales
                         esenciales. Calma quemaduras y reduce la inflamación.</p>
                 </div>
                 <!-- Miel Pura -->
                 <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
                     <span
-                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">opacity</span>
-                    <h3 class="font-heading text-2xl text-white font-bold mb-4 tracking-tight">Miel Pura</h3>
-                    <p class="text-white/40 font-light leading-relaxed">Humectante natural con propiedades
+                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">opacity</span>
+                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Miel Pura</h3>
+                    <p class="text-primary/40 font-light leading-relaxed">Humectante natural con propiedades
                         antibacterianas. Nutre profundamente y sella la hidratación.</p>
                 </div>
                 <!-- Colágeno -->
                 <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
                     <span
-                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">biotech</span>
-                    <h3 class="font-heading text-2xl text-white font-bold mb-4 tracking-tight">Colágeno</h3>
-                    <p class="text-white/40 font-light leading-relaxed">Proteína fundamental para la estructura de la
+                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">biotech</span>
+                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Colágeno</h3>
+                    <p class="text-primary/40 font-light leading-relaxed">Proteína fundamental para la estructura de la
                         piel. Mejora la firmeza y restaura la elasticidad perdida.</p>
                 </div>
                 <!-- Elastina -->
                 <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
                     <span
-                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">all_inclusive</span>
-                    <h3 class="font-heading text-2xl text-white font-bold mb-4 tracking-tight">Elastina</h3>
-                    <p class="text-white/40 font-light leading-relaxed">Proporciona flexibilidad y resiliencia a la
+                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">all_inclusive</span>
+                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Elastina</h3>
+                    <p class="text-primary/40 font-light leading-relaxed">Proporciona flexibilidad y resiliencia a la
                         piel. Trabaja junto al colágeno para mantener la elasticidad.</p>
                 </div>
             </div>
@@ -268,43 +270,50 @@
     </section>
 
     <!-- Benefits Section -->
-    <section class="py-24 bg-black">
+    <section class="py-24 bg-background">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="text-center mb-16">
-                <span class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">Beneficios</span>
-                <h2 class="font-heading text-4xl text-white font-extrabold tracking-tightest">Renovación Total</h2>
+                <span
+                    class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Beneficios</span>
+                <h2 class="font-heading text-4xl text-primary font-extrabold tracking-tightest">Renovación Total</h2>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
                 <div class="text-center group">
                     <span
-                        class="material-symbols-outlined text-4xl text-white/20 mb-4 transition-premium group-hover:text-accent">autorenew</span>
-                    <h4 class="font-heading text-sm font-bold text-white/60 tracking-widest uppercase">Regeneración</h4>
-                </div>
-                <div class="text-center group">
-                    <span
-                        class="material-symbols-outlined text-4xl text-white/20 mb-4 transition-premium group-hover:text-accent">water_drop</span>
-                    <h4 class="font-heading text-sm font-bold text-white/60 tracking-widest uppercase">Hidratación</h4>
-                </div>
-                <div class="text-center group">
-                    <span
-                        class="material-symbols-outlined text-4xl text-white/20 mb-4 transition-premium group-hover:text-accent">healing</span>
-                    <h4 class="font-heading text-sm font-bold text-white/60 tracking-widest uppercase">Antiinflamatorio
+                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">autorenew</span>
+                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Regeneración
                     </h4>
                 </div>
                 <div class="text-center group">
                     <span
-                        class="material-symbols-outlined text-4xl text-white/20 mb-4 transition-premium group-hover:text-accent">medication</span>
-                    <h4 class="font-heading text-sm font-bold text-white/60 tracking-widest uppercase">Cicatrizante</h4>
+                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">water_drop</span>
+                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Hidratación
+                    </h4>
                 </div>
                 <div class="text-center group">
                     <span
-                        class="material-symbols-outlined text-4xl text-white/20 mb-4 transition-premium group-hover:text-accent">nature</span>
-                    <h4 class="font-heading text-sm font-bold text-white/60 tracking-widest uppercase">Aroma Herbal</h4>
+                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">healing</span>
+                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">
+                        Antiinflamatorio
+                    </h4>
                 </div>
                 <div class="text-center group">
                     <span
-                        class="material-symbols-outlined text-4xl text-white/20 mb-4 transition-premium group-hover:text-accent">gesture</span>
-                    <h4 class="font-heading text-sm font-bold text-white/60 tracking-widest uppercase">Elasticidad</h4>
+                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">medication</span>
+                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Cicatrizante
+                    </h4>
+                </div>
+                <div class="text-center group">
+                    <span
+                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">nature</span>
+                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Aroma Herbal
+                    </h4>
+                </div>
+                <div class="text-center group">
+                    <span
+                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">gesture</span>
+                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Elasticidad
+                    </h4>
                 </div>
             </div>
         </div>
@@ -314,58 +323,58 @@
     <section class="py-32 relative text-center">
         <div class="max-w-4xl mx-auto px-6">
             <h2
-                class="font-heading text-4xl md:text-6xl text-white font-extrabold tracking-tightest mb-8 leading-tight">
+                class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest mb-8 leading-tight">
                 ¿Listo para Renovarte?</h2>
-            <p class="text-white/40 text-lg md:text-xl font-light leading-relaxed mb-12 max-w-2xl mx-auto">
+            <p class="text-primary/40 text-lg md:text-xl font-light leading-relaxed mb-12 max-w-2xl mx-auto">
                 Ordena tu jabón Renew hoy y experimenta la regeneración activa que tu piel necesita para lucir radiante.
             </p>
             <a href="https://wa.link/d79bce" target="_blank"
-                class="px-12 py-5 bg-white text-black rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">
+                class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">
                 Ordenar por WhatsApp
             </a>
         </div>
     </section>
 
     <!-- Customer Reviews Section -->
-    <section class="py-32 bg-black border-t border-white/5">
+    <section class="py-32 bg-background border-t border-primary/5">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-white/5 pb-12">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-primary/5 pb-12">
                 <div class="max-w-2xl">
                     <span
-                        class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">Testimonios</span>
+                        class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Testimonios</span>
                     <h2
-                        class="font-heading text-4xl md:text-6xl text-white font-extrabold tracking-tightest leading-tight">
+                        class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest leading-tight">
                         Reseñas de Clientes</h2>
                 </div>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-24">
                 <!-- Summary Column -->
                 <div class="lg:col-span-4">
-                    <div class="glass-premium p-12 rounded-[3rem] border border-white/5">
+                    <div class="glass-premium p-12 rounded-[3rem] border border-primary/5">
                         <div class="mb-10">
                             <div class="flex items-baseline gap-4 mb-4">
-                                <span class="text-7xl font-extrabold text-white tracking-tightest">5.0</span>
+                                <span class="text-7xl font-extrabold text-primary tracking-tightest">5.0</span>
                             </div>
                             <div class="flex items-center gap-1 mb-4">
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
                             </div>
-                            <p class="text-sm text-white/30 font-light">Basado en 42 experiencias reales.</p>
+                            <p class="text-sm text-primary/30 font-light">Basado en 42 experiencias reales.</p>
                         </div>
                         <div class="space-y-6 mb-12">
                             <div class="flex items-center gap-6">
-                                <span class="text-[10px] font-bold text-white/40 w-4">5</span>
-                                <div class="flex-grow h-1.5 bg-white/5 rounded-full overflow-hidden">
-                                    <div class="h-full bg-accent rounded-full shadow-glow" style="width: 100%"></div>
+                                <span class="text-[10px] font-bold text-primary/40 w-4">5</span>
+                                <div class="flex-grow h-1.5 bg-primary/5 rounded-full overflow-hidden">
+                                    <div class="h-full bg-secondary rounded-full shadow-glow" style="width: 100%"></div>
                                 </div>
-                                <span class="text-[10px] font-bold text-white/40 w-8 text-right">100%</span>
+                                <span class="text-[10px] font-bold text-primary/40 w-8 text-right">100%</span>
                             </div>
                         </div>
                         <button
-                            class="w-full py-5 bg-white text-black rounded-full text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">
+                            class="w-full py-5 bg-primary text-[#FDFBF7] rounded-full text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">
                             Escribir una Reseña
                         </button>
                     </div>
@@ -376,23 +385,24 @@
                         <div class="flex justify-between items-start mb-8">
                             <div class="flex items-center gap-6">
                                 <div
-                                    class="w-12 h-12 rounded-full glass-premium border border-white/10 flex items-center justify-center text-xs font-bold text-white">
+                                    class="w-12 h-12 rounded-full glass-premium border border-primary/10 flex items-center justify-center text-xs font-bold text-primary">
                                     SP</div>
                                 <div>
-                                    <span class="block font-heading font-bold text-white text-lg">Sofía Prada</span>
-                                    <span class="text-[10px] uppercase tracking-widest text-white/20">hace 1 día</span>
+                                    <span class="block font-heading font-bold text-primary text-lg">Sofía Prada</span>
+                                    <span class="text-[10px] uppercase tracking-widest text-primary/20">hace 1
+                                        día</span>
                                 </div>
                             </div>
                             <div class="flex items-center gap-1">
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
                             </div>
                         </div>
-                        <h4 class="font-heading font-bold text-white text-xl mb-4">Magia curativa</h4>
-                        <p class="text-white/40 text-lg font-light leading-relaxed">
+                        <h4 class="font-heading font-bold text-primary text-xl mb-4">Magia curativa</h4>
+                        <p class="text-primary/40 text-lg font-light leading-relaxed">
                             Tenía algunas zonas secas en los codos y este jabón las eliminó en una semana. La caléndula
                             realmente funciona.
                         </p>
@@ -401,23 +411,25 @@
                         <div class="flex justify-between items-start mb-8">
                             <div class="flex items-center gap-6">
                                 <div
-                                    class="w-12 h-12 rounded-full glass-premium border border-white/10 flex items-center justify-center text-xs font-bold text-white">
+                                    class="w-12 h-12 rounded-full glass-premium border border-primary/10 flex items-center justify-center text-xs font-bold text-primary">
                                     RV</div>
                                 <div>
-                                    <span class="block font-heading font-bold text-white text-lg">Ricardo Vargas</span>
-                                    <span class="text-[10px] uppercase tracking-widest text-white/20">hace 5 días</span>
+                                    <span class="block font-heading font-bold text-primary text-lg">Ricardo
+                                        Vargas</span>
+                                    <span class="text-[10px] uppercase tracking-widest text-primary/20">hace 5
+                                        días</span>
                                 </div>
                             </div>
                             <div class="flex items-center gap-1">
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-accent fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
+                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
                             </div>
                         </div>
-                        <h4 class="font-heading font-bold text-white text-xl mb-4">Increíble para la piel seca</h4>
-                        <p class="text-white/40 text-lg font-light leading-relaxed">
+                        <h4 class="font-heading font-bold text-primary text-xl mb-4">Increíble para la piel seca</h4>
+                        <p class="text-primary/40 text-lg font-light leading-relaxed">
                             Muy hidratante y el aroma de eucalipto es sutil y limpio. Definitivamente es parte de mi
                             rutina ahora.
                         </p>
@@ -428,56 +440,57 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-24 bg-black border-t border-white/5">
+    <footer class="py-24 bg-background border-t border-primary/5">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
                 <div class="col-span-1 md:col-span-2">
                     <a href="index.html"
                         class="font-heading text-2xl font-bold tracking-tightest uppercase text-gradient mb-8 block">Pachamama</a>
-                    <p class="text-white/40 text-lg font-light leading-relaxed max-w-sm">
+                    <p class="text-primary/40 text-lg font-light leading-relaxed max-w-sm">
                         Redefiniendo el cuidado de la piel a través de la botánica moderna and el diseño consciente.
                     </p>
                 </div>
                 <div>
-                    <h4 class="font-heading text-xs font-bold uppercase tracking-widest text-white/20 mb-8">Navegación
+                    <h4 class="font-heading text-xs font-bold uppercase tracking-widest text-primary/20 mb-8">Navegación
                     </h4>
                     <ul class="space-y-4">
                         <li><a href="coleccion.html"
-                                class="text-sm font-medium text-white/40 hover:text-white transition-premium">Colección</a>
+                                class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Colección</a>
                         </li>
                         <li><a href="filosofia.html"
-                                class="text-sm font-medium text-white/40 hover:text-white transition-premium">Filosofía</a>
+                                class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Filosofía</a>
                         </li>
                         <li><a href="map.html"
-                                class="text-sm font-medium text-white/40 hover:text-white transition-premium">Zonas de
+                                class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Zonas
+                                de
                                 Siembra</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-heading text-xs font-bold uppercase tracking-widest text-white/20 mb-8">Productos
+                    <h4 class="font-heading text-xs font-bold uppercase tracking-widest text-primary/20 mb-8">Productos
                     </h4>
                     <ul class="space-y-4">
                         <li><a href="relax.html"
-                                class="text-sm font-medium text-white/40 hover:text-white transition-premium">Relax</a>
+                                class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Relax</a>
                         </li>
                         <li><a href="detox.html"
-                                class="text-sm font-medium text-white/40 hover:text-white transition-premium">Detox</a>
+                                class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Detox</a>
                         </li>
                         <li><a href="renew.html"
-                                class="text-sm font-medium text-white/40 hover:text-white transition-premium">Renew</a>
+                                class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Renew</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-                <p class="text-[10px] font-bold uppercase tracking-widest text-white/20">
+            <div class="pt-12 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-8">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-primary/20">
                     © 2025 Pachamama. Todos los derechos reservados.
                 </p>
                 <div class="flex gap-8">
                     <a href="#"
-                        class="text-[10px] font-bold uppercase tracking-widest text-white/20 hover:text-white transition-premium">Instagram</a>
+                        class="text-[10px] font-bold uppercase tracking-widest text-primary/20 hover:text-primary transition-premium">Instagram</a>
                     <a href="#"
-                        class="text-[10px] font-bold uppercase tracking-widest text-white/20 hover:text-white transition-premium">TikTok</a>
+                        class="text-[10px] font-bold uppercase tracking-widest text-primary/20 hover:text-primary transition-premium">TikTok</a>
                 </div>
             </div>
         </div>

@@ -19,21 +19,21 @@ document.addEventListener('DOMContentLoaded', () => {
             coords: [4.438218, -69.282928],
             trees: 1200,
             type: "Reforestación Nativa",
-            color: "#5C6B5F" // Accent color
+            color: "#8DA47E" // Secondary (Green)
         },
         {
             name: "Amazonas - Pulmón del Mundo",
             coords: [-1.442811, -71.572395],
             trees: 3500,
             type: "Conservación",
-            color: "#C4A484" // Primary color
+            color: "#B38B6D" // Accent (Brown)
         },
         {
             name: "Antioquia - Bosque de Niebla",
             coords: [6.244203, -75.581212],
             trees: 850,
             type: "Restauración Ecológica",
-            color: "#B0A18E" // Secondary color
+            color: "#2D2926" // Primary (Dark)
         }
     ];
 
@@ -45,15 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const circle = L.circleMarker(zone.coords, {
             color: zone.color,
             fillColor: zone.color,
-            fillOpacity: 0.7,
-            radius: 12
+            fillOpacity: 0.6,
+            radius: 12,
+            weight: 2
         }).addTo(map);
 
         circle.bindPopup(`
             <div class="font-sans p-2">
                 <h3 class="font-bold text-lg mb-1" style="color: ${zone.color}">${zone.name}</h3>
-                <p class="text-sm text-gray-600 mb-1"><strong>Tipo:</strong> ${zone.type}</p>
-                <p class="text-sm text-gray-600"><strong>Árboles:</strong> ${zone.trees}</p>
+                <p class="text-sm text-primary/60 mb-1"><strong>Tipo:</strong> ${zone.type}</p>
+                <p class="text-sm text-primary/60"><strong>Árboles:</strong> ${zone.trees}</p>
             </div>
         `);
 
@@ -83,12 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (filtered.length > 0) {
             searchResults.innerHTML = filtered.map(m => `
-                <div class="search-item p-4 hover:bg-gray-50 dark:hover:bg-white/5 cursor-pointer border-b border-gray-100 dark:border-white/5 last:border-0 transition-colors" data-id="${m.id}">
+                <div class="search-item p-4 hover:bg-primary/5 cursor-pointer border-b border-primary/5 last:border-0 transition-colors" data-id="${m.id}">
                     <div class="flex items-center gap-3">
                         <div class="w-2 h-2 rounded-full" style="background-color: ${m.zone.color}"></div>
                         <div>
-                            <div class="text-sm font-bold text-text-light dark:text-text-dark">${m.zone.name}</div>
-                            <div class="text-[10px] uppercase tracking-wider text-text-muted-light dark:text-text-muted-dark">${m.zone.type}</div>
+                            <div class="text-sm font-bold text-primary">${m.zone.name}</div>
+                            <div class="text-[10px] uppercase tracking-wider text-primary/40">${m.zone.type}</div>
                         </div>
                     </div>
                 </div>
@@ -97,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             searchResults.innerHTML = `
                 <div class="p-6 text-center">
-                    <div class="text-sm text-text-muted-light dark:text-text-muted-dark">No se encontraron zonas</div>
+                    <div class="text-sm text-primary/40">No se encontraron zonas</div>
                 </div>
             `;
             searchResults.classList.remove('hidden');

@@ -23,12 +23,12 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#FFFFFF",
-                        secondary: "#71717a",
-                        accent: "#3b82f6",
-                        "background-dark": "#000000",
-                        "surface-dark": "#09090b",
-                        "border-dark": "#27272a",
+                        primary: "#2D2926",
+                        secondary: "#8DA47E",
+                        accent: "#B38B6D",
+                        background: "#FDFBF7",
+                        surface: "#FFFFFF",
+                        border: "rgba(45, 41, 38, 0.1)",
                     },
                     fontFamily: {
                         heading: ['"Inter"', 'sans-serif'],
@@ -39,7 +39,7 @@
                         '3xl': "1.5rem",
                     },
                     boxShadow: {
-                        'glow': '0 0 20px rgba(59, 130, 246, 0.1)',
+                        'glow': '0 0 20px rgba(141, 164, 126, 0.1)',
                     },
                     letterSpacing: {
                         'tightest': '-.05em',
@@ -52,9 +52,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
         :root {
-            --glass-bg: rgba(9, 9, 11, 0.7);
-            --glass-border: rgba(39, 39, 42, 0.5);
-            --aura-glow: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(45, 41, 38, 0.1);
+            --aura-glow: radial-gradient(circle at 50% 50%, rgba(141, 164, 126, 0.15) 0%, transparent 70%);
         }
 
         .glass {
@@ -62,17 +62,17 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
-            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5);
         }
 
         .glass-premium {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(45, 41, 38, 0.08);
             box-shadow:
-                inset 0 1px 1px rgba(255, 255, 255, 0.1),
-                0 8px 32px 0 rgba(0, 0, 0, 0.8);
+                inset 0 1px 1px rgba(255, 255, 255, 0.3),
+                0 8px 32px 0 rgba(45, 41, 38, 0.1);
         }
 
         .aura-bg {
@@ -81,7 +81,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #000;
+            background: #FDFBF7;
             z-index: -2;
             overflow: hidden;
         }
@@ -90,7 +90,7 @@
             position: absolute;
             width: 80vw;
             height: 80vw;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(141, 164, 126, 0.1) 0%, transparent 70%);
             border-radius: 50%;
             filter: blur(100px);
             z-index: -1;
@@ -119,15 +119,15 @@
         }
 
         .text-gradient {
-            background: linear-gradient(to bottom right, #fff 30%, rgba(255, 255, 255, 0.5));
+            background: linear-gradient(to bottom right, #2D2926 30%, rgba(45, 41, 38, 0.6));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hover-glow:hover {
-            box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
-            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 40px rgba(141, 164, 126, 0.15);
+            border-color: rgba(45, 41, 38, 0.2);
             transform: translateY(-4px);
         }
 
@@ -136,29 +136,30 @@
         }
 
         body {
-            background-color: #000;
-            color: #fff;
+            background-color: #FDFBF7;
+            color: #2D2926;
         }
 
-        /* Leaflet Overrides for Dark Theme */
+        /* Leaflet Overrides for Light Theme */
         .leaflet-container {
-            background: #09090b !important;
+            background: #FDFBF7 !important;
             border-radius: 1.5rem;
-            filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+            filter: sepia(20%) contrast(90%) brightness(105%);
         }
+    </style>
     </style>
 </head>
 
-<body class="bg-black text-white font-sans antialiased selection:bg-accent/30 overflow-x-hidden">
+<body class="bg-[#FDFBF7] text-[#2D2926] font-sans antialiased selection:bg-accent/30 overflow-x-hidden">
 
     <!-- Aura Background -->
     <div class="aura-bg">
         <div class="aura-glow -top-[20%] -left-[10%] scale-150 opacity-40"></div>
         <div class="aura-glow top-[40%] -right-[20%] scale-125 opacity-20"
-            style="background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%); animation-name: float-reverse; animation-duration: 25s;">
+            style="background: radial-gradient(circle, rgba(179, 139, 109, 0.08) 0%, transparent 70%); animation-name: float-reverse; animation-duration: 25s;">
         </div>
         <div class="aura-glow -bottom-[20%] left-[10%] scale-150 opacity-30"
-            style="background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%); animation-duration: 30s;">
+            style="background: radial-gradient(circle, rgba(141, 164, 126, 0.05) 0%, transparent 70%); animation-duration: 30s;">
         </div>
     </div>
 
@@ -168,18 +169,18 @@
                 <a href="index.html"
                     class="font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a>
                 <div class="hidden md:flex items-center gap-8">
-                    <a class="text-xs uppercase tracking-widest font-semibold text-white/40 hover:text-white transition-premium"
+                    <a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
                         href="coleccion.html">Colección</a>
-                    <a class="text-xs uppercase tracking-widest font-semibold text-white/40 hover:text-white transition-premium"
+                    <a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
                         href="filosofia.html">Filosofía</a>
                 </div>
             </div>
             <div class="flex items-center gap-6">
                 <a href="https://wa.link/d79bce" target="_blank"
-                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-white text-black px-6 py-2 rounded-full hover:bg-white/90 transition-premium">
+                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-primary text-[#FDFBF7] px-6 py-2 rounded-full hover:bg-primary/90 transition-premium">
                     Comprar
                 </a>
-                <button class="md:hidden text-white">
+                <button class="md:hidden text-primary">
                     <span class="material-symbols-outlined font-light">menu</span>
                 </button>
             </div>
@@ -188,14 +189,14 @@
 
     <header class="relative pt-48 pb-16 lg:pt-56 lg:pb-24 flex flex-col items-center justify-center text-center px-6">
         <div class="max-w-4xl mx-auto">
-            <span class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">Reforestación
+            <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Reforestación
                 Activa</span>
             <h1
                 class="font-heading text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tightest mb-8 leading-[0.9] text-gradient">
                 Zonas de<br />
                 <span class="opacity-50 font-light italic">Siembra</span>
             </h1>
-            <p class="text-lg md:text-xl text-white/40 max-w-2xl mx-auto font-light leading-relaxed">
+            <p class="text-lg md:text-xl text-primary/40 max-w-2xl mx-auto font-light leading-relaxed">
                 Cada envase de jabón Pachamama incluye una semilla lista para germinar. Tú plantas, tú reforestas.
                 Descubre dónde nuestra comunidad está sembrando el futuro.
             </p>
@@ -206,14 +207,14 @@
     <section class="pb-24 px-6 lg:px-12">
         <div class="max-w-4xl mx-auto">
             <div
-                class="glass-premium p-12 rounded-[3rem] border border-white/5 flex flex-col md:flex-row items-center justify-between gap-12">
+                class="glass-premium p-12 rounded-[3rem] border border-primary/5 flex flex-col md:flex-row items-center justify-between gap-12">
                 <!-- Current Count -->
                 <div class="text-center md:text-left flex-1">
-                    <span class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">Árboles
+                    <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Árboles
                         Sembrados</span>
                     <div class="flex items-baseline justify-center md:justify-start gap-4">
                         <span id="tree-counter"
-                            class="font-heading text-6xl md:text-7xl font-extrabold text-white tracking-tightest">1.542</span>
+                            class="font-heading text-6xl md:text-7xl font-extrabold text-primary tracking-tightest">1.542</span>
                         <span class="text-3xl">🌱</span>
                     </div>
                 </div>
@@ -221,19 +222,20 @@
                 <!-- Progress Bar & Goal -->
                 <div class="flex-1 w-full">
                     <div class="flex justify-between items-end mb-4">
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-white/40">Progreso
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary/40">Progreso
                             Global</span>
                         <div class="text-right">
-                            <span class="text-2xl font-heading font-extrabold text-white tracking-tightest">1M</span>
-                            <span class="text-[10px] font-bold uppercase tracking-widest text-accent block">Meta
+                            <span class="text-2xl font-heading font-extrabold text-primary tracking-tightest">1M</span>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-secondary block">Meta
                                 Final</span>
                         </div>
                     </div>
-                    <div class="w-full bg-white/5 rounded-full h-4 overflow-hidden p-1 border border-white/10">
-                        <div class="bg-accent h-full rounded-full transition-premium shadow-glow" style="width: 0.15%">
+                    <div class="w-full bg-primary/5 rounded-full h-4 overflow-hidden p-1 border border-primary/10">
+                        <div class="bg-secondary h-full rounded-full transition-premium shadow-glow"
+                            style="width: 0.15%">
                         </div>
                     </div>
-                    <p class="text-xs text-white/30 mt-4 text-center md:text-left font-light italic">
+                    <p class="text-xs text-primary/30 mt-4 text-center md:text-left font-light italic">
                         Juntos estamos reforestando Colombia, una semilla a la vez.
                     </p>
                 </div>
@@ -244,14 +246,15 @@
     </section>
 
     <!-- Mission Details Section -->
-    <section class="py-24 relative overflow-hidden bg-black">
+    <section class="py-24 relative overflow-hidden bg-background">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="text-center mb-24">
-                <span class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">Nuestra
+                <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Nuestra
                     Misión</span>
-                <h2 class="font-heading text-4xl md:text-6xl text-white font-extrabold tracking-tightest mb-8">¿Por Qué
+                <h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest mb-8">¿Por
+                    Qué
                     1 Millón?</h2>
-                <p class="text-white/40 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto">
+                <p class="text-primary/40 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto">
                     No se trata solo de plantar; se trata de restaurar, conectar y preservar los pulmones de nuestro
                     país.
                 </p>
@@ -260,11 +263,11 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Motivo -->
                 <div
-                    class="glass-premium p-10 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    class="glass-premium p-10 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
                     <span
-                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">healing</span>
-                    <h3 class="font-heading text-xl text-white font-bold mb-4 tracking-tight">El Motivo</h3>
-                    <p class="text-white/40 text-sm font-light leading-relaxed">
+                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">healing</span>
+                    <h3 class="font-heading text-xl text-primary font-bold mb-4 tracking-tight">El Motivo</h3>
+                    <p class="text-primary/40 text-sm font-light leading-relaxed">
                         Enfrentamos una crisis climática. La reforestación es la forma más directa de capturar carbono y
                         restaurar el equilibrio.
                     </p>
@@ -272,11 +275,11 @@
 
                 <!-- Meta -->
                 <div
-                    class="glass-premium p-10 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    class="glass-premium p-10 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
                     <span
-                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">beenhere</span>
-                    <h3 class="font-heading text-xl text-white font-bold mb-4 tracking-tight">La Meta</h3>
-                    <p class="text-white/40 text-sm font-light leading-relaxed">
+                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">beenhere</span>
+                    <h3 class="font-heading text-xl text-primary font-bold mb-4 tracking-tight">La Meta</h3>
+                    <p class="text-primary/40 text-sm font-light leading-relaxed">
                         Crear corredores biológicos que reconecten fragmentos de bosque, permitiendo el libre tránsito
                         de nuestra fauna.
                     </p>
@@ -284,11 +287,11 @@
 
                 <!-- Propósito -->
                 <div
-                    class="glass-premium p-10 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    class="glass-premium p-10 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
                     <span
-                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">diversity_3</span>
-                    <h3 class="font-heading text-xl text-white font-bold mb-4 tracking-tight">El Propósito</h3>
-                    <p class="text-white/40 text-sm font-light leading-relaxed">
+                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">diversity_3</span>
+                    <h3 class="font-heading text-xl text-primary font-bold mb-4 tracking-tight">El Propósito</h3>
+                    <p class="text-primary/40 text-sm font-light leading-relaxed">
                         Empoderar a la comunidad. Queremos que cada persona sienta la tierra en sus manos y sea el
                         cambio real.
                     </p>
@@ -296,11 +299,11 @@
 
                 <!-- Relevancia -->
                 <div
-                    class="glass-premium p-10 rounded-[2.5rem] transition-premium hover-glow group border border-white/5">
+                    class="glass-premium p-10 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
                     <span
-                        class="material-symbols-outlined text-4xl mb-8 text-white/40 group-hover:text-accent transition-premium">water_eco</span>
-                    <h3 class="font-heading text-xl text-white font-bold mb-4 tracking-tight">La Relevancia</h3>
-                    <p class="text-white/40 text-sm font-light leading-relaxed">
+                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">water_eco</span>
+                    <h3 class="font-heading text-xl text-primary font-bold mb-4 tracking-tight">La Relevancia</h3>
+                    <p class="text-primary/40 text-sm font-light leading-relaxed">
                         Los árboles son fábricas de agua. Al reforestar cuencas protegemos los nacimientos que nos dan
                         vida.
                     </p>
@@ -312,49 +315,53 @@
     </section>
 
     <!-- Ecological Impact Section -->
-    <section class="py-24 relative overflow-hidden bg-black">
+    <section class="py-24 relative overflow-hidden bg-background">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid md:grid-cols-2 gap-24 items-center">
                 <div>
-                    <span class="text-accent text-[10px] font-bold tracking-widest uppercase mb-4 block">Impacto
+                    <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Impacto
                         Real</span>
-                    <h2 class="font-heading text-4xl md:text-6xl text-white font-extrabold tracking-tightest mb-12">El
+                    <h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest mb-12">El
                         Poder de Una Sola Semilla</h2>
 
                     <div class="space-y-12">
                         <!-- Impact Item 1 -->
                         <div class="flex gap-8 group">
                             <div
-                                class="w-12 h-12 glass-premium rounded-full flex items-center justify-center border border-white/5 transition-premium group-hover:bg-accent group-hover:border-accent">
-                                <span class="material-symbols-outlined text-white">grass</span>
+                                class="w-12 h-12 glass-premium rounded-full flex items-center justify-center border border-primary/5 transition-premium group-hover:bg-secondary group-hover:border-secondary">
+                                <span
+                                    class="material-symbols-outlined text-primary group-hover:text-[#FDFBF7]">grass</span>
                             </div>
                             <div>
-                                <h4 class="font-heading text-lg text-white font-bold mb-2">Suelo Vivo</h4>
-                                <p class="text-white/40 text-sm font-light leading-relaxed">Evita la erosión. Las raíces
+                                <h4 class="font-heading text-lg text-primary font-bold mb-2">Suelo Vivo</h4>
+                                <p class="text-primary/40 text-sm font-light leading-relaxed">Evita la erosión. Las
+                                    raíces
                                     sostienen la tierra y nutren el suelo con cada hoja que cae.</p>
                             </div>
                         </div>
                         <!-- Impact Item 2 -->
                         <div class="flex gap-8 group">
                             <div
-                                class="w-12 h-12 glass-premium rounded-full flex items-center justify-center border border-white/5 transition-premium group-hover:bg-accent group-hover:border-accent">
-                                <span class="material-symbols-outlined text-white">air</span>
+                                class="w-12 h-12 glass-premium rounded-full flex items-center justify-center border border-primary/5 transition-premium group-hover:bg-secondary group-hover:border-secondary">
+                                <span
+                                    class="material-symbols-outlined text-primary group-hover:text-[#FDFBF7]">air</span>
                             </div>
                             <div>
-                                <h4 class="font-heading text-lg text-white font-bold mb-2">Aire Puro</h4>
-                                <p class="text-white/40 text-sm font-light leading-relaxed">Un árbol maduro absorbe
+                                <h4 class="font-heading text-lg text-primary font-bold mb-2">Aire Puro</h4>
+                                <p class="text-primary/40 text-sm font-light leading-relaxed">Un árbol maduro absorbe
                                     hasta 22kg de CO2 al año, liberando oxígeno puro.</p>
                             </div>
                         </div>
                         <!-- Impact Item 3 -->
                         <div class="flex gap-8 group">
                             <div
-                                class="w-12 h-12 glass-premium rounded-full flex items-center justify-center border border-white/5 transition-premium group-hover:bg-accent group-hover:border-accent">
-                                <span class="material-symbols-outlined text-white">water_drop</span>
+                                class="w-12 h-12 glass-premium rounded-full flex items-center justify-center border border-primary/5 transition-premium group-hover:bg-secondary group-hover:border-secondary">
+                                <span
+                                    class="material-symbols-outlined text-primary group-hover:text-[#FDFBF7]">water_drop</span>
                             </div>
                             <div>
-                                <h4 class="font-heading text-lg text-white font-bold mb-2">Ciclo del Agua</h4>
-                                <p class="text-white/40 text-sm font-light leading-relaxed">Esponjas naturales que
+                                <h4 class="font-heading text-lg text-primary font-bold mb-2">Ciclo del Agua</h4>
+                                <p class="text-primary/40 text-sm font-light leading-relaxed">Esponjas naturales que
                                     filtran el agua de lluvia y regulan el ciclo hídrico.</p>
                             </div>
                         </div>
@@ -362,15 +369,15 @@
                 </div>
 
                 <div
-                    class="glass-premium p-16 rounded-[4rem] text-center border border-white/5 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-accent/5 blur-[80px] -z-10"></div>
+                    class="glass-premium p-16 rounded-[4rem] text-center border border-primary/5 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-secondary/5 blur-[80px] -z-10"></div>
                     <span
-                        class="material-symbols-outlined text-6xl text-white/20 mb-10 font-light italic">format_quote</span>
+                        class="material-symbols-outlined text-6xl text-primary/20 mb-10 font-light italic">format_quote</span>
                     <blockquote
-                        class="font-heading text-3xl md:text-4xl text-white font-light italic leading-tight mb-8">
+                        class="font-heading text-3xl md:text-4xl text-primary font-light italic leading-tight mb-8">
                         "Aquel que planta un árbol,<br>planta una esperanza."
                     </blockquote>
-                    <p class="text-[10px] uppercase tracking-widest text-accent font-bold">
+                    <p class="text-[10px] uppercase tracking-widest text-secondary font-bold">
                         — Lucy Larcom
                     </p>
                 </div>
@@ -379,23 +386,23 @@
     </section>
 
     <!-- Map Section -->
-    <section class="py-24 relative overflow-hidden bg-black">
+    <section class="py-24 relative overflow-hidden bg-background">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="relative rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl">
+            <div class="relative rounded-[3rem] overflow-hidden border border-primary/5 shadow-2xl">
                 <!-- Search Control -->
                 <div class="absolute top-8 left-8 z-[1000] w-full max-w-sm">
                     <div class="relative group">
                         <div class="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
                             <span
-                                class="material-symbols-outlined text-white/20 group-focus-within:text-accent transition-premium">search</span>
+                                class="material-symbols-outlined text-primary/20 group-focus-within:text-secondary transition-premium">search</span>
                         </div>
                         <input type="text" id="map-search"
-                            class="block w-full pl-16 pr-6 py-4 bg-black/60 backdrop-blur-xl border border-white/10 rounded-2xl text-white outline-none focus:border-accent transition-premium text-sm"
+                            class="block w-full pl-16 pr-6 py-4 bg-background/60 backdrop-blur-xl border border-primary/10 rounded-2xl text-primary outline-none focus:border-secondary transition-premium text-sm"
                             placeholder="Buscar zona de siembra..." autocomplete="off">
 
                         <!-- Search Results -->
                         <div id="search-results"
-                            class="hidden absolute top-full left-0 right-0 mt-4 bg-black/80 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden max-h-64 overflow-y-auto">
+                            class="hidden absolute top-full left-0 right-0 mt-4 bg-background/80 backdrop-blur-2xl border border-primary/10 rounded-2xl shadow-2xl overflow-hidden max-h-64 overflow-y-auto">
                         </div>
                     </div>
                 </div>
@@ -406,58 +413,61 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-24 px-6 lg:px-12 border-t border-white/5 relative bg-black">
+    <footer class="py-24 px-6 lg:px-12 border-t border-primary/5 relative bg-background">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
                 <div class="md:col-span-1">
                     <a href="index.html"
                         class="font-heading text-2xl font-bold tracking-tightest uppercase text-gradient mb-8 block">Pachamama</a>
-                    <p class="text-white/30 font-light leading-relaxed">
+                    <p class="text-primary/30 font-light leading-relaxed">
                         Elevando el ritual del baño a una experiencia de lujo botánico y consciencia natural.
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-8">Navegación</h4>
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Navegación</h4>
                     <ul class="space-y-4">
                         <li><a href="coleccion.html"
-                                class="text-sm text-white/60 hover:text-white transition-premium">Colección</a></li>
+                                class="text-sm text-primary/60 hover:text-primary transition-premium">Colección</a></li>
                         <li><a href="filosofia.html"
-                                class="text-sm text-white/60 hover:text-white transition-premium">Filosofía</a></li>
-                        <li><a href="map.html" class="text-sm text-white/60 hover:text-white transition-premium">Zonas
+                                class="text-sm text-primary/60 hover:text-primary transition-premium">Filosofía</a></li>
+                        <li><a href="map.html"
+                                class="text-sm text-primary/60 hover:text-primary transition-premium">Zonas
                                 de Siembra</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-8">Contacto</h4>
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Contacto</h4>
                     <ul class="space-y-4">
                         <li><a href="https://wa.link/d79bce"
-                                class="text-sm text-white/60 hover:text-white transition-premium">WhatsApp Directo</a>
+                                class="text-sm text-primary/60 hover:text-primary transition-premium">WhatsApp
+                                Directo</a>
                         </li>
-                        <li><a href="#" class="text-sm text-white/60 hover:text-white transition-premium">Instagram</a>
+                        <li><a href="#"
+                                class="text-sm text-primary/60 hover:text-primary transition-premium">Instagram</a>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-white/40 mb-8">Newsletter</h4>
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Newsletter</h4>
                     <div class="relative group">
                         <input type="email" placeholder="Email"
-                            class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-3 text-sm focus:outline-none focus:border-accent transition-premium">
+                            class="w-full bg-primary/5 border border-primary/10 rounded-full px-6 py-3 text-sm focus:outline-none focus:border-secondary transition-premium">
                         <button
-                            class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white text-black flex items-center justify-center">
+                            class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary text-[#FDFBF7] flex items-center justify-center">
                             <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 gap-6">
-                <p class="text-[10px] uppercase tracking-widest text-white/20">© 2024 Pachamama. Todos los derechos
+            <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-primary/5 gap-6">
+                <p class="text-[10px] uppercase tracking-widest text-primary/20">© 2024 Pachamama. Todos los derechos
                     reservados.</p>
                 <div class="flex gap-8">
                     <a href="#"
-                        class="text-[10px] uppercase tracking-widest text-white/20 hover:text-white/40 transition-premium">Términos</a>
+                        class="text-[10px] uppercase tracking-widest text-primary/20 hover:text-primary/40 transition-premium">Términos</a>
                     <a href="#"
-                        class="text-[10px] uppercase tracking-widest text-white/20 hover:text-white/40 transition-premium">Privacidad</a>
+                        class="text-[10px] uppercase tracking-widest text-primary/20 hover:text-primary/40 transition-premium">Privacidad</a>
                 </div>
             </div>
         </div>
