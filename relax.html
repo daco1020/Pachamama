@@ -143,387 +143,52 @@
             background-color: #FDFBF7;
             color: #2D2926;
         }
-    </style>
-</head>
 
-<body class="bg-[#FDFBF7] text-[#2D2926] font-sans antialiased selection:bg-accent/30 overflow-x-hidden">
+        < !-- Meta Pixel Code --><script> !function(f, b, e, v, n, t, s) {
+            if(f.fbq)return;
 
-    <!-- Aura Background -->
-    <div class="aura-bg">
-        <div class="aura-glow -top-[20%] -left-[10%] scale-150 opacity-40"></div>
-        <div class="aura-glow top-[40%] -right-[20%] scale-125 opacity-20"
-            style="background: radial-gradient(circle, rgba(179, 139, 109, 0.08) 0%, transparent 70%); animation-name: float-reverse; animation-duration: 25s;">
-        </div>
-        <div class="aura-glow -bottom-[20%] left-[10%] scale-150 opacity-30"
-            style="background: radial-gradient(circle, rgba(141, 164, 126, 0.05) 0%, transparent 70%); animation-duration: 30s;">
-        </div>
-    </div>
+            n=f.fbq=function() {
+                n.callMethod? n.callMethod.apply(n, arguments): n.queue.push(arguments)
+            }
 
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] max-w-4xl">
-        <div class="glass-premium rounded-3xl px-8 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-12">
-                <a href="index.html"
-                    class="font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a>
-                <div class="hidden md:flex items-center gap-8">
-                    <a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
-                        href="coleccion.html">Colección</a>
-                    <a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
-                        href="filosofia.html">Filosofía</a>
-                </div>
-            </div>
-            <div class="flex items-center gap-6">
-                <a href="https://wa.link/d79bce" target="_blank"
-                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-primary text-[#FDFBF7] px-6 py-2 rounded-full hover:bg-primary/90 transition-premium">
-                    Comprar
-                </a>
-                <button class="md:hidden text-primary">
-                    <span class="material-symbols-outlined font-light">menu</span>
-                </button>
-            </div>
-        </div>
-    </nav>
+            ;
+            if( !f._fbq)f._fbq=n;
+            n.push=n;
+            n.loaded= !0;
+            n.version='2.0';
+            n.queue=[];
+            t=b.createElement(e);
+            t.async= !0;
+            t.src=v;
+            s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }
 
-    <header class="relative pt-48 pb-16 lg:pt-56 lg:pb-24 flex flex-col items-center justify-center text-center px-6">
-        <div class="max-w-4xl mx-auto">
-            <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Avena &
-                Lavanda</span>
-            <h1
-                class="font-heading text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tightest mb-8 leading-[0.9] text-gradient">
-                Relax
-            </h1>
-            <p class="text-lg md:text-xl text-primary/40 max-w-2xl mx-auto font-light leading-relaxed mb-12">
-                Sumérgete en una experiencia de calma profunda. Formulado con avena y lavanda para nutrir pieles
-                sensibles y prepararte para un descanso reparador.
-            </p>
-            <a href="https://wa.link/d79bce" target="_blank"
-                class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">
-                Ordenar Ahora
-            </a>
-        </div>
-    </header>
-
-    <!-- Ingredients Section -->
-    <section class="py-32 relative overflow-hidden bg-background">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-primary/5 pb-12">
-                <div class="max-w-2xl">
-                    <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Ingredientes
-                        Activos</span>
-                    <h2
-                        class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest leading-tight">
-                        La Fórmula Perfecta</h2>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Avena -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">grain</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Avena</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">Rica en beta-glucanos que forman una película
-                        protectora. Alivia la irritación y reduce el enrojecimiento.</p>
-                </div>
-                <!-- Lavanda -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">spa</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Lavanda</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">Aceite esencial calmante que reduce el estrés
-                        y
-                        promueve la relajación profunda.</p>
-                </div>
-                <!-- Aloe Vera -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">eco</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Aloe Vera</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">Vitaminas A, C y E con propiedades
-                        regeneradoras
-                        que aportan frescura inmediata.</p>
-                </div>
-                <!-- Miel -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">opacity</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Miel Pura</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">Humectante natural que atrae y retiene la
-                        humedad, dejando la piel suave y luminosa.</p>
-                </div>
-                <!-- Vitamina E -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">light_mode</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Vitamina E</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">Antioxidante poderoso que protege contra
-                        radicales libres y mejora la elasticidad.</p>
-                </div>
-                <!-- Seda -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">filter_drama</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Seda</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">Aminoácidos que suavizan profundamente,
-                        dejando
-                        un acabado sedoso y refinado.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="py-24 bg-background">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="text-center mb-16">
-                <span
-                    class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Beneficios</span>
-                <h2 class="font-heading text-4xl text-primary font-extrabold tracking-tightest">Diseñado para Ti</h2>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
-                <div class="text-center group">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">self_improvement</span>
-                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Calma Profunda
-                    </h4>
-                </div>
-                <div class="text-center group">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">nightlight</span>
-                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Uso Nocturno
-                    </h4>
-                </div>
-                <div class="text-center group">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">sentiment_satisfied</span>
-                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Pieles
-                        Sensibles
-                    </h4>
-                </div>
-                <div class="text-center group">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">texture</span>
-                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Exfoliación
-                        Suave
-                    </h4>
-                </div>
-                <div class="text-center group">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">air</span>
-                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Aroma Relajante
-                    </h4>
-                </div>
-                <div class="text-center group">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">psychiatry</span>
-                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">100% Vegano
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-32 relative text-center">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2
-                class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest mb-8 leading-tight">
-                ¿Listo para Relajarte?</h2>
-            <p class="text-primary/40 text-lg md:text-xl font-light leading-relaxed mb-12 max-w-2xl mx-auto">
-                Ordena tu jabón Relax hoy y transforma tu rutina de cuidado personal en un ritual de bienestar profundo.
-            </p>
-            <a href="https://wa.link/d79bce" target="_blank"
-                class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">
-                Ordenar por WhatsApp
-            </a>
-        </div>
-    </section>
-
-    <!-- Customer Reviews Section -->
-    <section class="py-32 bg-background border-t border-primary/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-primary/5 pb-12">
-                <div class="max-w-2xl">
-                    <span
-                        class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Testimonios</span>
-                    <h2
-                        class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest leading-tight">
-                        Reseñas de Clientes</h2>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-24">
-                <!-- Summary Column -->
-                <div class="lg:col-span-4">
-                    <div class="glass-premium p-12 rounded-[3rem] border border-primary/5">
-                        <div class="mb-10">
-                            <div class="flex items-baseline gap-4 mb-4">
-                                <span class="text-7xl font-extrabold text-primary tracking-tightest">4.8</span>
-                            </div>
-                            <div class="flex items-center gap-1 mb-4">
-                                <span class="material-symbols-outlined text-secondary fill-1 text-2xl">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-2xl">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-2xl">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-2xl">star</span>
-                                <span class="material-symbols-outlined text-secondary text-2xl"
-                                    style="font-variation-settings: 'FILL' 0.5;">star_half</span>
-                            </div>
-                            <p class="text-sm text-primary/30 font-light">Basado en 124 experiencias reales.</p>
-                        </div>
-
-                        <!-- Rating Bars -->
-                        <div class="space-y-6 mb-12">
-                            <div class="flex items-center gap-6">
-                                <span class="text-[10px] font-bold text-primary/40 w-4">5</span>
-                                <div class="flex-grow h-1.5 bg-primary/5 rounded-full overflow-hidden">
-                                    <div class="h-full bg-secondary rounded-full shadow-glow" style="width: 85%"></div>
-                                </div>
-                                <span class="text-[10px] font-bold text-primary/40 w-8 text-right">85%</span>
-                            </div>
-                            <div class="flex items-center gap-6">
-                                <span class="text-[10px] font-bold text-primary/40 w-4">4</span>
-                                <div class="flex-grow h-1.5 bg-primary/5 rounded-full overflow-hidden">
-                                    <div class="h-full bg-secondary rounded-full shadow-glow" style="width: 15%"></div>
-                                </div>
-                                <span class="text-[10px] font-bold text-primary/40 w-8 text-right">15%</span>
-                            </div>
-                        </div>
-
-                        <button
-                            class="w-full py-5 bg-primary text-[#FDFBF7] rounded-full text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">
-                            Escribir una Reseña
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Reviews List Column -->
-                <div class="lg:col-span-8 space-y-20">
-                    <!-- Review 1 -->
-                    <div class="group">
-                        <div class="flex justify-between items-start mb-8">
-                            <div class="flex items-center gap-6">
-                                <div
-                                    class="w-12 h-12 rounded-full glass-premium border border-primary/10 flex items-center justify-center text-xs font-bold text-primary">
-                                    JD</div>
-                                <div>
-                                    <span class="block font-heading font-bold text-primary text-lg">Juana Díaz</span>
-                                    <span class="text-[10px] uppercase tracking-widest text-primary/20">hace 2
-                                        días</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-1">
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                            </div>
-                        </div>
-                        <h4 class="font-heading font-bold text-primary text-xl mb-4">¡Huele increíble!</h4>
-                        <p class="text-primary/40 text-lg font-light leading-relaxed">
-                            Este jabón es increíblemente hidratante. La avena proporciona la cantidad justa de
-                            exfoliación sin ser demasiado agresiva para mi piel sensible. ¡Lo compraré de nuevo!
-                        </p>
-                    </div>
-
-                    <!-- Review 2 -->
-                    <div class="group">
-                        <div class="flex justify-between items-start mb-8">
-                            <div class="flex items-center gap-6">
-                                <div
-                                    class="w-12 h-12 rounded-full glass-premium border border-primary/10 flex items-center justify-center text-xs font-bold text-primary">
-                                    MS</div>
-                                <div>
-                                    <span class="block font-heading font-bold text-primary text-lg">Mateo Sánchez</span>
-                                    <span class="text-[10px] uppercase tracking-widest text-primary/20">hace 1
-                                        semana</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-1">
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                            </div>
-                        </div>
-                        <h4 class="font-heading font-bold text-primary text-xl mb-4">Increíble suavidad y aroma</h4>
-                        <p class="text-primary/40 text-lg font-light leading-relaxed">
-                            Me encanta el aroma y la suavidad que deja en mi piel. Es un producto de una calidad
-                            excepcional que se ha vuelto indispensable en mi baño. ¡Totalmente recomendado!
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-24 px-6 lg:px-12 border-t border-primary/5 relative bg-background">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
-                <div class="md:col-span-1">
-                    <a href="index.html"
-                        class="font-heading text-2xl font-bold tracking-tightest uppercase text-gradient mb-8 block">Pachamama</a>
-                    <p class="text-primary/30 font-light leading-relaxed">
-                        Elevando el ritual del baño a una experiencia de lujo botánico y consciencia natural.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Navegación</h4>
-                    <ul class="space-y-4">
-                        <li><a href="coleccion.html"
-                                class="text-sm text-primary/60 hover:text-primary transition-premium">Colección</a></li>
-                        <li><a href="filosofia.html"
-                                class="text-sm text-primary/60 hover:text-primary transition-premium">Filosofía</a></li>
-                        <li><a href="map.html"
-                                class="text-sm text-primary/60 hover:text-primary transition-premium">Zonas
-                                de Siembra</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Contacto</h4>
-                    <ul class="space-y-4">
-                        <li><a href="https://wa.link/d79bce"
-                                class="text-sm text-primary/60 hover:text-primary transition-premium">WhatsApp
-                                Directo</a>
-                        </li>
-                        <li><a href="#"
-                                class="text-sm text-primary/60 hover:text-primary transition-premium">Instagram</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Newsletter</h4>
-                    <div class="relative group">
-                        <input type="email" placeholder="Email"
-                            class="w-full bg-primary/5 border border-primary/10 rounded-full px-6 py-3 text-sm focus:outline-none focus:border-secondary transition-premium">
-                        <button
-                            class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary text-[#FDFBF7] flex items-center justify-center">
-                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-primary/5 gap-6">
-                <p class="text-[10px] uppercase tracking-widest text-primary/20">© 2024 Pachamama. Todos los derechos
-                    reservados.</p>
-                <div class="flex gap-8">
-                    <a href="#"
-                        class="text-[10px] uppercase tracking-widest text-primary/20 hover:text-primary/40 transition-premium">Términos</a>
-                    <a href="#"
-                        class="text-[10px] uppercase tracking-widest text-primary/20 hover:text-primary/40 transition-premium">Privacidad</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="sparkle.js"></script>
-</body>
-
-</html>
+        (window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1540040826610419');
+        fbq('track', 'PageView');
+        </script><noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1540040826610419&ev=PageView&noscript=1"
+        /></noscript>< !-- End Meta Pixel Code --></head><body class="bg-[#FDFBF7] text-[#2D2926] font-sans antialiased selection:bg-accent/30 overflow-x-hidden">< !-- Aura Background --><div class="aura-bg"><div class="aura-glow -top-[20%] -left-[10%] scale-150 opacity-40"></div><div class="aura-glow top-[40%] -right-[20%] scale-125 opacity-20"
+        style="background: radial-gradient(circle, rgba(179, 139, 109, 0.08) 0%, transparent 70%); animation-name: float-reverse; animation-duration: 25s;"></div><div class="aura-glow -bottom-[20%] left-[10%] scale-150 opacity-30"
+        style="background: radial-gradient(circle, rgba(141, 164, 126, 0.05) 0%, transparent 70%); animation-duration: 30s;"></div></div><nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] max-w-4xl"><div class="glass-premium rounded-3xl px-8 py-4 flex justify-between items-center"><div class="flex items-center gap-12"><a href="index.html"
+        class="font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a><div class="hidden md:flex items-center gap-8"><a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
+        href="coleccion.html">Colección</a><a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
+        href="filosofia.html">Filosofía</a></div></div><div class="flex items-center gap-6"><a href="https://wa.link/d79bce" target="_blank"
+        class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-primary text-[#FDFBF7] px-6 py-2 rounded-full hover:bg-primary/90 transition-premium">Comprar </a><button class="md:hidden text-primary"><span class="material-symbols-outlined font-light">menu</span></button></div></div></nav><header class="relative pt-48 pb-16 lg:pt-56 lg:pb-24 flex flex-col items-center justify-center text-center px-6"><div class="max-w-4xl mx-auto"><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Avena & Lavanda</span><h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tightest mb-8 leading-[0.9] text-gradient">Relax </h1><p class="text-lg md:text-xl text-primary/40 max-w-2xl mx-auto font-light leading-relaxed mb-12">Sumérgete en una experiencia de calma profunda. Formulado con avena y lavanda para nutrir pieles sensibles y prepararte para un descanso reparador. </p><a href="https://wa.link/d79bce" target="_blank"
+        class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">Ordenar Ahora </a></div></header>< !-- Ingredients Section --><section class="py-32 relative overflow-hidden bg-background"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-primary/5 pb-12"><div class="max-w-2xl"><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Ingredientes Activos</span><h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest leading-tight">La Fórmula Perfecta</h2></div></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">< !-- Avena --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">grain</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Avena</h3><p class="text-primary/40 font-light leading-relaxed">Rica en beta-glucanos que forman una película protectora. Alivia la irritación y reduce el enrojecimiento.</p></div>< !-- Lavanda --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">spa</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Lavanda</h3><p class="text-primary/40 font-light leading-relaxed">Aceite esencial calmante que reduce el estrés y promueve la relajación profunda.</p></div>< !-- Aloe Vera --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">eco</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Aloe Vera</h3><p class="text-primary/40 font-light leading-relaxed">Vitaminas A,
+        C y E con propiedades regeneradoras que aportan frescura inmediata.</p></div>< !-- Miel --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">opacity</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Miel Pura</h3><p class="text-primary/40 font-light leading-relaxed">Humectante natural que atrae y retiene la humedad,
+        dejando la piel suave y luminosa.</p></div>< !-- Vitamina E --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">light_mode</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Vitamina E</h3><p class="text-primary/40 font-light leading-relaxed">Antioxidante poderoso que protege contra radicales libres y mejora la elasticidad.</p></div>< !-- Seda --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">filter_drama</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Seda</h3><p class="text-primary/40 font-light leading-relaxed">Aminoácidos que suavizan profundamente,
+        dejando un acabado sedoso y refinado.</p></div></div></div></section>< !-- Benefits Section --><section class="py-24 bg-background"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="text-center mb-16"><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Beneficios</span><h2 class="font-heading text-4xl text-primary font-extrabold tracking-tightest">Diseñado para Ti</h2></div><div class="grid grid-cols-2 md:grid-cols-3 gap-12"><div class="text-center group"><span class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">self_improvement</span><h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Calma Profunda </h4></div><div class="text-center group"><span class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">nightlight</span><h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Uso Nocturno </h4></div><div class="text-center group"><span class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">sentiment_satisfied</span><h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Pieles Sensibles </h4></div><div class="text-center group"><span class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">texture</span><h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Exfoliación Suave </h4></div><div class="text-center group"><span class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">air</span><h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Aroma Relajante </h4></div><div class="text-center group"><span class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">psychiatry</span><h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">100% Vegano </h4></div></div></div></section>< !-- CTA Section --><section class="py-32 relative text-center"><div class="max-w-4xl mx-auto px-6"><h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest mb-8 leading-tight">¿Listo para Relajarte?</h2><p class="text-primary/40 text-lg md:text-xl font-light leading-relaxed mb-12 max-w-2xl mx-auto">Ordena tu jabón Relax hoy y transforma tu rutina de cuidado personal en un ritual de bienestar profundo. </p><a href="https://wa.link/d79bce" target="_blank"
+        class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">Ordenar por WhatsApp </a></div></section>< !-- Customer Reviews Section --><section class="py-32 bg-background border-t border-primary/5"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-primary/5 pb-12"><div class="max-w-2xl"><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Testimonios</span><h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest leading-tight">Reseñas de Clientes</h2></div></div><div class="grid grid-cols-1 lg:grid-cols-12 gap-24">< !-- Summary Column --><div class="lg:col-span-4"><div class="glass-premium p-12 rounded-[3rem] border border-primary/5"><div class="mb-10"><div class="flex items-baseline gap-4 mb-4"><span class="text-7xl font-extrabold text-primary tracking-tightest">4.8</span></div><div class="flex items-center gap-1 mb-4"><span class="material-symbols-outlined text-secondary fill-1 text-2xl">star</span><span class="material-symbols-outlined text-secondary fill-1 text-2xl">star</span><span class="material-symbols-outlined text-secondary fill-1 text-2xl">star</span><span class="material-symbols-outlined text-secondary fill-1 text-2xl">star</span><span class="material-symbols-outlined text-secondary text-2xl"
+        style="font-variation-settings: 'FILL' 0.5;">star_half</span></div><p class="text-sm text-primary/30 font-light">Basado en 124 experiencias reales.</p></div>< !-- Rating Bars --><div class="space-y-6 mb-12"><div class="flex items-center gap-6"><span class="text-[10px] font-bold text-primary/40 w-4">5</span><div class="flex-grow h-1.5 bg-primary/5 rounded-full overflow-hidden"><div class="h-full bg-secondary rounded-full shadow-glow" style="width: 85%"></div></div><span class="text-[10px] font-bold text-primary/40 w-8 text-right">85%</span></div><div class="flex items-center gap-6"><span class="text-[10px] font-bold text-primary/40 w-4">4</span><div class="flex-grow h-1.5 bg-primary/5 rounded-full overflow-hidden"><div class="h-full bg-secondary rounded-full shadow-glow" style="width: 15%"></div></div><span class="text-[10px] font-bold text-primary/40 w-8 text-right">15%</span></div></div><button class="w-full py-5 bg-primary text-[#FDFBF7] rounded-full text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">Escribir una Reseña </button></div></div>< !-- Reviews List Column --><div class="lg:col-span-8 space-y-20">< !-- Review 1 --><div class="group"><div class="flex justify-between items-start mb-8"><div class="flex items-center gap-6"><div class="w-12 h-12 rounded-full glass-premium border border-primary/10 flex items-center justify-center text-xs font-bold text-primary">JD</div><div><span class="block font-heading font-bold text-primary text-lg">Juana Díaz</span><span class="text-[10px] uppercase tracking-widest text-primary/20">hace 2 días</span></div></div><div class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span></div></div><h4 class="font-heading font-bold text-primary text-xl mb-4">¡Huele increíble !</h4><p class="text-primary/40 text-lg font-light leading-relaxed">Este jabón es increíblemente hidratante. La avena proporciona la cantidad justa de exfoliación sin ser demasiado agresiva para mi piel sensible. ¡Lo compraré de nuevo ! </p></div>< !-- Review 2 --><div class="group"><div class="flex justify-between items-start mb-8"><div class="flex items-center gap-6"><div class="w-12 h-12 rounded-full glass-premium border border-primary/10 flex items-center justify-center text-xs font-bold text-primary">MS</div><div><span class="block font-heading font-bold text-primary text-lg">Mateo Sánchez</span><span class="text-[10px] uppercase tracking-widest text-primary/20">hace 1 semana</span></div></div><div class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span></div></div><h4 class="font-heading font-bold text-primary text-xl mb-4">Increíble suavidad y aroma</h4><p class="text-primary/40 text-lg font-light leading-relaxed">Me encanta el aroma y la suavidad que deja en mi piel. Es un producto de una calidad excepcional que se ha vuelto indispensable en mi baño. ¡Totalmente recomendado ! </p></div></div></div></div></section>< !-- Footer --><footer class="py-24 px-6 lg:px-12 border-t border-primary/5 relative bg-background"><div class="max-w-7xl mx-auto"><div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24"><div class="md:col-span-1"><a href="index.html"
+        class="font-heading text-2xl font-bold tracking-tightest uppercase text-gradient mb-8 block">Pachamama</a><p class="text-primary/30 font-light leading-relaxed">Elevando el ritual del baño a una experiencia de lujo botánico y consciencia natural. </p></div><div><h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Navegación</h4><ul class="space-y-4"><li><a href="coleccion.html"
+        class="text-sm text-primary/60 hover:text-primary transition-premium">Colección</a></li><li><a href="filosofia.html"
+        class="text-sm text-primary/60 hover:text-primary transition-premium">Filosofía</a></li><li><a href="map.html"
+        class="text-sm text-primary/60 hover:text-primary transition-premium">Zonas de Siembra</a></li></ul></div><div><h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Contacto</h4><ul class="space-y-4"><li><a href="https://wa.link/d79bce"
+        class="text-sm text-primary/60 hover:text-primary transition-premium">WhatsApp Directo</a></li><li><a href="#"
+        class="text-sm text-primary/60 hover:text-primary transition-premium">Instagram</a></li></ul></div><div><h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Newsletter</h4><div class="relative group"><input type="email" placeholder="Email"
+        class="w-full bg-primary/5 border border-primary/10 rounded-full px-6 py-3 text-sm focus:outline-none focus:border-secondary transition-premium"><button class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary text-[#FDFBF7] flex items-center justify-center"><span class="material-symbols-outlined text-sm">arrow_forward</span></button></div></div></div><div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-primary/5 gap-6"><p class="text-[10px] uppercase tracking-widest text-primary/20">© 2024 Pachamama. Todos los derechos reservados.</p><div class="flex gap-8"><a href="#"
+        class="text-[10px] uppercase tracking-widest text-primary/20 hover:text-primary/40 transition-premium">Términos</a><a href="#"
+        class="text-[10px] uppercase tracking-widest text-primary/20 hover:text-primary/40 transition-premium">Privacidad</a></div></div></div></footer><script src="sparkle.js"></script></body></html>

@@ -134,451 +134,65 @@
             background-color: #FDFBF7;
             color: #2D2926;
         }
-    </style>
-</head>
 
-<body class="bg-[#FDFBF7] text-[#2D2926] font-sans antialiased selection:bg-accent/30 overflow-x-hidden">
+        < !-- Meta Pixel Code --><script> !function(f, b, e, v, n, t, s) {
+            if(f.fbq)return;
 
-    <!-- Aura Background -->
-    <div class="aura-bg">
-        <div class="aura-glow -top-[20%] -left-[10%] scale-150 opacity-40"></div>
-        <div class="aura-glow top-[40%] -right-[20%] scale-125 opacity-20"
-            style="background: radial-gradient(circle, rgba(179, 139, 109, 0.08) 0%, transparent 70%); animation-name: float-reverse; animation-duration: 25s;">
-        </div>
-        <div class="aura-glow -bottom-[20%] left-[10%] scale-150 opacity-30"
-            style="background: radial-gradient(circle, rgba(141, 164, 126, 0.05) 0%, transparent 70%); animation-duration: 30s;">
-        </div>
-    </div>
+            n=f.fbq=function() {
+                n.callMethod? n.callMethod.apply(n, arguments): n.queue.push(arguments)
+            }
 
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] max-w-4xl">
-        <div class="glass-premium rounded-3xl px-8 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-12">
-                <a href="index.html"
-                    class="font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a>
-                <div class="hidden md:flex items-center gap-8">
-                    <a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
-                        href="coleccion.html">Colección</a>
-                    <a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
-                        href="filosofia.html">Filosofía</a>
-                </div>
-            </div>
-            <div class="flex items-center gap-6">
-                <a href="https://wa.link/d79bce" target="_blank"
-                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-primary text-[#FDFBF7] px-6 py-2 rounded-full hover:bg-primary/90 transition-premium">
-                    Comprar
-                </a>
-                <button class="md:hidden text-primary">
-                    <span class="material-symbols-outlined font-light">menu</span>
-                </button>
-            </div>
-        </div>
-    </nav>
+            ;
+            if( !f._fbq)f._fbq=n;
+            n.push=n;
+            n.loaded= !0;
+            n.version='2.0';
+            n.queue=[];
+            t=b.createElement(e);
+            t.async= !0;
+            t.src=v;
+            s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }
 
-    <!-- Hero Section -->
-    <header class="relative pt-48 pb-16 lg:pt-56 lg:pb-24 flex flex-col items-center justify-center text-center px-6">
-        <div class="max-w-4xl mx-auto">
-            <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Nuestra
-                Filosofía</span>
-            <h1
-                class="font-heading text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tightest mb-8 leading-[0.9] text-gradient">
-                La Naturaleza<br />
-                <span class="opacity-50 font-light italic">Como Guía</span>
-            </h1>
-            <p class="text-lg md:text-xl text-primary/40 max-w-2xl mx-auto font-light leading-relaxed">
-                Creemos en el poder de lo natural, lo artesanal y lo sostenible. Cada jabón Pachamama es una promesa de
-                calidad, respeto por el medio ambiente y cuidado auténtico.
-            </p>
-        </div>
-    </header>
-
-    <!-- Core Values Section -->
-    <section class="py-24 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Sostenibilidad -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">eco</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Sostenibilidad</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">
-                        Cada decisión considera su impacto ambiental. Desde ingredientes biodegradables hasta empaques
-                        reciclables.
-                    </p>
-                </div>
-                <!-- Calidad -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">verified</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Calidad Premium</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">
-                        Seleccionamos cada ingrediente con el mayor cuidado, garantizando la pureza y eficacia de cada
-                        componente.
-                    </p>
-                </div>
-                <!-- Artesanal -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">cookie</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">100% Artesanal</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">
-                        Elaborado a mano en pequeños lotes, manteniendo un control de calidad excepcional y piezas
-                        únicas.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Story Section -->
-    <section class="py-24 relative overflow-hidden bg-background">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid md:grid-cols-2 gap-12 md:gap-24 items-center">
-                <div>
-                    <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Nuestra
-                        Historia</span>
-                    <h2
-                        class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest mb-8 leading-tight">
-                        Nacimos de la Tierra</h2>
-                    <p class="text-primary/40 text-lg font-light leading-relaxed mb-6">
-                        Pachamama nació del deseo de reconectar con lo esencial. En un mundo saturado de productos
-                        industriales, buscamos recuperar la tradición del jabón artesanal, enriquecido con el
-                        conocimiento de la botánica moderna.
-                    </p>
-                    <p class="text-primary/40 text-lg font-light leading-relaxed mb-6">
-                        Nuestro nombre rinde homenaje a la Madre Tierra en la cosmovisión andina. Cada producto que
-                        creamos es un tributo a su generosidad y un compromiso con su preservación.
-                    </p>
-                </div>
-                <div
-                    class="glass-premium rounded-[3rem] p-16 flex items-center justify-center border border-primary/5 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-secondary/5 blur-[50px] -z-10"></div>
-                    <span class="material-symbols-outlined text-[150px] text-primary/10 font-thin">nature_people</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="py-24 relative overflow-hidden bg-background">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="text-center mb-20">
-                <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Nuestro
-                    Proceso</span>
-                <h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest">Del Campo a
-                    Tu
-                    Piel</h2>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Step 1 -->
-                <div
-                    class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5">
-                    <div
-                        class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary">
-                        <span class="font-heading text-xl font-bold text-primary group-hover:text-[#FDFBF7]">1</span>
-                    </div>
-                    <h4 class="font-heading text-sm text-primary font-bold mb-2">Selección</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-primary/30">Orgánico & Local</p>
-                </div>
-                <!-- Step 2 -->
-                <div
-                    class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5">
-                    <div
-                        class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary">
-                        <span class="font-heading text-xl font-bold text-primary group-hover:text-[#FDFBF7]">2</span>
-                    </div>
-                    <h4 class="font-heading text-sm text-primary font-bold mb-2">Formulación</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-primary/30">Balance Botánico</p>
-                </div>
-                <!-- Step 3 -->
-                <div
-                    class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5">
-                    <div
-                        class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary">
-                        <span class="font-heading text-xl font-bold text-primary group-hover:text-[#FDFBF7]">3</span>
-                    </div>
-                    <h4 class="font-heading text-sm text-primary font-bold mb-2">Elaboración</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-primary/30">Saponificación en Frío</p>
-                </div>
-                <!-- Step 4 -->
-                <div
-                    class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5">
-                    <div
-                        class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary">
-                        <span class="font-heading text-xl font-bold text-primary group-hover:text-[#FDFBF7]">4</span>
-                    </div>
-                    <h4 class="font-heading text-sm text-primary font-bold mb-2">Curado</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-primary/30">Maduración Lenta</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seed Germination Section - Main Feature -->
-    <!-- Seed Germination Section - Main Feature -->
-    <section class="py-24 relative overflow-hidden bg-background">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="text-center mb-20">
-                <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Ciclo de
-                    Vida</span>
-                <h2
-                    class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest leading-tight">
-                    Tu Envase se Convierte en Vida</h2>
-                <p class="text-primary/40 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mt-8">
-                    En Pachamama, creemos que el fin de un producto no debería ser el fin de su propósito. Por eso, cada
-                    envase de jabón incluye una semilla de árbol nativo lista para germinar.
-                </p>
-            </div>
-
-            <!-- Lifecycle Steps -->
-            <div class="grid md:grid-cols-4 gap-6 mb-20">
-                <div
-                    class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5">
-                    <div
-                        class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary">
-                        <span class="material-symbols-outlined text-primary group-hover:text-[#FDFBF7]">soap</span>
-                    </div>
-                    <h4 class="font-heading text-sm text-primary font-bold mb-4">1. Disfruta</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-primary/30">Ritual de Bienestar</p>
-                </div>
-                <div
-                    class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5">
-                    <div
-                        class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary">
-                        <span
-                            class="material-symbols-outlined text-primary group-hover:text-[#FDFBF7]">potted_plant</span>
-                    </div>
-                    <h4 class="font-heading text-sm text-primary font-bold mb-4">2. Reutiliza</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-primary/30">Envase Maceta</p>
-                </div>
-                <div
-                    class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5">
-                    <div
-                        class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary">
-                        <span
-                            class="material-symbols-outlined text-primary group-hover:text-[#FDFBF7]">water_drop</span>
-                    </div>
-                    <h4 class="font-heading text-sm text-primary font-bold mb-4">3. Germina</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-primary/30">Nueva Vida</p>
-                </div>
-                <div
-                    class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5">
-                    <div
-                        class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary">
-                        <span class="material-symbols-outlined text-primary group-hover:text-[#FDFBF7]">forest</span>
-                    </div>
-                    <h4 class="font-heading text-sm text-primary font-bold mb-4">4. Transplanta</h4>
-                    <p class="text-[10px] uppercase tracking-widest text-primary/30">Reforestación Activa</p>
-                </div>
-            </div>
-
-            <!-- Highlight Box -->
-            <div class="glass-premium rounded-[3rem] p-12 md:p-20 border border-primary/5 relative overflow-hidden">
-                <div class="absolute inset-0 bg-secondary/5 blur-[100px] -z-10"></div>
-                <div class="grid md:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Tú Eres
-                            el
-                            Cambio</span>
-                        <h3
-                            class="font-heading text-3xl md:text-5xl text-primary font-extrabold tracking-tightest mb-8 leading-tight">
-                            Cada Cliente es un Reforestador</h3>
-                        <p class="text-primary/40 text-lg font-light leading-relaxed mb-8">
-                            Al incluir una semilla de árbol nativo en cada envase, te invitamos a ser parte de una
-                            comunidad de reforestadores. No somos una empresa que planta árboles por ti; somos una
-                            empresa que te empodera para que tú seas el agente del cambio.
-                        </p>
-                        <a href="map.html"
-                            class="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-[#FDFBF7] py-4 px-8 rounded-full bg-primary border border-primary hover:bg-primary/90 transition-premium">
-                            Ver Zonas de Siembra
-                            <span class="material-symbols-outlined text-sm ml-2">arrow_forward</span>
-                        </a>
-                    </div>
-                    <div class="grid grid-cols-1 gap-6">
-                        <div class="flex items-center gap-6 p-6 glass-premium rounded-2xl border border-primary/5">
-                            <span class="material-symbols-outlined text-secondary text-3xl">eco</span>
-                            <span class="text-sm font-bold uppercase tracking-widest text-primary/70">Árboles Nativos
-                                Colombianos</span>
-                        </div>
-                        <div class="flex items-center gap-6 p-6 glass-premium rounded-2xl border border-primary/5">
-                            <span class="material-symbols-outlined text-secondary text-3xl">recycling</span>
-                            <span class="text-sm font-bold uppercase tracking-widest text-primary/70">Envase
-                                Maceta</span>
-                        </div>
-                        <div class="flex items-center gap-6 p-6 glass-premium rounded-2xl border border-primary/5">
-                            <span class="material-symbols-outlined text-secondary text-3xl">handshake</span>
-                            <span class="text-sm font-bold uppercase tracking-widest text-primary/70">Tú plantas, tú
-                                reforestas</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Brand Manifesto Section -->
-    <section class="py-32 relative text-center bg-background">
-        <div class="max-w-4xl mx-auto px-6">
-            <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Nuestro
-                Manifiesto</span>
-            <h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest mb-12">Más Que
-                Jabón, Una Forma de Vivir</h2>
-            <div class="space-y-8 text-primary/40 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto">
-                <p>Creemos que cada pequeña acción cuenta. Que elegir productos conscientes no es una moda, sino una
-                    responsabilidad con las generaciones futuras. Que cuidar tu piel puede ser también cuidar la Tierra.
-                </p>
-                <p><strong class="text-primary">Pachamama</strong> significa "Madre Tierra" en quechua. Lo elegimos
-                    porque
-                    cada jabón es un acto de gratitud, y cada semilla una promesa.</p>
-            </div>
-            <div class="mt-20 pt-16 border-t border-primary/5">
-                <span
-                    class="material-symbols-outlined text-4xl text-primary/10 mb-8 font-light italic leading-tight mb-12">format_quote</span>
-                <blockquote class="font-heading text-3xl md:text-5xl text-primary font-light italic leading-tight mb-8">
-                    "No heredamos la Tierra de nuestros ancestros, la tomamos prestada de nuestros hijos."
-                </blockquote>
-                <p class="text-[10px] uppercase tracking-widest text-secondary font-bold mt-4">
-                    — Proverbio Nativo Americano
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Commitments Section -->
-    <!-- Commitments Section -->
-    <section class="py-24 relative overflow-hidden bg-background">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="text-center mb-20">
-                <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Nuestros
-                    Compromisos</span>
-                <h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest">Lo Que Nos
-                    Define</h2>
-            </div>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Commitment 1 -->
-                <div
-                    class="glass-premium p-10 rounded-3xl border border-primary/5 flex items-start gap-6 transition-premium hover-glow">
-                    <span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
-                    <div>
-                        <h4 class="font-heading text-xl text-primary font-bold mb-4">Libre de Crueldad Animal</h4>
-                        <p class="text-primary/40 font-light leading-relaxed">Nunca probamos en animales. Todos nuestros
-                            ingredientes son veganos y cruelty-free.</p>
-                    </div>
-                </div>
-                <!-- Commitment 2 -->
-                <div
-                    class="glass-premium p-10 rounded-3xl border border-primary/5 flex items-start gap-6 transition-premium hover-glow">
-                    <span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
-                    <div>
-                        <h4 class="font-heading text-xl text-primary font-bold mb-4">Sin Químicos Dañinos</h4>
-                        <p class="text-primary/40 font-light leading-relaxed">Sin parabenos, ni sulfatos. Solo
-                            ingredientes que nutren tu piel naturalmente.</p>
-                    </div>
-                </div>
-                <!-- Commitment 3 -->
-                <div
-                    class="glass-premium p-10 rounded-3xl border border-primary/5 flex items-start gap-6 transition-premium hover-glow">
-                    <span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
-                    <div>
-                        <h4 class="font-heading text-xl text-primary font-bold mb-4">Empaque Sostenible</h4>
-                        <p class="text-primary/40 font-light leading-relaxed">Usamos materiales reciclados y
-                            reciclables,
-                            reduciendo residuos plásticos.</p>
-                    </div>
-                </div>
-                <!-- Commitment 4 -->
-                <div
-                    class="glass-premium p-10 rounded-3xl border border-primary/5 flex items-start gap-6 transition-premium hover-glow">
-                    <span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
-                    <div>
-                        <h4 class="font-heading text-xl text-primary font-bold mb-4">Comercio Justo</h4>
-                        <p class="text-primary/40 font-light leading-relaxed">Trabajamos con productores locales bajo
-                            principios de comercio justo y transparencia.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-32 relative text-center">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2
-                class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest mb-8 leading-tight">
-                Únete a Nuestra Filosofía</h2>
-            <p class="text-primary/40 text-lg md:text-xl font-light leading-relaxed mb-12 max-w-2xl mx-auto">
-                Descubre cómo el cuidado consciente de tu piel puede ser también un acto de amor por el planeta.
-            </p>
-            <a href="coleccion.html"
-                class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">
-                Explorar Colección
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-24 px-6 lg:px-12 border-t border-primary/5 relative bg-background">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
-                <div class="md:col-span-1">
-                    <a href="index.html"
-                        class="font-heading text-2xl font-bold tracking-tightest uppercase text-gradient mb-8 block">Pachamama</a>
-                    <p class="text-primary/30 font-light leading-relaxed">
-                        Elevando el ritual del baño a una experiencia de lujo botánico y consciencia natural.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Navegación</h4>
-                    <ul class="space-y-4">
-                        <li><a href="coleccion.html"
-                                class="text-sm text-primary/60 hover:text-primary transition-premium">Colección</a></li>
-                        <li><a href="filosofia.html"
-                                class="text-sm text-primary/60 hover:text-primary transition-premium">Filosofía</a></li>
-                        <li><a href="map.html"
-                                class="text-sm text-primary/60 hover:text-primary transition-premium">Zonas
-                                de Siembra</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Contacto</h4>
-                    <ul class="space-y-4">
-                        <li><a href="https://wa.link/d79bce"
-                                class="text-sm text-primary/60 hover:text-primary transition-premium">WhatsApp
-                                Directo</a>
-                        </li>
-                        <li><a href="#"
-                                class="text-sm text-primary/60 hover:text-primary transition-premium">Instagram</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Newsletter</h4>
-                    <div class="relative group">
-                        <input type="email" placeholder="Email"
-                            class="w-full bg-primary/5 border border-primary/10 rounded-full px-6 py-3 text-sm focus:outline-none focus:border-secondary transition-premium">
-                        <button
-                            class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary text-[#FDFBF7] flex items-center justify-center">
-                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-primary/5 gap-6">
-                <p class="text-[10px] uppercase tracking-widest text-primary/20">© 2024 Pachamama. Todos los derechos
-                    reservados.</p>
-                <div class="flex gap-8">
-                    <a href="#"
-                        class="text-[10px] uppercase tracking-widest text-primary/20 hover:text-primary/40 transition-premium">Términos</a>
-                    <a href="#"
-                        class="text-[10px] uppercase tracking-widest text-primary/20 hover:text-primary/40 transition-premium">Privacidad</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="sparkle.js"></script>
-</body>
-
-</html>
+        (window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1540040826610419');
+        fbq('track', 'PageView');
+        </script><noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1540040826610419&ev=PageView&noscript=1"
+        /></noscript>< !-- End Meta Pixel Code --></head><body class="bg-[#FDFBF7] text-[#2D2926] font-sans antialiased selection:bg-accent/30 overflow-x-hidden">< !-- Aura Background --><div class="aura-bg"><div class="aura-glow -top-[20%] -left-[10%] scale-150 opacity-40"></div><div class="aura-glow top-[40%] -right-[20%] scale-125 opacity-20"
+        style="background: radial-gradient(circle, rgba(179, 139, 109, 0.08) 0%, transparent 70%); animation-name: float-reverse; animation-duration: 25s;"></div><div class="aura-glow -bottom-[20%] left-[10%] scale-150 opacity-30"
+        style="background: radial-gradient(circle, rgba(141, 164, 126, 0.05) 0%, transparent 70%); animation-duration: 30s;"></div></div><nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] max-w-4xl"><div class="glass-premium rounded-3xl px-8 py-4 flex justify-between items-center"><div class="flex items-center gap-12"><a href="index.html"
+        class="font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a><div class="hidden md:flex items-center gap-8"><a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
+        href="coleccion.html">Colección</a><a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
+        href="filosofia.html">Filosofía</a></div></div><div class="flex items-center gap-6"><a href="https://wa.link/d79bce" target="_blank"
+        class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-primary text-[#FDFBF7] px-6 py-2 rounded-full hover:bg-primary/90 transition-premium">Comprar </a><button class="md:hidden text-primary"><span class="material-symbols-outlined font-light">menu</span></button></div></div></nav>< !-- Hero Section --><header class="relative pt-48 pb-16 lg:pt-56 lg:pb-24 flex flex-col items-center justify-center text-center px-6"><div class="max-w-4xl mx-auto"><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Nuestra Filosofía</span><h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tightest mb-8 leading-[0.9] text-gradient">La Naturaleza<br /><span class="opacity-50 font-light italic">Como Guía</span></h1><p class="text-lg md:text-xl text-primary/40 max-w-2xl mx-auto font-light leading-relaxed">Creemos en el poder de lo natural,
+        lo artesanal y lo sostenible. Cada jabón Pachamama es una promesa de calidad,
+        respeto por el medio ambiente y cuidado auténtico. </p></div></header>< !-- Core Values Section --><section class="py-24 relative overflow-hidden"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="grid md:grid-cols-3 gap-8">< !-- Sostenibilidad --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">eco</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Sostenibilidad</h3><p class="text-primary/40 font-light leading-relaxed">Cada decisión considera su impacto ambiental. Desde ingredientes biodegradables hasta empaques reciclables. </p></div>< !-- Calidad --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">verified</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Calidad Premium</h3><p class="text-primary/40 font-light leading-relaxed">Seleccionamos cada ingrediente con el mayor cuidado,
+        garantizando la pureza y eficacia de cada componente. </p></div>< !-- Artesanal --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">cookie</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">100% Artesanal</h3><p class="text-primary/40 font-light leading-relaxed">Elaborado a mano en pequeños lotes,
+        manteniendo un control de calidad excepcional y piezas únicas. </p></div></div></div></section>< !-- Our Story Section --><section class="py-24 relative overflow-hidden bg-background"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="grid md:grid-cols-2 gap-12 md:gap-24 items-center"><div><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Nuestra Historia</span><h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest mb-8 leading-tight">Nacimos de la Tierra</h2><p class="text-primary/40 text-lg font-light leading-relaxed mb-6">Pachamama nació del deseo de reconectar con lo esencial. En un mundo saturado de productos industriales,
+        buscamos recuperar la tradición del jabón artesanal,
+        enriquecido con el conocimiento de la botánica moderna. </p><p class="text-primary/40 text-lg font-light leading-relaxed mb-6">Nuestro nombre rinde homenaje a la Madre Tierra en la cosmovisión andina. Cada producto que creamos es un tributo a su generosidad y un compromiso con su preservación. </p></div><div class="glass-premium rounded-[3rem] p-16 flex items-center justify-center border border-primary/5 relative overflow-hidden"><div class="absolute inset-0 bg-secondary/5 blur-[50px] -z-10"></div><span class="material-symbols-outlined text-[150px] text-primary/10 font-thin">nature_people</span></div></div></div></section>< !-- Process Section --><section class="py-24 relative overflow-hidden bg-background"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="text-center mb-20"><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Nuestro Proceso</span><h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest">Del Campo a Tu Piel</h2></div><div class="grid grid-cols-2 md:grid-cols-4 gap-6">< !-- Step 1 --><div class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5"><div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary"><span class="font-heading text-xl font-bold text-primary group-hover:text-[#FDFBF7]">1</span></div><h4 class="font-heading text-sm text-primary font-bold mb-2">Selección</h4><p class="text-[10px] uppercase tracking-widest text-primary/30">Orgánico & Local</p></div>< !-- Step 2 --><div class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5"><div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary"><span class="font-heading text-xl font-bold text-primary group-hover:text-[#FDFBF7]">2</span></div><h4 class="font-heading text-sm text-primary font-bold mb-2">Formulación</h4><p class="text-[10px] uppercase tracking-widest text-primary/30">Balance Botánico</p></div>< !-- Step 3 --><div class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5"><div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary"><span class="font-heading text-xl font-bold text-primary group-hover:text-[#FDFBF7]">3</span></div><h4 class="font-heading text-sm text-primary font-bold mb-2">Elaboración</h4><p class="text-[10px] uppercase tracking-widest text-primary/30">Saponificación en Frío</p></div>< !-- Step 4 --><div class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5"><div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-6 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary"><span class="font-heading text-xl font-bold text-primary group-hover:text-[#FDFBF7]">4</span></div><h4 class="font-heading text-sm text-primary font-bold mb-2">Curado</h4><p class="text-[10px] uppercase tracking-widest text-primary/30">Maduración Lenta</p></div></div></div></section>< !-- Seed Germination Section - Main Feature -->< !-- Seed Germination Section - Main Feature --><section class="py-24 relative overflow-hidden bg-background"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="text-center mb-20"><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Ciclo de Vida</span><h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest leading-tight">Tu Envase se Convierte en Vida</h2><p class="text-primary/40 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mt-8">En Pachamama,
+        creemos que el fin de un producto no debería ser el fin de su propósito. Por eso,
+        cada envase de jabón incluye una semilla de árbol nativo lista para germinar. </p></div>< !-- Lifecycle Steps --><div class="grid md:grid-cols-4 gap-6 mb-20"><div class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5"><div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary"><span class="material-symbols-outlined text-primary group-hover:text-[#FDFBF7]">soap</span></div><h4 class="font-heading text-sm text-primary font-bold mb-4">1. Disfruta</h4><p class="text-[10px] uppercase tracking-widest text-primary/30">Ritual de Bienestar</p></div><div class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5"><div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary"><span class="material-symbols-outlined text-primary group-hover:text-[#FDFBF7]">potted_plant</span></div><h4 class="font-heading text-sm text-primary font-bold mb-4">2. Reutiliza</h4><p class="text-[10px] uppercase tracking-widest text-primary/30">Envase Maceta</p></div><div class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5"><div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary"><span class="material-symbols-outlined text-primary group-hover:text-[#FDFBF7]">water_drop</span></div><h4 class="font-heading text-sm text-primary font-bold mb-4">3. Germina</h4><p class="text-[10px] uppercase tracking-widest text-primary/30">Nueva Vida</p></div><div class="glass-premium p-10 rounded-3xl text-center transition-premium hover-glow group border border-primary/5"><div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-8 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary"><span class="material-symbols-outlined text-primary group-hover:text-[#FDFBF7]">forest</span></div><h4 class="font-heading text-sm text-primary font-bold mb-4">4. Transplanta</h4><p class="text-[10px] uppercase tracking-widest text-primary/30">Reforestación Activa</p></div></div>< !-- Highlight Box --><div class="glass-premium rounded-[3rem] p-12 md:p-20 border border-primary/5 relative overflow-hidden"><div class="absolute inset-0 bg-secondary/5 blur-[100px] -z-10"></div><div class="grid md:grid-cols-2 gap-16 items-center"><div><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Tú Eres el Cambio</span><h3 class="font-heading text-3xl md:text-5xl text-primary font-extrabold tracking-tightest mb-8 leading-tight">Cada Cliente es un Reforestador</h3><p class="text-primary/40 text-lg font-light leading-relaxed mb-8">Al incluir una semilla de árbol nativo en cada envase,
+        te invitamos a ser parte de una comunidad de reforestadores. No somos una empresa que planta árboles por ti;
+        somos una empresa que te empodera para que tú seas el agente del cambio. </p><a href="map.html"
+        class="inline-flex items-center text-[10px] font-bold uppercase tracking-widest text-[#FDFBF7] py-4 px-8 rounded-full bg-primary border border-primary hover:bg-primary/90 transition-premium">Ver Zonas de Siembra <span class="material-symbols-outlined text-sm ml-2">arrow_forward</span></a></div><div class="grid grid-cols-1 gap-6"><div class="flex items-center gap-6 p-6 glass-premium rounded-2xl border border-primary/5"><span class="material-symbols-outlined text-secondary text-3xl">eco</span><span class="text-sm font-bold uppercase tracking-widest text-primary/70">Árboles Nativos Colombianos</span></div><div class="flex items-center gap-6 p-6 glass-premium rounded-2xl border border-primary/5"><span class="material-symbols-outlined text-secondary text-3xl">recycling</span><span class="text-sm font-bold uppercase tracking-widest text-primary/70">Envase Maceta</span></div><div class="flex items-center gap-6 p-6 glass-premium rounded-2xl border border-primary/5"><span class="material-symbols-outlined text-secondary text-3xl">handshake</span><span class="text-sm font-bold uppercase tracking-widest text-primary/70">Tú plantas,
+        tú reforestas</span></div></div></div></div></div></section>< !-- Brand Manifesto Section --><section class="py-32 relative text-center bg-background"><div class="max-w-4xl mx-auto px-6"><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Nuestro Manifiesto</span><h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest mb-12">Más Que Jabón,
+        Una Forma de Vivir</h2><div class="space-y-8 text-primary/40 text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto"><p>Creemos que cada pequeña acción cuenta. Que elegir productos conscientes no es una moda,
+        sino una responsabilidad con las generaciones futuras. Que cuidar tu piel puede ser también cuidar la Tierra. </p><p><strong class="text-primary">Pachamama</strong>significa "Madre Tierra" en quechua. Lo elegimos porque cada jabón es un acto de gratitud,
+        y cada semilla una promesa.</p></div><div class="mt-20 pt-16 border-t border-primary/5"><span class="material-symbols-outlined text-4xl text-primary/10 mb-8 font-light italic leading-tight mb-12">format_quote</span><blockquote class="font-heading text-3xl md:text-5xl text-primary font-light italic leading-tight mb-8">"No heredamos la Tierra de nuestros ancestros, la tomamos prestada de nuestros hijos."
+        </blockquote><p class="text-[10px] uppercase tracking-widest text-secondary font-bold mt-4">— Proverbio Nativo Americano </p></div></div></section>< !-- Commitments Section -->< !-- Commitments Section --><section class="py-24 relative overflow-hidden bg-background"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="text-center mb-20"><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Nuestros Compromisos</span><h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest">Lo Que Nos Define</h2></div><div class="grid md:grid-cols-2 gap-6">< !-- Commitment 1 --><div class="glass-premium p-10 rounded-3xl border border-primary/5 flex items-start gap-6 transition-premium hover-glow"><span class="material-symbols-outlined text-secondary text-3xl">check_circle</span><div><h4 class="font-heading text-xl text-primary font-bold mb-4">Libre de Crueldad Animal</h4><p class="text-primary/40 font-light leading-relaxed">Nunca probamos en animales. Todos nuestros ingredientes son veganos y cruelty-free.</p></div></div>< !-- Commitment 2 --><div class="glass-premium p-10 rounded-3xl border border-primary/5 flex items-start gap-6 transition-premium hover-glow"><span class="material-symbols-outlined text-secondary text-3xl">check_circle</span><div><h4 class="font-heading text-xl text-primary font-bold mb-4">Sin Químicos Dañinos</h4><p class="text-primary/40 font-light leading-relaxed">Sin parabenos,
+        ni sulfatos. Solo ingredientes que nutren tu piel naturalmente.</p></div></div>< !-- Commitment 3 --><div class="glass-premium p-10 rounded-3xl border border-primary/5 flex items-start gap-6 transition-premium hover-glow"><span class="material-symbols-outlined text-secondary text-3xl">check_circle</span><div><h4 class="font-heading text-xl text-primary font-bold mb-4">Empaque Sostenible</h4><p class="text-primary/40 font-light leading-relaxed">Usamos materiales reciclados y reciclables,
+        reduciendo residuos plásticos.</p></div></div>< !-- Commitment 4 --><div class="glass-premium p-10 rounded-3xl border border-primary/5 flex items-start gap-6 transition-premium hover-glow"><span class="material-symbols-outlined text-secondary text-3xl">check_circle</span><div><h4 class="font-heading text-xl text-primary font-bold mb-4">Comercio Justo</h4><p class="text-primary/40 font-light leading-relaxed">Trabajamos con productores locales bajo principios de comercio justo y transparencia.</p></div></div></div></div></section>< !-- CTA Section --><section class="py-32 relative text-center"><div class="max-w-4xl mx-auto px-6"><h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest mb-8 leading-tight">Únete a Nuestra Filosofía</h2><p class="text-primary/40 text-lg md:text-xl font-light leading-relaxed mb-12 max-w-2xl mx-auto">Descubre cómo el cuidado consciente de tu piel puede ser también un acto de amor por el planeta. </p><a href="coleccion.html"
+        class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">Explorar Colección </a></div></section>< !-- Footer --><footer class="py-24 px-6 lg:px-12 border-t border-primary/5 relative bg-background"><div class="max-w-7xl mx-auto"><div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24"><div class="md:col-span-1"><a href="index.html"
+        class="font-heading text-2xl font-bold tracking-tightest uppercase text-gradient mb-8 block">Pachamama</a><p class="text-primary/30 font-light leading-relaxed">Elevando el ritual del baño a una experiencia de lujo botánico y consciencia natural. </p></div><div><h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Navegación</h4><ul class="space-y-4"><li><a href="coleccion.html"
+        class="text-sm text-primary/60 hover:text-primary transition-premium">Colección</a></li><li><a href="filosofia.html"
+        class="text-sm text-primary/60 hover:text-primary transition-premium">Filosofía</a></li><li><a href="map.html"
+        class="text-sm text-primary/60 hover:text-primary transition-premium">Zonas de Siembra</a></li></ul></div><div><h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Contacto</h4><ul class="space-y-4"><li><a href="https://wa.link/d79bce"
+        class="text-sm text-primary/60 hover:text-primary transition-premium">WhatsApp Directo</a></li><li><a href="#"
+        class="text-sm text-primary/60 hover:text-primary transition-premium">Instagram</a></li></ul></div><div><h4 class="text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-8">Newsletter</h4><div class="relative group"><input type="email" placeholder="Email"
+        class="w-full bg-primary/5 border border-primary/10 rounded-full px-6 py-3 text-sm focus:outline-none focus:border-secondary transition-premium"><button class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary text-[#FDFBF7] flex items-center justify-center"><span class="material-symbols-outlined text-sm">arrow_forward</span></button></div></div></div><div class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-primary/5 gap-6"><p class="text-[10px] uppercase tracking-widest text-primary/20">© 2024 Pachamama. Todos los derechos reservados.</p><div class="flex gap-8"><a href="#"
+        class="text-[10px] uppercase tracking-widest text-primary/20 hover:text-primary/40 transition-premium">Términos</a><a href="#"
+        class="text-[10px] uppercase tracking-widest text-primary/20 hover:text-primary/40 transition-premium">Privacidad</a></div></div></div></footer><script src="sparkle.js"></script></body></html>

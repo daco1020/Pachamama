@@ -138,373 +138,49 @@
             background-color: #FDFBF7;
             color: #2D2926;
         }
-    </style>
-</head>
 
-<body class="bg-[#FDFBF7] text-[#2D2926] font-sans selection:bg-accent/30 selection:text-[#FDFBF7]">
-    <!-- Aura Background -->
-    <div class="aura-bg">
-        <div class="aura-glow -top-[20%] -left-[10%] scale-150 opacity-40"></div>
-        <div class="aura-glow top-[40%] -right-[20%] scale-125 opacity-20"
-            style="background: radial-gradient(circle, rgba(179, 139, 109, 0.08) 0%, transparent 70%); animation-name: float-reverse; animation-duration: 25s;">
-        </div>
-        <div class="aura-glow -bottom-[20%] left-[10%] scale-150 opacity-30"
-            style="background: radial-gradient(circle, rgba(141, 164, 126, 0.05) 0%, transparent 70%); animation-duration: 30s;">
-        </div>
-    </div>
-    <!-- Navigation -->
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] max-w-4xl">
-        <div class="glass-premium rounded-3xl px-8 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-12">
-                <a href="index.html"
-                    class="font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a>
-                <div class="hidden md:flex items-center gap-8">
-                    <a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
-                        href="coleccion.html">Colección</a>
-                    <a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
-                        href="filosofia.html">Filosofía</a>
-                </div>
-            </div>
-            <div class="flex items-center gap-6">
-                <a href="https://wa.link/d79bce" target="_blank"
-                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-primary text-[#FDFBF7] px-6 py-2 rounded-full hover:bg-primary/90 transition-premium">
-                    Comprar
-                </a>
-                <button class="md:hidden text-primary">
-                    <span class="material-symbols-outlined font-light">menu</span>
-                </button>
-            </div>
-        </div>
-    </nav>
+        < !-- Meta Pixel Code --><script> !function(f, b, e, v, n, t, s) {
+            if(f.fbq)return;
 
-    <!-- Hero Section -->
-    <header class="relative pt-48 pb-16 lg:pt-56 lg:pb-24 flex flex-col items-center justify-center text-center px-6">
-        <div class="max-w-4xl mx-auto">
-            <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Carbón &
-                Menta</span>
-            <h1
-                class="font-heading text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tightest mb-8 leading-[0.9] text-gradient">
-                Detox
-            </h1>
-            <p class="text-lg md:text-xl text-primary/40 max-w-2xl mx-auto font-light leading-relaxed mb-12">
-                Limpieza profunda que despierta tus sentidos. Carbón activado y menta fresca se combinan para purificar
-                y energizar tu piel desde el primer uso.
-            </p>
-            <a href="https://wa.link/d79bce" target="_blank"
-                class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">
-                Ordenar Ahora
-            </a>
-        </div>
-    </header>
+            n=f.fbq=function() {
+                n.callMethod? n.callMethod.apply(n, arguments): n.queue.push(arguments)
+            }
 
-    <!-- Ingredients Section -->
-    <section class="py-32 relative overflow-hidden bg-background">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-primary/5 pb-12">
-                <div class="max-w-2xl">
-                    <span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Ingredientes
-                        Activos</span>
-                    <h2
-                        class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest leading-tight">
-                        La Fórmula Purificadora</h2>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Carbón Activado -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">blur_on</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Carbón Activado</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">Microporos que actúan como imanes para
-                        impurezas
-                        y toxinas. Extrae suciedad, exceso de grasa y contaminantes ambientales.</p>
-                </div>
-                <!-- Menta -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">ac_unit</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Menta</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">Aceite esencial con efecto refrescante
-                        inmediato. Estimula la circulación y proporciona una sensación vigorizante.</p>
-                </div>
-                <!-- Eucalipto -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">forest</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Eucalipto</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">Propiedades antisépticas y antiinflamatorias
-                        naturales. Su aroma fresco abre las vías respiratorias mientras purifica la piel.</p>
-                </div>
-                <!-- Colágeno -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">biotech</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Colágeno</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">Proteína estructural que mantiene la firmeza y
-                        elasticidad de la piel. Ayuda a rellenar líneas finas y mejora la textura.</p>
-                </div>
-                <!-- Elastina -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">all_inclusive</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Elastina</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">Permite que la piel recupere su forma después
-                        de
-                        estirarse. Mejora la flexibilidad y resiliencia cutánea.</p>
-                </div>
-                <!-- Vitamina E -->
-                <div
-                    class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5">
-                    <span
-                        class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">light_mode</span>
-                    <h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Vitamina E</h3>
-                    <p class="text-primary/40 font-light leading-relaxed">Antioxidante esencial que neutraliza los
-                        radicales libres. Protege contra el daño ambiental y fortalece la barrera cutánea.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+            ;
+            if( !f._fbq)f._fbq=n;
+            n.push=n;
+            n.loaded= !0;
+            n.version='2.0';
+            n.queue=[];
+            t=b.createElement(e);
+            t.async= !0;
+            t.src=v;
+            s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }
 
-    <!-- Benefits Section -->
-    <section class="py-24 bg-background">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="text-center mb-16">
-                <span
-                    class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Beneficios</span>
-                <h2 class="font-heading text-4xl text-primary font-extrabold tracking-tightest">Poder Purificador</h2>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
-                <div class="text-center group">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">cleaning_services</span>
-                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Limpieza
-                        Profunda
-                    </h4>
-                </div>
-                <div class="text-center group">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">bolt</span>
-                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Energía
-                        Matutina
-                    </h4>
-                </div>
-                <div class="text-center group">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">opacity</span>
-                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Control de
-                        Grasa
-                    </h4>
-                </div>
-                <div class="text-center group">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">recycling</span>
-                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Desintoxicante
-                    </h4>
-                </div>
-                <div class="text-center group">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">air</span>
-                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Frescura Total
-                    </h4>
-                </div>
-                <div class="text-center group">
-                    <span
-                        class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">verified</span>
-                    <h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Antibacteriano
-                    </h4>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-32 relative text-center">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2
-                class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest mb-8 leading-tight">
-                ¿Listo para Purificarte?</h2>
-            <p class="text-primary/40 text-lg md:text-xl font-light leading-relaxed mb-12 max-w-2xl mx-auto">
-                Ordena tu jabón Detox hoy y comienza cada día con una limpieza profunda que energiza tu piel y tus
-                sentidos.
-            </p>
-            <a href="https://wa.link/d79bce" target="_blank"
-                class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">
-                Ordenar por WhatsApp
-            </a>
-        </div>
-    </section>
-
-    <!-- Customer Reviews Section -->
-    <section class="py-32 bg-background border-t border-primary/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-primary/5 pb-12">
-                <div class="max-w-2xl">
-                    <span
-                        class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Testimonios</span>
-                    <h2
-                        class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest leading-tight">
-                        Reseñas de Clientes</h2>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-24">
-                <!-- Summary Column -->
-                <div class="lg:col-span-4">
-                    <div class="glass-premium p-12 rounded-[3rem] border border-primary/5">
-                        <div class="mb-10">
-                            <div class="flex items-baseline gap-4 mb-4">
-                                <span class="text-7xl font-extrabold text-primary tracking-tightest">4.9</span>
-                            </div>
-                            <div class="flex items-center gap-1 mb-4">
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                            </div>
-                            <p class="text-sm text-primary/30 font-light">Basado en 86 experiencias reales.</p>
-                        </div>
-                        <div class="space-y-6 mb-12">
-                            <div class="flex items-center gap-6">
-                                <span class="text-[10px] font-bold text-primary/40 w-4">5</span>
-                                <div class="flex-grow h-1.5 bg-primary/5 rounded-full overflow-hidden">
-                                    <div class="h-full bg-secondary rounded-full shadow-glow" style="width: 92%"></div>
-                                </div>
-                                <span class="text-[10px] font-bold text-primary/40 w-8 text-right">92%</span>
-                            </div>
-                            <div class="flex items-center gap-6">
-                                <span class="text-[10px] font-bold text-primary/40 w-4">4</span>
-                                <div class="flex-grow h-1.5 bg-primary/5 rounded-full overflow-hidden">
-                                    <div class="h-full bg-secondary rounded-full shadow-glow" style="width: 8%"></div>
-                                </div>
-                                <span class="text-[10px] font-bold text-primary/40 w-8 text-right">8%</span>
-                            </div>
-                        </div>
-                        <button
-                            class="w-full py-5 bg-primary text-[#FDFBF7] rounded-full text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">
-                            Escribir una Reseña
-                        </button>
-                    </div>
-                </div>
-                <!-- Reviews List Column -->
-                <div class="lg:col-span-8 space-y-20">
-                    <div class="group">
-                        <div class="flex justify-between items-start mb-8">
-                            <div class="flex items-center gap-6">
-                                <div
-                                    class="w-12 h-12 rounded-full glass-premium border border-primary/10 flex items-center justify-center text-xs font-bold text-primary">
-                                    AM</div>
-                                <div>
-                                    <span class="block font-heading font-bold text-primary text-lg">Andrés Mora</span>
-                                    <span class="text-[10px] uppercase tracking-widest text-primary/20">hace 3
-                                        días</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-1">
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                            </div>
-                        </div>
-                        <h4 class="font-heading font-bold text-primary text-xl mb-4">Limpieza profunda real</h4>
-                        <p class="text-primary/40 text-lg font-light leading-relaxed">
-                            Puedes sentir la frescura de la menta inmediatamente. El carbón realmente ayuda con mi piel
-                            grasa. El mejor compañero para las mañanas.
-                        </p>
-                    </div>
-                    <div class="group">
-                        <div class="flex justify-between items-start mb-8">
-                            <div class="flex items-center gap-6">
-                                <div
-                                    class="w-12 h-12 rounded-full glass-premium border border-primary/10 flex items-center justify-center text-xs font-bold text-primary">
-                                    CL</div>
-                                <div>
-                                    <span class="block font-heading font-bold text-primary text-lg">Clara López</span>
-                                    <span class="text-[10px] uppercase tracking-widest text-primary/20">hace 2
-                                        semanas</span>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-1">
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                                <span class="material-symbols-outlined text-secondary fill-1 text-base">star</span>
-                            </div>
-                        </div>
-                        <h4 class="font-heading font-bold text-primary text-xl mb-4">Limpio y Fresco</h4>
-                        <p class="text-primary/40 text-lg font-light leading-relaxed">
-                            Me encanta cómo deja mi piel sintiéndose tersa y limpia pero no seca. El aroma es muy
-                            natural y agradable.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-24 bg-background border-t border-primary/5">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
-                <div class="col-span-1 md:col-span-2">
-                    <a href="index.html"
-                        class="font-heading text-2xl font-bold tracking-tightest uppercase text-gradient mb-8 block">Pachamama</a>
-                    <p class="text-primary/40 text-lg font-light leading-relaxed max-w-sm">
-                        Redefiniendo el cuidado de la piel a través de la botánica moderna y el diseño consciente.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-heading text-xs font-bold uppercase tracking-widest text-primary/20 mb-8">Navegación
-                    </h4>
-                    <ul class="space-y-4">
-                        <li><a href="coleccion.html"
-                                class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Colección</a>
-                        </li>
-                        <li><a href="filosofia.html"
-                                class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Filosofía</a>
-                        </li>
-                        <li><a href="map.html"
-                                class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Zonas
-                                de
-                                Siembra</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-heading text-xs font-bold uppercase tracking-widest text-primary/20 mb-8">Productos
-                    </h4>
-                    <ul class="space-y-4">
-                        <li><a href="relax.html"
-                                class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Relax</a>
-                        </li>
-                        <li><a href="detox.html"
-                                class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Detox</a>
-                        </li>
-                        <li><a href="renew.html"
-                                class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Renew</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="pt-12 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-8">
-                <p class="text-[10px] font-bold uppercase tracking-widest text-primary/20">
-                    © 2025 Pachamama. Todos los derechos reservados.
-                </p>
-                <div class="flex gap-8">
-                    <a href="#"
-                        class="text-[10px] font-bold uppercase tracking-widest text-primary/20 hover:text-primary transition-premium">Instagram</a>
-                    <a href="#"
-                        class="text-[10px] font-bold uppercase tracking-widest text-primary/20 hover:text-primary transition-premium">TikTok</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-
-</html>
+        (window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1540040826610419');
+        fbq('track', 'PageView');
+        </script><noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1540040826610419&ev=PageView&noscript=1"
+        /></noscript>< !-- End Meta Pixel Code --></head><body class="bg-[#FDFBF7] text-[#2D2926] font-sans selection:bg-accent/30 selection:text-[#FDFBF7]">< !-- Aura Background --><div class="aura-bg"><div class="aura-glow -top-[20%] -left-[10%] scale-150 opacity-40"></div><div class="aura-glow top-[40%] -right-[20%] scale-125 opacity-20"
+        style="background: radial-gradient(circle, rgba(179, 139, 109, 0.08) 0%, transparent 70%); animation-name: float-reverse; animation-duration: 25s;"></div><div class="aura-glow -bottom-[20%] left-[10%] scale-150 opacity-30"
+        style="background: radial-gradient(circle, rgba(141, 164, 126, 0.05) 0%, transparent 70%); animation-duration: 30s;"></div></div>< !-- Navigation --><nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] max-w-4xl"><div class="glass-premium rounded-3xl px-8 py-4 flex justify-between items-center"><div class="flex items-center gap-12"><a href="index.html"
+        class="font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a><div class="hidden md:flex items-center gap-8"><a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
+        href="coleccion.html">Colección</a><a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
+        href="filosofia.html">Filosofía</a></div></div><div class="flex items-center gap-6"><a href="https://wa.link/d79bce" target="_blank"
+        class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-primary text-[#FDFBF7] px-6 py-2 rounded-full hover:bg-primary/90 transition-premium">Comprar </a><button class="md:hidden text-primary"><span class="material-symbols-outlined font-light">menu</span></button></div></div></nav>< !-- Hero Section --><header class="relative pt-48 pb-16 lg:pt-56 lg:pb-24 flex flex-col items-center justify-center text-center px-6"><div class="max-w-4xl mx-auto"><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Carbón & Menta</span><h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tightest mb-8 leading-[0.9] text-gradient">Detox </h1><p class="text-lg md:text-xl text-primary/40 max-w-2xl mx-auto font-light leading-relaxed mb-12">Limpieza profunda que despierta tus sentidos. Carbón activado y menta fresca se combinan para purificar y energizar tu piel desde el primer uso. </p><a href="https://wa.link/d79bce" target="_blank"
+        class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">Ordenar Ahora </a></div></header>< !-- Ingredients Section --><section class="py-32 relative overflow-hidden bg-background"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-primary/5 pb-12"><div class="max-w-2xl"><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Ingredientes Activos</span><h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest leading-tight">La Fórmula Purificadora</h2></div></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">< !-- Carbón Activado --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">blur_on</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Carbón Activado</h3><p class="text-primary/40 font-light leading-relaxed">Microporos que actúan como imanes para impurezas y toxinas. Extrae suciedad,
+        exceso de grasa y contaminantes ambientales.</p></div>< !-- Menta --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">ac_unit</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Menta</h3><p class="text-primary/40 font-light leading-relaxed">Aceite esencial con efecto refrescante inmediato. Estimula la circulación y proporciona una sensación vigorizante.</p></div>< !-- Eucalipto --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">forest</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Eucalipto</h3><p class="text-primary/40 font-light leading-relaxed">Propiedades antisépticas y antiinflamatorias naturales. Su aroma fresco abre las vías respiratorias mientras purifica la piel.</p></div>< !-- Colágeno --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">biotech</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Colágeno</h3><p class="text-primary/40 font-light leading-relaxed">Proteína estructural que mantiene la firmeza y elasticidad de la piel. Ayuda a rellenar líneas finas y mejora la textura.</p></div>< !-- Elastina --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">all_inclusive</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Elastina</h3><p class="text-primary/40 font-light leading-relaxed">Permite que la piel recupere su forma después de estirarse. Mejora la flexibilidad y resiliencia cutánea.</p></div>< !-- Vitamina E --><div class="glass-premium p-12 rounded-[2.5rem] transition-premium hover-glow group border border-primary/5"><span class="material-symbols-outlined text-4xl mb-8 text-primary/40 group-hover:text-secondary transition-premium">light_mode</span><h3 class="font-heading text-2xl text-primary font-bold mb-4 tracking-tight">Vitamina E</h3><p class="text-primary/40 font-light leading-relaxed">Antioxidante esencial que neutraliza los radicales libres. Protege contra el daño ambiental y fortalece la barrera cutánea.</p></div></div></div></section>< !-- Benefits Section --><section class="py-24 bg-background"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="text-center mb-16"><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Beneficios</span><h2 class="font-heading text-4xl text-primary font-extrabold tracking-tightest">Poder Purificador</h2></div><div class="grid grid-cols-2 md:grid-cols-3 gap-12"><div class="text-center group"><span class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">cleaning_services</span><h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Limpieza Profunda </h4></div><div class="text-center group"><span class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">bolt</span><h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Energía Matutina </h4></div><div class="text-center group"><span class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">opacity</span><h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Control de Grasa </h4></div><div class="text-center group"><span class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">recycling</span><h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Desintoxicante </h4></div><div class="text-center group"><span class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">air</span><h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Frescura Total </h4></div><div class="text-center group"><span class="material-symbols-outlined text-4xl text-primary/20 mb-4 transition-premium group-hover:text-secondary">verified</span><h4 class="font-heading text-sm font-bold text-primary/60 tracking-widest uppercase">Antibacteriano </h4></div></div></div></section>< !-- CTA Section --><section class="py-32 relative text-center"><div class="max-w-4xl mx-auto px-6"><h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest mb-8 leading-tight">¿Listo para Purificarte?</h2><p class="text-primary/40 text-lg md:text-xl font-light leading-relaxed mb-12 max-w-2xl mx-auto">Ordena tu jabón Detox hoy y comienza cada día con una limpieza profunda que energiza tu piel y tus sentidos. </p><a href="https://wa.link/d79bce" target="_blank"
+        class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">Ordenar por WhatsApp </a></div></section>< !-- Customer Reviews Section --><section class="py-32 bg-background border-t border-primary/5"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="flex flex-col md:flex-row justify-between items-end mb-24 border-b border-primary/5 pb-12"><div class="max-w-2xl"><span class="text-secondary text-[10px] font-bold tracking-widest uppercase mb-4 block">Testimonios</span><h2 class="font-heading text-4xl md:text-6xl text-primary font-extrabold tracking-tightest leading-tight">Reseñas de Clientes</h2></div></div><div class="grid grid-cols-1 lg:grid-cols-12 gap-24">< !-- Summary Column --><div class="lg:col-span-4"><div class="glass-premium p-12 rounded-[3rem] border border-primary/5"><div class="mb-10"><div class="flex items-baseline gap-4 mb-4"><span class="text-7xl font-extrabold text-primary tracking-tightest">4.9</span></div><div class="flex items-center gap-1 mb-4"><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span></div><p class="text-sm text-primary/30 font-light">Basado en 86 experiencias reales.</p></div><div class="space-y-6 mb-12"><div class="flex items-center gap-6"><span class="text-[10px] font-bold text-primary/40 w-4">5</span><div class="flex-grow h-1.5 bg-primary/5 rounded-full overflow-hidden"><div class="h-full bg-secondary rounded-full shadow-glow" style="width: 92%"></div></div><span class="text-[10px] font-bold text-primary/40 w-8 text-right">92%</span></div><div class="flex items-center gap-6"><span class="text-[10px] font-bold text-primary/40 w-4">4</span><div class="flex-grow h-1.5 bg-primary/5 rounded-full overflow-hidden"><div class="h-full bg-secondary rounded-full shadow-glow" style="width: 8%"></div></div><span class="text-[10px] font-bold text-primary/40 w-8 text-right">8%</span></div></div><button class="w-full py-5 bg-primary text-[#FDFBF7] rounded-full text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">Escribir una Reseña </button></div></div>< !-- Reviews List Column --><div class="lg:col-span-8 space-y-20"><div class="group"><div class="flex justify-between items-start mb-8"><div class="flex items-center gap-6"><div class="w-12 h-12 rounded-full glass-premium border border-primary/10 flex items-center justify-center text-xs font-bold text-primary">AM</div><div><span class="block font-heading font-bold text-primary text-lg">Andrés Mora</span><span class="text-[10px] uppercase tracking-widest text-primary/20">hace 3 días</span></div></div><div class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span></div></div><h4 class="font-heading font-bold text-primary text-xl mb-4">Limpieza profunda real</h4><p class="text-primary/40 text-lg font-light leading-relaxed">Puedes sentir la frescura de la menta inmediatamente. El carbón realmente ayuda con mi piel grasa. El mejor compañero para las mañanas. </p></div><div class="group"><div class="flex justify-between items-start mb-8"><div class="flex items-center gap-6"><div class="w-12 h-12 rounded-full glass-premium border border-primary/10 flex items-center justify-center text-xs font-bold text-primary">CL</div><div><span class="block font-heading font-bold text-primary text-lg">Clara López</span><span class="text-[10px] uppercase tracking-widest text-primary/20">hace 2 semanas</span></div></div><div class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span><span class="material-symbols-outlined text-secondary fill-1 text-base">star</span></div></div><h4 class="font-heading font-bold text-primary text-xl mb-4">Limpio y Fresco</h4><p class="text-primary/40 text-lg font-light leading-relaxed">Me encanta cómo deja mi piel sintiéndose tersa y limpia pero no seca. El aroma es muy natural y agradable. </p></div></div></div></div></section>< !-- Footer --><footer class="py-24 bg-background border-t border-primary/5"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24"><div class="col-span-1 md:col-span-2"><a href="index.html"
+        class="font-heading text-2xl font-bold tracking-tightest uppercase text-gradient mb-8 block">Pachamama</a><p class="text-primary/40 text-lg font-light leading-relaxed max-w-sm">Redefiniendo el cuidado de la piel a través de la botánica moderna y el diseño consciente. </p></div><div><h4 class="font-heading text-xs font-bold uppercase tracking-widest text-primary/20 mb-8">Navegación </h4><ul class="space-y-4"><li><a href="coleccion.html"
+        class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Colección</a></li><li><a href="filosofia.html"
+        class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Filosofía</a></li><li><a href="map.html"
+        class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Zonas de Siembra</a></li></ul></div><div><h4 class="font-heading text-xs font-bold uppercase tracking-widest text-primary/20 mb-8">Productos </h4><ul class="space-y-4"><li><a href="relax.html"
+        class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Relax</a></li><li><a href="detox.html"
+        class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Detox</a></li><li><a href="renew.html"
+        class="text-sm font-medium text-primary/40 hover:text-primary transition-premium">Renew</a></li></ul></div></div><div class="pt-12 border-t border-primary/5 flex flex-col md:flex-row justify-between items-center gap-8"><p class="text-[10px] font-bold uppercase tracking-widest text-primary/20">© 2025 Pachamama. Todos los derechos reservados. </p><div class="flex gap-8"><a href="#"
+        class="text-[10px] font-bold uppercase tracking-widest text-primary/20 hover:text-primary transition-premium">Instagram</a><a href="#"
+        class="text-[10px] font-bold uppercase tracking-widest text-primary/20 hover:text-primary transition-premium">TikTok</a></div></div></div></footer></body></html>
