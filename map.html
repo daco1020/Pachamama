@@ -52,8 +52,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
         :root {
-            --glass-bg: rgba(255, 255, 255, 0.7);
-            --glass-border: rgba(45, 41, 38, 0.1);
+            --glass-bg: rgba(20, 20, 20, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
             --aura-glow: radial-gradient(circle at 50% 50%, rgba(141, 164, 126, 0.15) 0%, transparent 70%);
         }
 
@@ -66,12 +66,12 @@
         }
 
         .glass-premium {
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
-            border: 1px solid rgba(45, 41, 38, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow:
-                inset 0 1px 1px rgba(255, 255, 255, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1),
                 0 8px 32px 0 rgba(45, 41, 38, 0.1);
         }
 
@@ -81,7 +81,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #FDFBF7;
+            background: #050505;
             z-index: -2;
             overflow: hidden;
         }
@@ -92,7 +92,7 @@
             height: 80vw;
             background: radial-gradient(circle, rgba(141, 164, 126, 0.1) 0%, transparent 70%);
             border-radius: 50%;
-            filter: blur(100px);
+            filter: blur(120px) contrast(150%); mix-blend-mode: screen;
             z-index: -1;
             pointer-events: none;
             animation: float 20s infinite alternate ease-in-out;
@@ -119,7 +119,7 @@
         }
 
         .text-gradient {
-            background: linear-gradient(to bottom right, #2D2926 30%, rgba(45, 41, 38, 0.6));
+            background: linear-gradient(to bottom right, #FFFFFF 30%, rgba(255, 255, 255, 0.4));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -136,8 +136,8 @@
         }
 
         body {
-            background-color: #FDFBF7;
-            color: #2D2926;
+            background-color: #050505;
+            color: #FFFFFF;
         }
 
         /* Leaflet Overrides for Light Theme */
@@ -168,7 +168,7 @@
     <!-- End Meta Pixel Code -->
 </head>
 
-<body class="bg-[#FDFBF7] text-[#2D2926] font-sans antialiased selection:bg-accent/30 overflow-x-hidden">
+<body class="bg-[#050505] text-[#FFFFFF] font-sans antialiased selection:bg-accent/30 overflow-x-hidden">
 
     <!-- Aura Background -->
     <div class="aura-bg">
@@ -182,26 +182,18 @@
     </div>
 
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] max-w-4xl">
-        <div class="glass-premium rounded-3xl px-8 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-12">
-                <a href="index.html"
-                    class="font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a>
-                <div class="hidden md:flex items-center gap-8">
-                    <a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
-                        href="coleccion.html">Colección</a>
-                    <a class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
-                        href="filosofia.html">Filosofía</a>
-                </div>
-            </div>
-            <div class="flex items-center gap-6">
-                <a href="https://wa.link/d79bce" target="_blank"
-                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-primary text-[#FDFBF7] px-6 py-2 rounded-full hover:bg-primary/90 transition-premium">
-                    Comprar
-                </a>
-                <button class="md:hidden text-primary">
-                    <span class="material-symbols-outlined font-light">menu</span>
-                </button>
-            </div>
+        <div class="glass-premium rounded-3xl px-8 py-4 flex justify-between items-center relative">
+            <div class="hidden md:flex items-center gap-8 w-1/3 origin-left"><a
+                    class="text-xs uppercase tracking-widest font-semibold text-primary/60 hover:text-primary transition-premium"
+                    href="coleccion.html">Colección</a><a
+                    class="text-xs uppercase tracking-widest font-semibold text-primary/60 hover:text-primary transition-premium"
+                    href="filosofia.html">Filosofía</a></div>
+            <a href="index.html"
+                class="absolute left-1/2 -translate-x-1/2 font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a>
+            <div class="flex items-center justify-end gap-6 w-full md:w-1/3"><a href="https://wa.link/d79bce" target="_blank"
+                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-primary text-[#050505] px-6 py-2 rounded-full hover:bg-primary/90 transition-premium">Comprar
+                </a><button class="md:hidden text-primary ml-auto flex items-center"><span
+                        class="material-symbols-outlined font-light">menu</span></button></div>
         </div>
     </nav>
 
@@ -348,7 +340,7 @@
                             <div
                                 class="w-12 h-12 glass-premium rounded-full flex items-center justify-center border border-primary/5 transition-premium group-hover:bg-secondary group-hover:border-secondary">
                                 <span
-                                    class="material-symbols-outlined text-primary group-hover:text-[#FDFBF7]">grass</span>
+                                    class="material-symbols-outlined text-primary group-hover:text-[#050505]">grass</span>
                             </div>
                             <div>
                                 <h4 class="font-heading text-lg text-primary font-bold mb-2">Suelo Vivo</h4>
@@ -362,7 +354,7 @@
                             <div
                                 class="w-12 h-12 glass-premium rounded-full flex items-center justify-center border border-primary/5 transition-premium group-hover:bg-secondary group-hover:border-secondary">
                                 <span
-                                    class="material-symbols-outlined text-primary group-hover:text-[#FDFBF7]">air</span>
+                                    class="material-symbols-outlined text-primary group-hover:text-[#050505]">air</span>
                             </div>
                             <div>
                                 <h4 class="font-heading text-lg text-primary font-bold mb-2">Aire Puro</h4>
@@ -375,7 +367,7 @@
                             <div
                                 class="w-12 h-12 glass-premium rounded-full flex items-center justify-center border border-primary/5 transition-premium group-hover:bg-secondary group-hover:border-secondary">
                                 <span
-                                    class="material-symbols-outlined text-primary group-hover:text-[#FDFBF7]">water_drop</span>
+                                    class="material-symbols-outlined text-primary group-hover:text-[#050505]">water_drop</span>
                             </div>
                             <div>
                                 <h4 class="font-heading text-lg text-primary font-bold mb-2">Ciclo del Agua</h4>
@@ -471,7 +463,7 @@
                         <input type="email" placeholder="Email"
                             class="w-full bg-primary/5 border border-primary/10 rounded-full px-6 py-3 text-sm focus:outline-none focus:border-secondary transition-premium">
                         <button
-                            class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary text-[#FDFBF7] flex items-center justify-center">
+                            class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary text-[#050505] flex items-center justify-center">
                             <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </button>
                     </div>
@@ -495,6 +487,10 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="map-script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="gsap-animations.js"></script>
 </body>
 
 </html>

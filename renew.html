@@ -14,12 +14,12 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#2D2926",
-                        secondary: "#8DA47E",
+                        primary: "#FFFFFF",
+                        secondary: "#A3C293",
                         accent: "#B38B6D",
-                        background: "#FDFBF7",
-                        "surface": "#FFFFFF",
-                        "border": "rgba(45, 41, 38, 0.1)",
+                        background: "#050505",
+                        "surface": "rgba(255, 255, 255, 0.03)",
+                        "border": "rgba(255, 255, 255, 0.1)",
                     },
                     fontFamily: {
                         heading: ['"Inter"', 'sans-serif'],
@@ -43,8 +43,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
         :root {
-            --glass-bg: rgba(255, 255, 255, 0.7);
-            --glass-border: rgba(45, 41, 38, 0.1);
+            --glass-bg: rgba(20, 20, 20, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
             --aura-glow: radial-gradient(circle at 50% 50%, rgba(141, 164, 126, 0.15) 0%, transparent 70%);
         }
 
@@ -57,12 +57,12 @@
         }
 
         .glass-premium {
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
-            border: 1px solid rgba(45, 41, 38, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow:
-                inset 0 1px 1px rgba(255, 255, 255, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1),
                 0 8px 32px 0 rgba(45, 41, 38, 0.1);
         }
 
@@ -72,7 +72,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #FDFBF7;
+            background: #050505;
             z-index: -2;
             overflow: hidden;
         }
@@ -83,7 +83,7 @@
             height: 80vw;
             background: radial-gradient(circle, rgba(141, 164, 126, 0.1) 0%, transparent 70%);
             border-radius: 50%;
-            filter: blur(100px);
+            filter: blur(120px) contrast(150%); mix-blend-mode: screen;
             z-index: -1;
             pointer-events: none;
             animation: float 20s infinite alternate ease-in-out;
@@ -110,7 +110,7 @@
         }
 
         .text-gradient {
-            background: linear-gradient(to bottom right, #2D2926 30%, rgba(45, 41, 38, 0.6));
+            background: linear-gradient(to bottom right, #FFFFFF 30%, rgba(255, 255, 255, 0.4));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -135,8 +135,8 @@
         }
 
         body {
-            background-color: #FDFBF7;
-            color: #2D2926;
+            background-color: #050505;
+            color: #FFFFFF;
         }
     </style>
     <!-- Meta Pixel Code -->
@@ -160,7 +160,7 @@
     <!-- End Meta Pixel Code -->
 </head>
 
-<body class="bg-[#FDFBF7] text-[#2D2926] font-sans selection:bg-accent/30 selection:text-[#FDFBF7]">
+<body class="bg-[#050505] text-[#FFFFFF] font-sans selection:bg-accent/30 selection:text-[#050505]">
     <!-- Aura Background -->
     <div class="aura-bg">
         <div class="aura-glow -top-[20%] -left-[10%] scale-150 opacity-40"></div>
@@ -172,18 +172,17 @@
         </div>
     </div><!-- Navigation -->
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] max-w-4xl">
-        <div class="glass-premium rounded-3xl px-8 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-12"><a href="index.html"
-                    class="font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a>
-                <div class="hidden md:flex items-center gap-8"><a
-                        class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
-                        href="coleccion.html">Colección</a><a
-                        class="text-xs uppercase tracking-widest font-semibold text-primary/40 hover:text-primary transition-premium"
-                        href="filosofia.html">Filosofía</a></div>
-            </div>
-            <div class="flex items-center gap-6"><a href="https://wa.link/d79bce" target="_blank"
-                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-primary text-[#FDFBF7] px-6 py-2 rounded-full hover:bg-primary/90 transition-premium">Comprar
-                </a><button class="md:hidden text-primary"><span
+        <div class="glass-premium rounded-3xl px-8 py-4 flex justify-between items-center relative">
+            <div class="hidden md:flex items-center gap-8 w-1/3 origin-left"><a
+                    class="text-xs uppercase tracking-widest font-semibold text-primary/60 hover:text-primary transition-premium"
+                    href="coleccion.html">Colección</a><a
+                    class="text-xs uppercase tracking-widest font-semibold text-primary/60 hover:text-primary transition-premium"
+                    href="filosofia.html">Filosofía</a></div>
+            <a href="index.html"
+                class="absolute left-1/2 -translate-x-1/2 font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a>
+            <div class="flex items-center justify-end gap-6 w-full md:w-1/3"><a href="https://wa.link/d79bce" target="_blank"
+                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-primary text-[#050505] px-6 py-2 rounded-full hover:bg-primary/90 transition-premium">Comprar
+                </a><button class="md:hidden text-primary ml-auto flex items-center"><span
                         class="material-symbols-outlined font-light">menu</span></button></div>
         </div>
     </nav><!-- Hero Section -->
@@ -197,7 +196,7 @@
             <p class="text-lg md:text-xl text-primary/40 max-w-2xl mx-auto font-light leading-relaxed mb-12">
                 Regeneración activa para una piel renovada. Caléndula y eucalipto trabajan en sinergia para hidratar,
                 calmar y restaurar la vitalidad de tu piel. </p><a href="https://wa.link/d79bce" target="_blank"
-                class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">Ordenar
+                class="px-12 py-5 bg-primary text-[#050505] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">Ordenar
                 Ahora </a>
         </div>
     </header>
@@ -334,7 +333,7 @@
                             class="text-primary/40 text-lg md:text-xl font-light leading-relaxed mb-12 max-w-2xl mx-auto">
                             Ordena tu jabón Renew hoy y experimenta la regeneración activa que tu piel necesita para
                             lucir radiante. </p><a href="https://wa.link/d79bce" target="_blank"
-                            class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">Ordenar
+                            class="px-12 py-5 bg-primary text-[#050505] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">Ordenar
                             por WhatsApp </a>
                     </div>
                 </section>
@@ -379,7 +378,7 @@
                                                         class="text-[10px] font-bold text-primary/40 w-8 text-right">100%</span>
                                                 </div>
                                             </div><button
-                                                class="w-full py-5 bg-primary text-[#FDFBF7] rounded-full text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">Escribir
+                                                class="w-full py-5 bg-primary text-[#050505] rounded-full text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-glow">Escribir
                                                 una Reseña </button>
                                         </div>
                                     </div>
@@ -496,6 +495,10 @@
                                 </div>
                             </div>
                         </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="gsap-animations.js"></script>
 </body>
 
 </html>

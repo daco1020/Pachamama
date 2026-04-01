@@ -927,3 +927,6 @@ h6 {
         font-size: 1.5rem;
     }
 }
+/* Adiciones GSAP GSAP-Reveal */
+.gsap-reveal { visibility: hidden; opacity: 0; }
+.gsap-scale-up { visibility: hidden; opacity: 0; }

@@ -18,12 +18,12 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: "#2D2926",
-                        secondary: "#8DA47E",
+                        primary: "#FFFFFF",
+                        secondary: "#A3C293",
                         accent: "#B38B6D",
-                        background: "#FDFBF7",
-                        "surface": "#FFFFFF",
-                        "border": "rgba(45, 41, 38, 0.1)",
+                        background: "#050505",
+                        "surface": "rgba(255, 255, 255, 0.03)",
+                        "border": "rgba(255, 255, 255, 0.1)",
                     },
                     fontFamily: {
                         heading: ['"Inter"', 'sans-serif'],
@@ -47,8 +47,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
         :root {
-            --glass-bg: rgba(255, 255, 255, 0.7);
-            --glass-border: rgba(45, 41, 38, 0.1);
+            --glass-bg: rgba(20, 20, 20, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
             --aura-glow: radial-gradient(circle at 50% 50%, rgba(141, 164, 126, 0.15) 0%, transparent 70%);
         }
 
@@ -61,12 +61,12 @@
         }
 
         .glass-premium {
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
-            border: 1px solid rgba(45, 41, 38, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow:
-                inset 0 1px 1px rgba(255, 255, 255, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1),
                 0 8px 32px 0 rgba(45, 41, 38, 0.1);
         }
 
@@ -76,7 +76,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #FDFBF7;
+            background: #050505;
             z-index: -2;
             overflow: hidden;
         }
@@ -87,7 +87,7 @@
             height: 80vw;
             background: radial-gradient(circle, rgba(141, 164, 126, 0.1) 0%, transparent 70%);
             border-radius: 50%;
-            filter: blur(100px);
+            filter: blur(120px) contrast(150%); mix-blend-mode: screen;
             z-index: -1;
             pointer-events: none;
             animation: float 20s infinite alternate ease-in-out;
@@ -114,7 +114,7 @@
         }
 
         .text-gradient {
-            background: linear-gradient(to bottom right, #2D2926 30%, rgba(45, 41, 38, 0.6));
+            background: linear-gradient(to bottom right, #FFFFFF 30%, rgba(255, 255, 255, 0.4));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -131,8 +131,8 @@
         }
 
         body {
-            background-color: #FDFBF7;
-            color: #2D2926;
+            background-color: #050505;
+            color: #FFFFFF;
         }
 
         /* Override light mode for this modernization task as requested */
@@ -161,14 +161,10 @@
     <!-- End Meta Pixel Code -->
 </head>
 
-<body class="bg-[#FDFBF7] text-[#2D2926] font-sans antialiased selection:bg-accent/30 overflow-x-hidden">
+<body class="bg-[#050505] text-[#FFFFFF] font-sans antialiased selection:bg-accent/30 overflow-x-hidden">
     <!-- Aura Background -->
     <div class="aura-bg">
-        <div class="fixed inset-0 opacity-15 pointer-events-none" style="background-image: url('file:///Users/daniel/.gemini/antigravity/brain/e2d9ad60-dedf-4b10-909e-42d86f6a658f/uploaded_image_1766297732824.jpg'); 
- background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        "></div>
+        
         <div class="aura-glow -top-[20%] -left-[10%] scale-150 opacity-40"></div>
         <div class="aura-glow top-[40%] -right-[20%] scale-125 opacity-20"
             style="background: radial-gradient(circle, rgba(179, 139, 109, 0.08) 0%, transparent 70%); animation-name: float-reverse; animation-duration: 25s;">
@@ -178,18 +174,17 @@
         </div>
     </div>
     <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-3rem)] max-w-4xl">
-        <div class="glass-premium rounded-3xl px-8 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-12"><a href="index.html"
-                    class="font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a>
-                <div class="hidden md:flex items-center gap-8"><a
-                        class="text-xs uppercase tracking-widest font-semibold text-primary/60 hover:text-primary transition-premium"
-                        href="coleccion.html">Colección</a><a
-                        class="text-xs uppercase tracking-widest font-semibold text-primary/60 hover:text-primary transition-premium"
-                        href="filosofia.html">Filosofía</a></div>
-            </div>
-            <div class="flex items-center gap-6"><a href="https://wa.link/d79bce" target="_blank"
-                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-primary text-[#FDFBF7] px-6 py-2 rounded-full hover:bg-primary/90 transition-premium">Comprar
-                </a><button class="md:hidden text-primary"><span
+        <div class="glass-premium rounded-3xl px-8 py-4 flex justify-between items-center relative">
+            <div class="hidden md:flex items-center gap-8 w-1/3 origin-left"><a
+                    class="text-xs uppercase tracking-widest font-semibold text-primary/60 hover:text-primary transition-premium"
+                    href="coleccion.html">Colección</a><a
+                    class="text-xs uppercase tracking-widest font-semibold text-primary/60 hover:text-primary transition-premium"
+                    href="filosofia.html">Filosofía</a></div>
+            <a href="index.html"
+                class="absolute left-1/2 -translate-x-1/2 font-heading text-lg font-bold tracking-tightest uppercase text-gradient">Pachamama</a>
+            <div class="flex items-center justify-end gap-6 w-full md:w-1/3"><a href="https://wa.link/d79bce" target="_blank"
+                    class="hidden sm:block text-[10px] font-bold uppercase tracking-widest bg-primary text-[#050505] px-6 py-2 rounded-full hover:bg-primary/90 transition-premium">Comprar
+                </a><button class="md:hidden text-primary ml-auto flex items-center"><span
                         class="material-symbols-outlined font-light">menu</span></button></div>
         </div>
     </nav>
@@ -208,7 +203,7 @@
                 nutrir y elevar tus rituales diarios. </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6"><a href="https://wa.link/d79bce"
                     target="_blank"
-                    class="px-12 py-5 bg-primary text-[#FDFBF7] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium min-w-[220px] flex items-center justify-center shadow-[0_0_40px_rgba(45,41,38,0.1)]">Explorar
+                    class="px-12 py-5 bg-primary text-[#050505] rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium min-w-[220px] flex items-center justify-center shadow-[0_0_40px_rgba(45,41,38,0.1)]">Explorar
                     Colección </a></div>
         </div>
     </header>
@@ -305,14 +300,14 @@
                                     <span>Pieles Sensibles</span><span
                                         class="material-symbols-outlined text-[10px]">arrow_forward</span></div>
                             </div><span
-                                class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-primary py-3 px-6 rounded-full bg-primary/5 border border-primary/10 group-hover:bg-primary group-hover:text-[#FDFBF7] transition-premium">Ver
+                                class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-primary py-3 px-6 rounded-full bg-primary/5 border border-primary/10 group-hover:bg-primary group-hover:text-[#050505] transition-premium">Ver
                                 Detalles </span>
                         </div>
                     </a>
                     <!-- Best Seller Card --><a href="detox.html"
                             class="glass-premium p-8 rounded-[2.5rem] flex flex-col group transition-premium hover-glow h-full relative overflow-hidden ring-1 ring-secondary/20">
                             <div class="absolute top-6 right-6 z-10"><span
-                                    class="bg-accent text-[#FDFBF7] text-[9px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-[0_0_20px_rgba(179,139,109,0.5)]">Más
+                                    class="bg-accent text-[#050505] text-[9px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest shadow-[0_0_20px_rgba(179,139,109,0.5)]">Más
                                     Vendido</span></div>
                             <div class="mb-10 rounded-3xl relative overflow-hidden aspect-[4/3]"><img
                                     src="detox-soap.jpg" alt="Detox"
@@ -332,7 +327,7 @@
                                         <span>Desintoxicante</span><span
                                             class="material-symbols-outlined text-[10px]">arrow_forward</span></div>
                                 </div><span
-                                    class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-primary py-3 px-6 rounded-full bg-primary/5 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary group-hover:text-[#FDFBF7] transition-premium">Ver
+                                    class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-primary py-3 px-6 rounded-full bg-primary/5 border border-primary/10 group-hover:bg-secondary group-hover:border-secondary group-hover:text-[#050505] transition-premium">Ver
                                     Detalles </span>
                             </div>
                         </a><a href="renew.html"
@@ -355,7 +350,7 @@
                                         <span>Hidratación</span><span
                                             class="material-symbols-outlined text-[10px]">arrow_forward</span></div>
                                 </div><span
-                                    class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-primary py-3 px-6 rounded-full bg-primary/5 border border-primary/10 group-hover:bg-primary group-hover:text-[#FDFBF7] transition-premium">Ver
+                                    class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-primary py-3 px-6 rounded-full bg-primary/5 border border-primary/10 group-hover:bg-primary group-hover:text-[#050505] transition-premium">Ver
                                     Detalles </span>
                             </div>
                         </a>
@@ -386,7 +381,7 @@
             </div>
             <div class="relative z-10 md:w-1/3 flex justify-center md:justify-end"><a href="https://wa.link/d79bce"
                     target="_blank"
-                    class="bg-primary text-[#FDFBF7] px-12 py-5 rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-lg inline-block text-center">Comprar
+                    class="bg-primary text-[#050505] px-12 py-5 rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 transition-premium shadow-lg inline-block text-center">Comprar
                     Colección </a></div>
         </div>
     </section>
@@ -603,7 +598,7 @@
                             </h4>
                             <div class="relative group"><input type="email" placeholder="Email"
                                     class="w-full bg-primary/5 border border-primary/10 rounded-full px-6 py-3 text-sm focus:outline-none focus:border-secondary transition-premium"><button
-                                    class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary text-[#FDFBF7] flex items-center justify-center"><span
+                                    class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary text-[#050505] flex items-center justify-center"><span
                                         class="material-symbols-outlined text-sm">arrow_forward</span></button></div>
                         </div>
                     </div>
@@ -620,6 +615,10 @@
                 </div>
             </footer>
             <script src="sparkle.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="gsap-animations.js"></script>
 </body>
 
 </html>
